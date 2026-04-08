@@ -1,94 +1,683 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A1 Property Solutions</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A1 Property Solutions</title>
 
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f8fafc;
-  color: #0f172a;
-}
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
-}
-h1 {
-  font-size: 36px;
-}
-h2 {
-  margin-top: 40px;
-}
-.button {
-  display: inline-block;
-  padding: 12px 20px;
-  background: #111827;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  margin-top: 15px;
-}
-.card {
-  background: white;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-}
-</style>
+  <!-- ═══════════════════════════════════════════════
+       FONTS — change these URLs to swap fonts
+  ═══════════════════════════════════════════════ -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════════
+       SITE-WIDE COLOURS — edit just these variables
+       to re-skin the whole site instantly
+    ═══════════════════════════════════════════════ */
+    :root {
+      --navy:       #0d1f3c;   /* dark header / footer bg   */
+      --gold:       #e8a020;   /* accent / CTA colour        */
+      --gold-dark:  #c4861a;   /* hover state for gold       */
+      --white:      #ffffff;
+      --light-bg:   #f4f6f9;   /* alternating section bg     */
+      --text:       #1a1a2e;   /* body copy                  */
+      --muted:      #5a6478;   /* secondary text             */
+      --radius:     8px;
+    }
+
+    /* ─── RESET ──────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a  { text-decoration: none; color: inherit; }
+
+    /* ─── TYPOGRAPHY HELPERS ─────────────────────── */
+    h1, h2, h3, h4 {
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.02em;
+      line-height: 1.15;
+    }
+
+    /* ─── LAYOUT HELPERS ─────────────────────────── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    section { padding: 80px 0; }
+
+    /* ─── SECTION LABEL (little tag above headings) ─ */
+    .section-label {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 540px;
+    }
+
+
+    /* ═══════════════════════════════════════════════
+       TOP BAR — thin strip above nav
+    ═══════════════════════════════════════════════ */
+    .topbar {
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 8px 24px;
+      letter-spacing: 0.04em;
+    }
+    .topbar a { color: var(--navy); font-weight: 700; }
+
+
+    /* ═══════════════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════════════ */
+    nav {
+      background: var(--navy);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+    .logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.82);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy) !important;
+      padding: 9px 22px;
+      border-radius: var(--radius);
+      font-weight: 700 !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--gold-dark) !important; color: var(--white) !important; }
+
+
+    /* ═══════════════════════════════════════════════
+       HERO SECTION
+    ═══════════════════════════════════════════════ */
+    .hero {
+      background: var(--navy);
+      background-image: linear-gradient(135deg, #0d1f3c 55%, #162c54 100%);
+      color: var(--white);
+      padding: 100px 0 90px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      border: 1px solid rgba(232,160,32,0.12);
+      top: -200px; right: -150px;
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-block;
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 40px;
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      color: var(--white);
+      max-width: 760px;
+      margin: 0 auto 18px;
+    }
+    .hero h1 span { color: var(--gold); }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.72);
+      max-width: 560px;
+      margin: 0 auto 38px;
+    }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 15px 34px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--gold-dark); transform: translateY(-2px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.4);
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 13px 32px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero-trust {
+      margin-top: 48px;
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+    }
+    .trust-item .icon { font-size: 1.3rem; }
+
+
+    /* ═══════════════════════════════════════════════
+       ABOUT SECTION
+    ═══════════════════════════════════════════════ */
+    #about { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .about-visual {
+      background: var(--light-bg);
+      border-radius: 12px;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      border: 3px solid #e2e8f0;
+    }
+    .about-text p { color: var(--muted); margin-bottom: 16px; font-size: 1.05rem; }
+    .about-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2rem;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .stat-label { font-size: 0.82rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+
+
+    /* ═══════════════════════════════════════════════
+       SERVICES SECTION
+    ═══════════════════════════════════════════════ */
+    #services { background: var(--light-bg); }
+    .services-header { text-align: center; margin-bottom: 52px; }
+    .services-header .section-sub { margin: 0 auto; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 32px 28px;
+      border: 1px solid #e2e8f0;
+      transition: box-shadow 0.25s, transform 0.2s, border-color 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .service-card:hover { box-shadow: 0 12px 36px rgba(13,31,60,0.12); transform: translateY(-4px); border-color: transparent; }
+    .service-card:hover::after { transform: scaleX(1); }
+
+    .service-icon {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .service-card h3 {
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .service-card p { color: var(--muted); font-size: 0.95rem; }
+
+
+    /* ═══════════════════════════════════════════════
+       HOW IT WORKS SECTION
+    ═══════════════════════════════════════════════ */
+    #how-it-works { background: var(--navy); color: var(--white); }
+    .how-header { text-align: center; margin-bottom: 52px; }
+    .how-header .section-title { color: var(--white); }
+    .how-header .section-sub { color: rgba(255,255,255,0.65); margin: 0 auto; }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+    }
+    .step { text-align: center; padding: 24px 16px; }
+    .step-number {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+    }
+    .step h3 { color: var(--white); margin-bottom: 8px; font-size: 1.1rem; }
+    .step p  { color: rgba(255,255,255,0.6); font-size: 0.92rem; }
+
+
+    /* ═══════════════════════════════════════════════
+       CONTACT SECTION
+    ═══════════════════════════════════════════════ */
+    #contact { background: var(--white); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-info h2 { color: var(--navy); margin-bottom: 16px; }
+    .contact-info p  { color: var(--muted); margin-bottom: 28px; }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .contact-icon {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      background: var(--light-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .contact-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+    .contact-value { font-weight: 700; font-size: 1.05rem; color: var(--navy); }
+
+    .contact-cta-box {
+      background: var(--navy);
+      border-radius: 14px;
+      padding: 44px 40px;
+      text-align: center;
+    }
+    .contact-cta-box h3 { color: var(--white); font-size: 1.5rem; margin-bottom: 12px; }
+    .contact-cta-box p  { color: rgba(255,255,255,0.65); margin-bottom: 28px; font-size: 0.95rem; }
+    .contact-cta-box .btn-primary { font-size: 1.05rem; padding: 16px 40px; width: 100%; text-align: center; }
+
+
+    /* ═══════════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════════ */
+    footer {
+      background: #080f1e;
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.88rem;
+    }
+    footer span { color: var(--gold); }
+
+
+    /* ═══════════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+      section { padding: 56px 0; }
+      .nav-links { display: none; }
+      .about-grid,
+      .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+      .about-visual { min-height: 200px; }
+      .hero { padding: 72px 0 64px; }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="container">
 
-<h1>A1 Property Solutions</h1>
-<p><strong>Property Maintenance, Repairs & HVAC/R Upkeep</strong></p>
+  <!-- ═══════════════════════════════════════════════
+       TOP BAR — EDIT: phone number & message
+  ═══════════════════════════════════════════════ -->
+  <div class="topbar">
+    📞 Call or text us anytime: <a href="tel:5555555555">(555) 555-5555</a>
+    &nbsp;·&nbsp; Serving Boston & Surrounding Areas
+  </div>
 
-<a href="tel:+15555555555" class="button">Call Now</a>
 
-<h2>About</h2>
-<p>
-We provide reliable property maintenance, repairs, and yard cleanup services for residential and commercial properties in the Boston area. 
-From lawn care and handyman work to HVAC and refrigeration preventative maintenance, we help keep your property clean, functional, and well-maintained.
-</p>
+  <!-- ═══════════════════════════════════════════════
+       NAVIGATION — EDIT: logo name & links
+  ═══════════════════════════════════════════════ -->
+  <nav>
+    <div class="container nav-inner">
+      <div class="logo">A1 <span>Property</span> Solutions</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<h2>Services</h2>
 
-<div class="card">
-<h3>Yard Cleanup & Exterior</h3>
-<p>Yard cleanup, debris removal, gutter cleaning, trimming, and seasonal maintenance.</p>
-</div>
+  <!-- ═══════════════════════════════════════════════
+       HERO — EDIT: headline, sub-text, buttons
+  ═══════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Boston Area Property Services</div>
 
-<div class="card">
-<h3>Handyman & Repairs</h3>
-<p>Doors, drywall, fixtures, and general repair work handled quickly and professionally.</p>
-</div>
+      <h1>Your Property, <span>Handled Right.</span></h1>
 
-<div class="card">
-<h3>Property Maintenance</h3>
-<p>Ongoing maintenance and preventative care for residential and commercial properties.</p>
-</div>
+      <p class="hero-sub">
+        Reliable property maintenance, repairs, and yard cleanup
+        for residential &amp; commercial properties in the Boston area.
+      </p>
 
-<div class="card">
-<h3>HVAC/R Maintenance</h3>
-<p>Air filters, basic cleaning, inspections, walk-in coolers/freezers, and ice machine upkeep.</p>
-</div>
+      <div class="hero-buttons">
+        <a href="tel:5555555555" class="btn-primary">📞 Call Now — (555) 555-5555</a>
+        <a href="#services" class="btn-outline">See Our Services</a>
+      </div>
 
-<h2>How It Works</h2>
-<p>1. Call or text</p>
-<p>2. Get a quote</p>
-<p>3. Schedule service</p>
-<p>4. Job gets done</p>
+      <!-- EDIT: trust badges — add/remove as needed -->
+      <div class="hero-trust">
+        <div class="trust-item"><span class="icon">✅</span> Residential &amp; Commercial</div>
+        <div class="trust-item"><span class="icon">⚡</span> Fast Response</div>
+        <div class="trust-item"><span class="icon">📍</span> Boston &amp; Surrounding Areas</div>
+        <div class="trust-item"><span class="icon">🔧</span> HVAC/R Specialists</div>
+      </div>
+    </div>
+  </section>
 
-<h2>Contact</h2>
-<p><strong>Phone:</strong> (555) 555-5555</p>
-<p><strong>Service Area:</strong> Boston & Surrounding Areas</p>
 
-</div>
+  <!-- ═══════════════════════════════════════════════
+       ABOUT — EDIT: paragraphs & stats
+  ═══════════════════════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Replace the emoji with an <img src="your-photo.jpg"> if you have a photo -->
+        <div class="about-visual">🏠</div>
+
+        <div class="about-text">
+          <div class="section-label">About Us</div>
+          <h2 class="section-title">Keeping Boston Properties Clean &amp; Functional</h2>
+          <p>
+            We provide reliable property maintenance, repairs, and yard cleanup services
+            for residential and commercial properties in the Boston area.
+          </p>
+          <p>
+            From lawn care and handyman work to HVAC and refrigeration preventative maintenance,
+            we help keep your property clean, functional, and well-maintained year-round.
+          </p>
+
+          <!-- EDIT: stat numbers & labels -->
+          <div class="about-stats">
+            <div class="stat">
+              <div class="stat-num">100+</div>
+              <div class="stat-label">Jobs Completed</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">5★</div>
+              <div class="stat-label">Customer Rating</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">Same</div>
+              <div class="stat-label">Day Response</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SERVICES — EDIT: add/remove/rename cards
+       Copy a whole service-card block to add more
+  ═══════════════════════════════════════════════ -->
+  <section id="services">
+    <div class="container">
+      <div class="services-header">
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-sub">
+          Everything your property needs — handled by one dependable team.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- SERVICE CARD 1 — EDIT: icon, title, description -->
+        <div class="service-card">
+          <span class="service-icon">🌿</span>
+          <h3>Yard Cleanup &amp; Exterior</h3>
+          <p>Yard cleanup, debris removal, gutter cleaning, trimming, and seasonal maintenance.</p>
+        </div>
+
+        <!-- SERVICE CARD 2 -->
+        <div class="service-card">
+          <span class="service-icon">🔨</span>
+          <h3>Handyman &amp; Repairs</h3>
+          <p>Doors, drywall, fixtures, and general repair work handled quickly and professionally.</p>
+        </div>
+
+        <!-- SERVICE CARD 3 -->
+        <div class="service-card">
+          <span class="service-icon">🏢</span>
+          <h3>Property Maintenance</h3>
+          <p>Ongoing maintenance and preventative care for residential and commercial properties.</p>
+        </div>
+
+        <!-- SERVICE CARD 4 -->
+        <div class="service-card">
+          <span class="service-icon">❄️</span>
+          <h3>HVAC/R Maintenance</h3>
+          <p>Air filters, basic cleaning, inspections, walk-in coolers/freezers, and ice machine upkeep.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       HOW IT WORKS — EDIT: step titles & descriptions
+  ═══════════════════════════════════════════════ -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="how-header">
+        <div class="section-label">Simple Process</div>
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-sub">Getting your property taken care of takes just four easy steps.</p>
+      </div>
+
+      <div class="steps-grid">
+
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Call or Text</h3>
+          <p>Reach out any time — we respond fast and are easy to get ahold of.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Get a Quote</h3>
+          <p>We'll give you a clear, honest quote with no surprises.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Schedule Service</h3>
+          <p>Pick a time that works for you — we work around your schedule.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Job Gets Done</h3>
+          <p>We show up, do the work right, and leave your property looking great.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       CONTACT — EDIT: phone, area, hours
+  ═══════════════════════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <div class="section-label">Get In Touch</div>
+          <h2 class="section-title">Ready to Get Started?</h2>
+          <p>Give us a call or text. We'll get back to you quickly and get your property taken care of.</p>
+
+          <!-- EDIT: phone number -->
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-label">Phone / Text</div>
+              <div class="contact-value"><a href="tel:5555555555">(555) 555-5555</a></div>
+            </div>
+          </div>
+
+          <!-- EDIT: service area -->
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-label">Service Area</div>
+              <div class="contact-value">Boston &amp; Surrounding Areas</div>
+            </div>
+          </div>
+
+          <!-- EDIT: hours (delete this block if not needed) -->
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <div class="contact-label">Hours</div>
+              <div class="contact-value">Mon – Sat, 7 AM – 7 PM</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-cta-box">
+          <h3>Call Us Today</h3>
+          <p>No online forms — just a real person ready to help with your property.</p>
+          <a href="tel:5555555555" class="btn-primary">📞 (555) 555-5555</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER — EDIT: company name & year
+  ═══════════════════════════════════════════════ -->
+  <footer>
+    <p>© 2025 <span>A1 Property Solutions</span> · Boston, MA · All Rights Reserved</p>
+  </footer>
+
 
 </body>
 </html>
