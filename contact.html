@@ -3,31 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | A1 Property Solutions — Free Quote Boston, MA</title>
-  <meta name="description" content="Contact A1 Property Solutions for a free estimate on handyman, property maintenance, HVAC, or yard cleanup services in Greater Boston. Call (617) 602-6160." />
+  <title>A1 Property Solutions | Handyman & Property Maintenance — Boston, MA</title>
+  <meta name="description" content="Reliable handyman and property maintenance services for residential and commercial properties in Boston and surrounding areas. HVAC, repairs, yard cleanup & more. Call (617) 602-6160." />
+  <meta name="keywords" content="handyman Boston, property maintenance Boston MA, HVAC maintenance Boston, yard cleanup Boston, handyman Greater Boston" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://a1propertypros.com/contact.html" />
+  <link rel="canonical" href="https://a1propertypros.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="A1 Property Solutions | Boston Handyman & Property Maintenance" />
+  <meta property="og:description" content="Residential & commercial property maintenance, handyman repairs, HVAC, and yard cleanup across Greater Boston." />
+  <meta property="og:url" content="https://a1propertypros.com/" />
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"A1 Property Solutions","description":"Reliable handyman and property maintenance services in Greater Boston.","url":"https://a1propertypros.com","telephone":"+16176026160","address":{"@type":"PostalAddress","addressLocality":"Boston","addressRegion":"MA","addressCountry":"US"},"areaServed":["Boston","Cambridge","Somerville","Quincy","Brookline","Newton","Waltham","Medford"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"05:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"05:00","closes":"15:00"}],"priceRange":"$$"}
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
-    :root{--navy:#0d1f3c;--navy-mid:#142850;--navy-deep:#07111f;--gold:#e8a020;--gold-dk:#c4861a;--gold-lt:#fdf3e0;--white:#ffffff;--off:#f5f7fa;--border:#dde3ed;--text:#1c2333;--muted:#5a6478;--r:8px;--shadow:0 4px 20px rgba(13,31,60,.10);--shadow-lg:0 12px 40px rgba(13,31,60,.16)}
+    /* ── TOKENS ─────────────────────────────────────── */
+    :root {
+      --navy:      #0d1f3c;
+      --navy-mid:  #142850;
+      --navy-deep: #07111f;
+      --gold:      #e8a020;
+      --gold-dk:   #c4861a;
+      --gold-lt:   #fdf3e0;
+      --white:     #ffffff;
+      --off:       #f5f7fa;
+      --border:    #dde3ed;
+      --text:      #1c2333;
+      --muted:     #5a6478;
+      --r:         8px;
+      --shadow:    0 4px 20px rgba(13,31,60,.10);
+      --shadow-lg: 0 12px 40px rgba(13,31,60,.16);
+    }
+
+    /* ── RESET ──────────────────────────────────────── */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{font-family:'Source Sans 3',sans-serif;color:var(--text);background:var(--white);line-height:1.65}
-    img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    ul{list-style:none}
+
+    /* ── TYPE ───────────────────────────────────────── */
     h1,h2,h3,h4{font-family:'Oswald',sans-serif;letter-spacing:.02em;line-height:1.15}
+
+    /* ── LAYOUT ─────────────────────────────────────── */
     .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
     section{padding:88px 0}
+
+    /* ── LABELS / PILLS ─────────────────────────────── */
     .pill{display:inline-block;background:var(--gold);color:var(--navy);font-family:'Oswald',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 13px;border-radius:4px;margin-bottom:14px}
     .section-h{font-size:clamp(1.75rem,3.8vw,2.5rem);color:var(--navy);margin-bottom:14px}
     .section-p{color:var(--muted);font-size:1.05rem;max-width:520px;line-height:1.7}
+
+    /* ── BUTTONS ────────────────────────────────────── */
     .btn{display:inline-block;font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:.06em;border-radius:var(--r);transition:all .2s;cursor:pointer;border:none}
     .btn-gold{background:var(--gold);color:var(--navy);padding:14px 32px;font-size:.97rem}
     .btn-gold:hover{background:var(--gold-dk);transform:translateY(-2px)}
+    .btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.38);padding:12px 30px;font-size:.97rem}
+    .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+    .btn-outline{background:transparent;color:var(--navy);border:2px solid var(--navy);padding:12px 28px;font-size:.92rem}
+    .btn-outline:hover{background:var(--navy);color:#fff}
+
+    /* ════════════════════════════════════════════════
+       TOPBAR
+    ════════════════════════════════════════════════ */
     .topbar{background:var(--gold);color:var(--navy);font-size:.84rem;font-weight:600;text-align:center;padding:9px 24px;letter-spacing:.03em}
     .topbar a{color:var(--navy);font-weight:700}
+
+    /* ════════════════════════════════════════════════
+       NAV
+    ════════════════════════════════════════════════ */
     nav{background:var(--navy);position:sticky;top:0;z-index:200;box-shadow:0 2px 16px rgba(0,0,0,.4)}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
     .logo{font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:.04em}
@@ -38,21 +88,123 @@
     .nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:8px 20px;border-radius:var(--r);font-weight:700!important}
     .nav-cta:hover{background:var(--gold-dk)!important;color:#fff!important}
     .hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px;background:none;border:none}
-    .hbg span{display:block;width:25px;height:2px;background:#fff;border-radius:2px}
+    .hbg span{display:block;width:25px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
     .mob-menu{display:none;background:var(--navy-mid);border-top:1px solid rgba(255,255,255,.08)}
     .mob-menu.open{display:block}
-    .mob-menu a{display:block;color:rgba(255,255,255,.85);font-size:1rem;font-weight:600;padding:13px 28px;border-bottom:1px solid rgba(255,255,255,.07)}
-    .mob-menu a:hover{color:var(--gold)}
-    .page-hero{background:var(--navy);background-image:linear-gradient(150deg,#07111f 0%,#0d1f3c 50%,#152d56 100%);color:#fff;padding:72px 0 64px;text-align:center;position:relative;overflow:hidden}
-    .page-hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;border:1px solid rgba(232,160,32,.09);top:-180px;right:-100px;pointer-events:none}
-    .page-hero h1{font-size:clamp(2rem,5vw,3rem);color:#fff;margin-bottom:14px}
-    .page-hero h1 span{color:var(--gold)}
-    .page-hero p{color:rgba(255,255,255,.65);font-size:1.08rem;max-width:520px;margin:0 auto}
+    .mob-menu a{display:block;color:rgba(255,255,255,.85);font-size:1rem;font-weight:600;padding:13px 28px;border-bottom:1px solid rgba(255,255,255,.07);letter-spacing:.03em}
+    .mob-menu a:hover{color:var(--gold);background:rgba(255,255,255,.04)}
+
+    /* ════════════════════════════════════════════════
+       HERO
+    ════════════════════════════════════════════════ */
+    .hero{background:var(--navy);background-image:linear-gradient(150deg,#07111f 0%,#0d1f3c 50%,#152d56 100%);color:#fff;padding:96px 0 88px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;border:1px solid rgba(232,160,32,.09);top:-220px;right:-160px;pointer-events:none}
+    .hero::after{content:'';position:absolute;width:450px;height:450px;border-radius:50%;border:1px solid rgba(232,160,32,.06);bottom:-120px;left:-80px;pointer-events:none}
+    .hero-badge{display:inline-block;border:2px solid rgba(232,160,32,.6);color:var(--gold);font-family:'Oswald',sans-serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;padding:5px 18px;border-radius:40px;margin-bottom:24px}
+    .hero h1{font-size:clamp(2.3rem,5.5vw,3.8rem);color:#fff;max-width:760px;margin:0 auto 18px}
+    .hero h1 span{color:var(--gold)}
+    .hero-sub{font-size:1.12rem;color:rgba(255,255,255,.68);max-width:560px;margin:0 auto 40px;line-height:1.7}
+    .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .hero-trust{margin-top:52px;display:flex;justify-content:center;gap:32px;flex-wrap:wrap;padding-top:40px;border-top:1px solid rgba(255,255,255,.09)}
+    .trust-item{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.62);font-size:.88rem}
+    .trust-icon{font-size:1.1rem}
+
+    /* ════════════════════════════════════════════════
+       WHY STRIP
+    ════════════════════════════════════════════════ */
+    .why-strip{background:var(--white);padding:52px 0;border-bottom:2px solid var(--off)}
+    .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+    .why-item{display:flex;align-items:flex-start;gap:14px;padding:20px 18px;border-radius:10px;border:1px solid var(--border);background:var(--off);transition:box-shadow .2s,border-color .2s}
+    .why-item:hover{box-shadow:var(--shadow);border-color:rgba(232,160,32,.4)}
+    .why-ico{width:42px;height:42px;border-radius:10px;background:var(--gold-lt);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+    .why-item h4{font-family:'Oswald',sans-serif;font-size:1rem;color:var(--navy);margin-bottom:4px}
+    .why-item p{font-size:.86rem;color:var(--muted);line-height:1.55}
+
+    /* ════════════════════════════════════════════════
+       ABOUT
+    ════════════════════════════════════════════════ */
+    .about-sec{background:var(--off)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    /* ── PHOTO PLACEHOLDER — replace with real <img> ── */
+    .about-visual{border-radius:14px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;border:1px solid var(--border);position:relative}
+    .about-visual::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e8a020' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+    .av-icon{font-size:3.5rem;z-index:1}
+    .av-label{font-family:'Oswald',sans-serif;color:rgba(255,255,255,.45);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;z-index:1}
+    /* ── Replace above with: <img src="images/your-photo.jpg" alt="..."> ── */
+    .about-text .section-p{margin-bottom:14px}
+    .stats-row{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--border)}
+    .stat-num{font-family:'Oswald',sans-serif;font-size:2rem;color:var(--gold);font-weight:700;line-height:1}
+    .stat-lbl{font-size:.78rem;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;margin-top:4px}
+
+    /* ════════════════════════════════════════════════
+       SERVICES
+    ════════════════════════════════════════════════ */
+    .services-sec{background:var(--white)}
+    .svc-hd{text-align:center;margin-bottom:52px}
+    .svc-hd .section-p{margin:0 auto}
+    .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+    .svc-card{background:var(--off);border:1px solid var(--border);border-radius:12px;padding:30px 26px;position:relative;overflow:hidden;transition:box-shadow .25s,transform .2s,border-color .2s}
+    .svc-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+    .svc-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px);border-color:transparent;background:var(--white)}
+    .svc-card:hover::after{transform:scaleX(1)}
+    .svc-ico{width:50px;height:50px;border-radius:12px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:18px}
+    .svc-card h3{font-size:1.15rem;color:var(--navy);margin-bottom:9px}
+    .svc-card p{color:var(--muted);font-size:.92rem;line-height:1.6}
+    .svc-link{display:inline-block;margin-top:14px;font-size:.85rem;font-weight:700;color:var(--gold-dk);letter-spacing:.04em}
+    .svc-link:hover{text-decoration:underline}
+
+    /* ════════════════════════════════════════════════
+       HOW IT WORKS
+    ════════════════════════════════════════════════ */
+    .how-sec{background:var(--navy);color:#fff}
+    .how-hd{text-align:center;margin-bottom:56px}
+    .how-hd .section-h{color:#fff}
+    .how-hd .section-p{color:rgba(255,255,255,.6);margin:0 auto}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+    .steps::before{content:'';position:absolute;top:28px;left:14%;right:14%;height:2px;background:linear-gradient(90deg,var(--gold) 0%,rgba(232,160,32,.2) 100%)}
+    .step{text-align:center;padding:0 12px;position:relative}
+    .step-num{width:56px;height:56px;border-radius:50%;background:var(--gold);color:var(--navy);font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;position:relative;z-index:1;box-shadow:0 0 0 6px rgba(232,160,32,.15)}
+    .step h3{color:#fff;margin-bottom:8px;font-size:1.05rem}
+    .step p{color:rgba(255,255,255,.55);font-size:.88rem;line-height:1.6}
+
+    /* ════════════════════════════════════════════════
+       REVIEW STRIP
+    ════════════════════════════════════════════════ */
+    .rev-strip{background:var(--gold-lt);padding:72px 0}
+    .rev-hd{text-align:center;margin-bottom:44px}
+    .stars-row{color:var(--gold);font-size:1.5rem;letter-spacing:3px;margin-bottom:10px}
+    .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .rev-mini{background:var(--white);border-radius:12px;padding:26px 24px;border:1px solid var(--border);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
+    .rev-mini .stars{color:var(--gold);font-size:.95rem}
+    .rev-mini blockquote{font-size:.95rem;color:var(--text);font-style:italic;line-height:1.65;flex:1}
+    .rev-mini .who{font-size:.82rem;font-weight:700;color:var(--navy)}
+    .rev-mini .who span{color:var(--muted);font-weight:400}
+
+    /* ════════════════════════════════════════════════
+       SERVICE AREA
+    ════════════════════════════════════════════════ */
+    .area-sec{background:var(--white)}
+    .area-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .area-visual{background:var(--navy);border-radius:14px;padding:40px 32px;text-align:center;box-shadow:var(--shadow-lg)}
+    .area-visual .map-icon{font-size:3.5rem;margin-bottom:16px}
+    .area-visual h3{color:#fff;font-size:1.3rem;margin-bottom:8px}
+    .area-visual p{color:rgba(255,255,255,.55);font-size:.9rem}
+    .area-visual .ph{color:var(--gold);font-weight:700;font-size:1.1rem;margin-top:16px}
+    .town-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+    .town-tag{background:var(--gold-lt);border:1px solid rgba(232,160,32,.35);color:var(--navy);font-size:.8rem;font-weight:600;padding:5px 13px;border-radius:20px}
+
+    /* ════════════════════════════════════════════════
+       CTA BANNER
+    ════════════════════════════════════════════════ */
     .cta-band{background:var(--gold);padding:60px 0;text-align:center}
     .cta-band h2{font-size:clamp(1.6rem,3.5vw,2.2rem);color:var(--navy);margin-bottom:10px}
     .cta-band p{color:var(--navy);opacity:.75;margin-bottom:28px;font-size:1.02rem}
-    .btn-navy{background:var(--navy);color:#fff;padding:15px 38px;font-size:1rem;border-radius:var(--r);display:inline-block;font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:.06em;transition:background .2s,transform .15s;border:none;cursor:pointer}
-    .btn-navy:hover{background:#1a3060;transform:translateY(-2px)}
+    .cta-band .btn-navy{background:var(--navy);color:#fff;padding:15px 38px;font-size:1rem;border-radius:var(--r);display:inline-block;font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:.06em;transition:background .2s,transform .15s;border:none;cursor:pointer}
+    .cta-band .btn-navy:hover{background:#1a3060;transform:translateY(-2px)}
+
+    /* ════════════════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════════════════ */
     footer{background:var(--navy-deep);color:rgba(255,255,255,.5);padding:60px 28px 28px}
     .ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;max-width:1080px;margin:0 auto 44px}
     .ft-brand .logo{font-size:1.2rem;margin-bottom:14px}
@@ -66,66 +218,45 @@
     .ft-col .hrs{color:rgba(255,255,255,.38);font-size:.83rem;line-height:1.7;margin-top:10px}
     .ft-bottom{max-width:1080px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.82rem}
     .ft-bottom span{color:var(--gold)}
-    .ft-bottom a{color:rgba(255,255,255,.38)}
+    .ft-bottom a{color:rgba(255,255,255,.38);transition:color .2s}
     .ft-bottom a:hover{color:var(--gold)}
     .ft-links{display:flex;gap:20px}
 
-    /* ── CONTACT PAGE ── */
-    .contact-sec{background:var(--off)}
-    .contact-layout{display:grid;grid-template-columns:1fr 1.55fr;gap:44px;align-items:start}
-    .c-sidebar{position:sticky;top:84px}
-    .c-info-box{background:var(--navy);border-radius:14px;padding:34px 28px;color:#fff;margin-bottom:20px}
-    .c-info-box h3{color:#fff;font-size:1.25rem;margin-bottom:4px}
-    .c-info-box .sub{color:rgba(255,255,255,.5);font-size:.88rem;margin-bottom:26px}
-    .c-item{display:flex;align-items:flex-start;gap:13px;margin-bottom:20px}
-    .c-item:last-child{margin-bottom:0}
-    .c-ico{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
-    .c-lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:3px}
-    .c-val{color:#fff;font-weight:600;font-size:.97rem;line-height:1.5}
-    .c-val a{color:var(--gold)}
-    .area-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
-    .area-tag{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.65);font-size:.75rem;padding:3px 10px;border-radius:12px}
-    .call-box{background:var(--gold);border-radius:12px;padding:26px 22px;text-align:center}
-    .call-box h4{color:var(--navy);font-size:1.05rem;margin-bottom:5px}
-    .call-box p{color:var(--navy);opacity:.7;font-size:.86rem;margin-bottom:14px}
-    .call-box .ph-link{font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:var(--navy);display:block}
-
-    .form-box{background:var(--white);border-radius:14px;padding:38px 34px;box-shadow:var(--shadow-lg);border:1px solid var(--border)}
-    .form-title{font-size:1.45rem;color:var(--navy);margin-bottom:5px}
-    .form-sub{color:var(--muted);font-size:.9rem;margin-bottom:28px;line-height:1.6}
-    .f-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .f-group{margin-bottom:18px}
-    .f-group label{display:block;font-size:.85rem;font-weight:700;color:var(--navy);margin-bottom:6px;letter-spacing:.02em}
-    .f-group .req{color:var(--gold-dk)}
-    .f-group input,.f-group select,.f-group textarea{width:100%;padding:11px 15px;border:1px solid var(--border);border-radius:var(--r);font-family:'Source Sans 3',sans-serif;font-size:.95rem;color:var(--text);background:var(--white);transition:border-color .2s,box-shadow .2s;outline:none;-webkit-appearance:none;appearance:none}
-    .f-group input:focus,.f-group select:focus,.f-group textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(232,160,32,.14)}
-    .f-group textarea{min-height:112px;resize:vertical}
-    .f-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235a6478' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:34px}
-    .form-submit{width:100%;padding:15px;font-size:1rem;letter-spacing:.06em;margin-top:6px;background:var(--gold);color:var(--navy);font-family:'Oswald',sans-serif;font-weight:700;border:none;border-radius:var(--r);cursor:pointer;transition:background .2s,transform .15s}
-    .form-submit:hover{background:var(--gold-dk);transform:translateY(-2px)}
-    .form-disc{font-size:.78rem;color:var(--muted);text-align:center;margin-top:12px;line-height:1.5}
-    .form-ok{display:none;text-align:center;padding:40px 20px}
-    .form-ok .ok-ico{font-size:3rem;margin-bottom:14px}
-    .form-ok h3{color:var(--navy);font-size:1.35rem;margin-bottom:8px}
-    .form-ok p{color:var(--muted);font-size:.95rem;line-height:1.65}
-    .form-ok a{color:var(--gold-dk);font-weight:700}
-
-    .social-strip{background:var(--white);padding:52px 0;border-top:1px solid var(--border)}
-    .social-inner{text-align:center;margin-bottom:28px}
-    .social-row{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
-    .soc-pill{display:flex;align-items:center;gap:9px;background:var(--off);border:1px solid var(--border);border-radius:40px;padding:12px 22px;font-size:.93rem;font-weight:600;color:var(--navy);transition:all .2s;box-shadow:var(--shadow)}
-    .soc-pill:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
-    .soc-pill .si{font-size:1.2rem}
-
-    @media(max-width:900px){.contact-layout{grid-template-columns:1fr}.c-sidebar{position:static}.ft-grid{grid-template-columns:1fr 1fr;gap:28px}}
-    @media(max-width:768px){section{padding:60px 0}.nav-links{display:none}.hbg{display:flex}.f-row{grid-template-columns:1fr}.form-box{padding:26px 20px}}
-    @media(max-width:520px){.ft-grid{grid-template-columns:1fr}.ft-bottom{flex-direction:column;text-align:center}}
+    /* ════════════════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════════════════ */
+    @media(max-width:900px){
+      .why-grid{grid-template-columns:1fr 1fr}
+      .ft-grid{grid-template-columns:1fr 1fr;gap:28px}
+    }
+    @media(max-width:768px){
+      section{padding:60px 0}
+      .nav-links{display:none}
+      .hbg{display:flex}
+      .about-grid,.area-grid{grid-template-columns:1fr;gap:36px}
+      .steps{grid-template-columns:1fr 1fr;gap:28px}
+      .steps::before{display:none}
+      .rev-grid{grid-template-columns:1fr}
+      .hero{padding:72px 0 64px}
+      .hero-trust{gap:18px}
+    }
+    @media(max-width:520px){
+      .why-grid{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr}
+      .ft-grid{grid-template-columns:1fr}
+      .ft-bottom{flex-direction:column;text-align:center}
+    }
   </style>
 </head>
 <body>
 
-  <div class="topbar">📞 Call or text anytime: <a href="tel:6176026160">(617) 602-6160</a> &nbsp;·&nbsp; Serving Boston &amp; Surrounding Areas</div>
+  <!-- ── TOP BAR — EDIT: phone number ── -->
+  <div class="topbar">
+    📞 Call or text anytime: <a href="tel:6176026160">(617) 602-6160</a>
+    &nbsp;·&nbsp; Serving Boston &amp; Surrounding Areas
+  </div>
 
+  <!-- ── NAVIGATION ── -->
   <nav>
     <div class="wrap nav-inner">
       <a href="index.html" class="logo">A1 <span>Property</span> Solutions</a>
@@ -134,218 +265,269 @@
         <li><a href="index.html#services">Services</a></li>
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="contact.html" class="nav-cta active">Contact Us</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
       </ul>
       <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
     <div class="mob-menu" id="mob">
-      <a href="about.html">About</a><a href="index.html#services">Services</a><a href="pricing.html">Pricing</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact Us</a>
+      <a href="about.html">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact Us</a>
     </div>
   </nav>
 
-  <section class="page-hero">
-    <div class="wrap">
-      <div class="pill">Get In Touch</div>
-      <h1>Get Your <span>Free Estimate</span></h1>
-      <p>Fill out the form, call, or text — we respond fast and get to work quickly.</p>
-    </div>
-  </section>
-
   <!-- ══════════════════════════════════════════════
-       CONTACT LAYOUT
+       HERO — EDIT: headline, sub, phone
   ══════════════════════════════════════════════ -->
-  <section class="contact-sec">
+  <section class="hero">
     <div class="wrap">
-      <div class="contact-layout" style="padding:72px 0">
-
-        <!-- SIDEBAR -->
-        <div class="c-sidebar">
-          <div class="c-info-box">
-            <h3>Contact Info</h3>
-            <p class="sub">Easy to reach — call, text, or fill out the form.</p>
-
-            <!-- EDIT: phone number -->
-            <div class="c-item">
-              <div class="c-ico">📞</div>
-              <div><div class="c-lbl">Phone / Text</div><div class="c-val"><a href="tel:6176026160">(617) 602-6160</a></div></div>
-            </div>
-
-            <!-- EDIT: email (delete block if you prefer calls only) -->
-            <div class="c-item">
-              <div class="c-ico">✉️</div>
-              <div><div class="c-lbl">Email</div><div class="c-val"><a href="mailto:info@a1propertypros.com">info@a1propertypros.com</a></div></div>
-            </div>
-
-            <!-- EDIT: business hours -->
-            <div class="c-item">
-              <div class="c-ico">🕐</div>
-              <div><div class="c-lbl">Hours</div><div class="c-val" style="font-size:.9rem">Mon–Fri: 5 AM – 7 PM<br>Sat: 5 AM – 3 PM<br><span style="color:rgba(255,255,255,.35);font-size:.82rem">Sun: Closed</span></div></div>
-            </div>
-
-            <div class="c-item">
-              <div class="c-ico">📍</div>
-              <div>
-                <div class="c-lbl">Service Area</div>
-                <div class="c-val" style="font-size:.9rem">Greater Boston, MA</div>
-                <!-- EDIT: town tags -->
-                <div class="area-tags">
-                  <span class="area-tag">Boston</span><span class="area-tag">Cambridge</span><span class="area-tag">Somerville</span><span class="area-tag">Brookline</span><span class="area-tag">Newton</span><span class="area-tag">Quincy</span><span class="area-tag">Medford</span><span class="area-tag">+ More</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="call-box">
-            <h4>Prefer to Call?</h4>
-            <p>Fastest way to get a quote — we answer fast.</p>
-            <a href="tel:6176026160" class="ph-link">📞 (617) 602-6160</a>
-          </div>
-        </div>
-
-        <!-- FORM -->
-        <div class="form-box">
-          <h2 class="form-title">Request a Free Estimate</h2>
-          <p class="form-sub">Tell us about your property and what you need. We'll get back to you within a few hours.</p>
-
-          <!-- ══════════════════════════════════════════
-               FORM SETUP — to receive emails, use one of:
-               
-               OPTION A (Formspree — free & easy):
-               1. Sign up at formspree.io
-               2. Get your form ID
-               3. Change action="#" to action="https://formspree.io/f/YOUR_ID"
-               4. Add method="POST" to the form tag
-               5. Remove e.preventDefault() from the JS below
-               
-               OPTION B (Netlify — if hosted on Netlify):
-               Add  netlify  attribute to the <form> tag
-          ══════════════════════════════════════════ -->
-          <form id="form" action="https://formspree.io/f/xpqovbql" method="POST" autocomplete="on">
-            <div class="f-row">
-              <div class="f-group"><label for="fn">First Name <span class="req">*</span></label><input type="text" id="fn" name="firstName" placeholder="John" required /></div>
-              <div class="f-group"><label for="ln">Last Name <span class="req">*</span></label><input type="text" id="ln" name="lastName" placeholder="Smith" required /></div>
-            </div>
-            <div class="f-row">
-              <div class="f-group"><label for="ph">Phone <span class="req">*</span></label><input type="tel" id="ph" name="phone" placeholder="(617) 555-0100" required /></div>
-              <div class="f-group"><label for="em">Email</label><input type="email" id="em" name="email" placeholder="john@email.com" /></div>
-            </div>
-            <div class="f-group"><label for="addr">Property Address / Town <span class="req">*</span></label><input type="text" id="addr" name="address" placeholder="123 Main St, Brookline, MA" required /></div>
-            <div class="f-row">
-              <div class="f-group">
-                <label for="svc">Service Needed <span class="req">*</span></label>
-                <select id="svc" name="service" required>
-                  <option value="" disabled selected>Select a service…</option>
-                  <option value="yard">Yard Cleanup &amp; Exterior</option>
-                  <option value="handyman">Handyman &amp; Repairs</option>
-                  <option value="maintenance">Property Maintenance</option>
-                  <option value="hvac">HVAC/R Maintenance</option>
-                  <option value="commercial">Commercial Services</option>
-                  <option value="other">Other / Not Sure</option>
-                </select>
-              </div>
-              <div class="f-group">
-                <label for="prop">Property Type</label>
-                <select id="prop" name="propertyType">
-                  <option value="" disabled selected>Select type…</option>
-                  <option value="single">Residential – Single Family</option>
-                  <option value="condo">Residential – Condo/Unit</option>
-                  <option value="multi">Residential – Multi-Family</option>
-                  <option value="commercial">Commercial</option>
-                  <option value="rental">Rental Property</option>
-                </select>
-              </div>
-            </div>
-            <div class="f-group">
-              <label for="timing">When Do You Need Service?</label>
-              <select id="timing" name="timing">
-                <option value="" disabled selected>Select timeframe…</option>
-                <option value="asap">As soon as possible</option>
-                <option value="week">This week</option>
-                <option value="month">This month</option>
-                <option value="flex">Flexible / just getting quotes</option>
-              </select>
-            </div>
-            <div class="f-group"><label for="msg">Describe Your Project <span class="req">*</span></label><textarea id="msg" name="message" placeholder="Tell us what needs to be done. The more detail, the faster we can give you an accurate quote." required></textarea></div>
-            <!-- Honeypot anti-spam field -->
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-            <button type="submit" class="form-submit">Send My Request →</button>
-            <p class="form-disc">We typically respond within a few hours. We'll never share your information.</p>
-          </form>
-
-          <div class="form-ok" id="form-ok">
-            <div class="ok-ico">✅</div>
-            <h3>Request Sent!</h3>
-            <p>Thanks! We'll be in touch shortly. Need us right away? Call <a href="tel:6176026160">(617) 602-6160</a>.</p>
-          </div>
-        </div>
-
+      <div class="hero-badge">Greater Boston's Property Maintenance Team</div>
+      <h1>Your Property, <span>Handled Right.</span></h1>
+      <p class="hero-sub">
+        Reliable maintenance, handyman repairs &amp; yard cleanup for residential
+        and commercial properties across Greater Boston.
+      </p>
+      <div class="hero-btns">
+        <a href="tel:6176026160" class="btn btn-gold">📞 Call Now — (617) 602-6160</a>
+        <a href="contact.html" class="btn btn-ghost">Get a Free Quote</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><span class="trust-icon">✅</span> Residential &amp; Commercial</div>
+        <div class="trust-item"><span class="trust-icon">⚡</span> Same-Day Response</div>
+        <div class="trust-item"><span class="trust-icon">📍</span> Greater Boston</div>
+        <div class="trust-item"><span class="trust-icon">❄️</span> HVAC/R Specialists</div>
+        <div class="trust-item"><span class="trust-icon">⭐</span> 5-Star Rated</div>
       </div>
     </div>
   </section>
 
   <!-- ══════════════════════════════════════════════
-       SOCIAL — EDIT: replace # with your real URLs
+       WHY CHOOSE US — EDIT: icons, titles, copy
   ══════════════════════════════════════════════ -->
-  <div class="social-strip">
+  <div class="why-strip">
     <div class="wrap">
-      <div class="social-inner">
-        <div class="pill">Stay Connected</div>
-        <h2 class="section-h">Follow Us Online</h2>
-        <p class="section-p" style="margin:0 auto">See our latest work, tips, and updates on social media.</p>
-      </div>
-      <div class="social-row">
-        <a href="https://www.facebook.com/profile.php?id=61572055553393" target="_blank" rel="noopener" class="soc-pill"><span class="si">📘</span> Follow on Facebook</a>
-        <a href="#" target="_blank" rel="noopener" class="soc-pill"><span class="si">📷</span> Follow on Instagram</a>
-        <a href="https://g.page/r/CVxrB5_T8yDwEAE/review" target="_blank" rel="noopener" class="soc-pill"><span class="si">🔍</span> Google Business Profile</a>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-ico">📞</div>
+          <div><h4>Easy to Reach</h4><p>Call or text — we pick up fast and keep you informed.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-ico">💰</div>
+          <div><h4>Honest Pricing</h4><p>Clear quotes upfront. No hidden fees, ever.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-ico">🏆</div>
+          <div><h4>Quality Work</h4><p>We don't cut corners. Every job is done right.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-ico">🔄</div>
+          <div><h4>One Team</h4><p>Stop juggling contractors. We handle it all.</p></div>
+        </div>
       </div>
     </div>
   </div>
 
-  <section class="cta-band">
+  <!-- ══════════════════════════════════════════════
+       ABOUT — EDIT: paragraphs, stats
+       Replace .about-visual with <img src="images/...">
+  ══════════════════════════════════════════════ -->
+  <section class="about-sec" id="about">
     <div class="wrap">
-      <h2>Prefer to Talk? Give Us a Call.</h2>
-      <p>We're easy to reach and respond fast — call or text anytime during business hours.</p>
-      <a href="tel:6176026160" class="btn-navy">📞 (617) 602-6160</a>
+      <div class="about-grid">
+
+        <!-- REPLACE THIS ENTIRE DIV with:
+             <img src="images/owner-or-job-photo.jpg" alt="A1 Property Solutions team" style="border-radius:14px;box-shadow:var(--shadow-lg)"> -->
+        <div class="about-visual">
+          <div class="av-icon">🏗️</div>
+          <div class="av-label">Add your photo here</div>
+        </div>
+
+        <div>
+          <div class="pill">About Us</div>
+          <h2 class="section-h">Boston's Dependable Property Maintenance Team</h2>
+          <p class="section-p">We provide reliable property maintenance, repairs, and yard cleanup for residential and commercial properties throughout Greater Boston.</p>
+          <p class="section-p" style="margin-top:12px">From lawn care and seasonal cleanups to handyman repairs and HVAC preventative maintenance — we help homeowners and businesses stay on top of property upkeep without the hassle of multiple contractors.</p>
+          <div class="stats-row">
+            <div><div class="stat-num">100+</div><div class="stat-lbl">Jobs Completed</div></div>
+            <div><div class="stat-num">5★</div><div class="stat-lbl">Avg. Rating</div></div>
+            <div><div class="stat-num">Same Day</div><div class="stat-lbl">Response</div></div>
+          </div>
+          <div style="margin-top:28px"><a href="about.html" class="btn btn-outline">Our Full Story →</a></div>
+        </div>
+
+      </div>
     </div>
   </section>
 
+  <!-- ══════════════════════════════════════════════
+       SERVICES — EDIT: cards (copy block to add more)
+  ══════════════════════════════════════════════ -->
+  <section class="services-sec" id="services">
+    <div class="wrap">
+      <div class="svc-hd">
+        <div class="pill">What We Do</div>
+        <h2 class="section-h">Our Services</h2>
+        <p class="section-p">Everything your property needs — handled by one dependable team.</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc-card">
+          <div class="svc-ico">🌿</div>
+          <h3>Yard Cleanup &amp; Exterior</h3>
+          <p>Yard cleanup, debris removal, gutter cleaning, trimming, and seasonal maintenance.</p>
+          <a href="pricing.html#exterior" class="svc-link">See Pricing →</a>
+        </div>
+        <div class="svc-card">
+          <div class="svc-ico">🔨</div>
+          <h3>Handyman &amp; Repairs</h3>
+          <p>Doors, drywall, fixtures, furniture assembly, and general repairs handled quickly.</p>
+          <a href="pricing.html#handyman" class="svc-link">See Pricing →</a>
+        </div>
+        <div class="svc-card">
+          <div class="svc-ico">🏢</div>
+          <h3>Property Maintenance</h3>
+          <p>Ongoing maintenance and preventative care for residential and commercial properties.</p>
+          <a href="pricing.html#maintenance" class="svc-link">See Pricing →</a>
+        </div>
+        <div class="svc-card">
+          <div class="svc-ico">❄️</div>
+          <h3>HVAC/R Maintenance</h3>
+          <p>Air filters, inspections, walk-in coolers/freezers, and ice machine upkeep.</p>
+          <a href="pricing.html#hvac" class="svc-link">See Pricing →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       HOW IT WORKS — EDIT: step titles & descriptions
+  ══════════════════════════════════════════════ -->
+  <section class="how-sec" id="how-it-works">
+    <div class="wrap">
+      <div class="how-hd">
+        <div class="pill">Simple Process</div>
+        <h2 class="section-h">How It Works</h2>
+        <p class="section-p">Getting your property taken care of is easy — just four steps.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><h3>Call or Text</h3><p>Reach out anytime — we respond fast.</p></div>
+        <div class="step"><div class="step-num">2</div><h3>Get a Quote</h3><p>Clear, honest quote with no surprises.</p></div>
+        <div class="step"><div class="step-num">3</div><h3>Schedule</h3><p>We work around your schedule.</p></div>
+        <div class="step"><div class="step-num">4</div><h3>Job Done</h3><p>We show up, do great work, done.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       REVIEWS — EDIT: swap in your real reviews
+  ══════════════════════════════════════════════ -->
+  <section class="rev-strip">
+    <div class="wrap">
+      <div class="rev-hd">
+        <div class="stars-row">★★★★★</div>
+        <div class="pill">Customer Reviews</div>
+        <h2 class="section-h">What Our Customers Say</h2>
+        <p class="section-p" style="margin:0 auto">Real feedback from Boston-area homeowners and businesses.</p>
+      </div>
+      <div class="rev-grid">
+        <div class="rev-mini">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Fast response, fair price, and the work was done perfectly. Will definitely use A1 again."</blockquote>
+          <div class="who">— Sarah M. <span>· Brookline, MA</span></div>
+        </div>
+        <div class="rev-mini">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Finally found a reliable handyman in Boston. Showed up on time and knocked out a whole list of repairs."</blockquote>
+          <div class="who">— James R. <span>· Somerville, MA</span></div>
+        </div>
+        <div class="rev-mini">
+          <div class="stars">★★★★★</div>
+          <blockquote>"We use A1 for all our commercial property maintenance. Consistent, professional, and easy to work with."</blockquote>
+          <div class="who">— Maria T. <span>· Property Manager, Boston</span></div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:36px">
+        <a href="reviews.html" class="btn btn-outline">Read All Reviews →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SERVICE AREA — EDIT: town tags
+  ══════════════════════════════════════════════ -->
+  <section class="area-sec">
+    <div class="wrap">
+      <div class="area-grid">
+        <div>
+          <div class="pill">Where We Work</div>
+          <h2 class="section-h">Serving Greater Boston</h2>
+          <p class="section-p">Based in Boston, we serve homeowners and property managers across the metro and surrounding suburbs. Not sure if we cover your town? Give us a call.</p>
+          <div class="town-tags">
+            <span class="town-tag">Boston</span><span class="town-tag">Cambridge</span><span class="town-tag">Somerville</span><span class="town-tag">Brookline</span><span class="town-tag">Quincy</span><span class="town-tag">Newton</span><span class="town-tag">Waltham</span><span class="town-tag">Medford</span><span class="town-tag">Malden</span><span class="town-tag">Everett</span><span class="town-tag">Watertown</span><span class="town-tag">Arlington</span><span class="town-tag">Belmont</span><span class="town-tag">Milton</span><span class="town-tag">+ More</span>
+          </div>
+          <div style="margin-top:28px"><a href="contact.html" class="btn btn-gold">Get a Quote in Your Area</a></div>
+        </div>
+        <div class="area-visual" style="padding:0;overflow:hidden;border-radius:14px">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2951.1!2d-71.0685574!3d42.2886121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8d8429f747aff67f%3A0xf020f3d39f076b5c!2sA1%20Property%20Solutions!5e0!3m2!1sen!2sus!4v1"
+            width="100%"
+            height="340"
+            style="border:0;display:block"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="A1 Property Solutions on Google Maps">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BAND ── -->
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Ready to Get Your Property Taken Care Of?</h2>
+      <p>Call or text us — we respond fast and get to work quickly.</p>
+      <a href="tel:6176026160" class="btn-navy">📞 Call (617) 602-6160</a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
   <footer>
     <div class="ft-grid">
-      <div class="ft-brand"><div class="logo">A1 <span>Property</span> Solutions</div><p>Reliable property maintenance, handyman repairs, and yard cleanup across Greater Boston.</p><div class="ft-social"><a href="https://www.facebook.com/profile.php?id=61572055553393" target="_blank" rel="noopener" class="soc-btn" aria-label="Facebook">📘</a><a href="#" target="_blank" rel="noopener" class="soc-btn" aria-label="Instagram" style="opacity:0.4;pointer-events:none" title="Coming soon">📷</a></div></div>
-      <div class="ft-col"><h4>Pages</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="pricing.html">Pricing</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a></div>
-      <div class="ft-col"><h4>Services</h4><a href="index.html#services">Yard Cleanup</a><a href="index.html#services">Handyman &amp; Repairs</a><a href="index.html#services">Property Maintenance</a><a href="index.html#services">HVAC/R Maintenance</a></div>
-      <div class="ft-col"><h4>Contact</h4><a href="tel:6176026160">(617) 602-6160</a><a href="contact.html">Send a Message</a><div class="hrs">Mon–Fri: 5 AM – 7 PM<br>Sat: 5 AM – 3 PM</div></div>
+      <div class="ft-brand">
+        <div class="logo">A1 <span>Property</span> Solutions</div>
+        <p>Reliable property maintenance, handyman repairs, and yard cleanup across Greater Boston.</p>
+        <div class="ft-social">
+          <!-- EDIT: replace # with your Facebook/Instagram URLs -->
+          <a href="https://www.facebook.com/profile.php?id=61572055553393" target="_blank" rel="noopener" class="soc-btn" aria-label="Facebook">📘</a>
+          <a href="https://www.instagram.com/a1prosolutions?igsh=MWhndnA4NDRhMHc1dw%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="soc-btn" aria-label="Instagram">📷</a>
+        </div>
+      </div>
+      <div class="ft-col">
+        <h4>Pages</h4>
+        <a href="index.html">Home</a><a href="about.html">About Us</a><a href="pricing.html">Pricing</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="ft-col">
+        <h4>Services</h4>
+        <a href="index.html#services">Yard Cleanup</a><a href="index.html#services">Handyman &amp; Repairs</a><a href="index.html#services">Property Maintenance</a><a href="index.html#services">HVAC/R Maintenance</a>
+      </div>
+      <div class="ft-col">
+        <h4>Contact</h4>
+        <a href="tel:6176026160">(617) 602-6160</a><a href="contact.html">Send a Message</a>
+        <div class="hrs">Mon–Fri: 5 AM – 7 PM<br>Sat: 5 AM – 3 PM</div>
+      </div>
     </div>
-    <div class="ft-bottom"><p>© 2026 <span>A1 Property Solutions</span> · Boston, MA · All Rights Reserved</p><div class="ft-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
+    <div class="ft-bottom">
+      <p>© 2026 <span>A1 Property Solutions</span> · Boston, MA · All Rights Reserved</p>
+      <div class="ft-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
   </footer>
 
   <script>
-    document.getElementById('hbg').addEventListener('click',function(){document.getElementById('mob').classList.toggle('open')});
-    // Formspree AJAX — submits to Formspree and shows success message without page reload
-    document.getElementById('form').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const btn = this.querySelector('.form-submit');
-      btn.textContent = 'Sending…';
-      btn.disabled = true;
-      try {
-        const res = await fetch(this.action, {
-          method: 'POST',
-          body: new FormData(this),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          this.style.display = 'none';
-          document.getElementById('form-ok').style.display = 'block';
-        } else {
-          btn.textContent = 'Something went wrong — please call (617) 602-6160';
-          btn.style.background = '#c0392b'; btn.style.color = '#fff';
-          btn.disabled = false;
-        }
-      } catch(err) {
-        btn.textContent = 'Something went wrong — please call (617) 602-6160';
-        btn.style.background = '#c0392b'; btn.style.color = '#fff';
-        btn.disabled = false;
-      }
+    document.getElementById('hbg').addEventListener('click',function(){
+      document.getElementById('mob').classList.toggle('open');
     });
   </script>
 </body>
