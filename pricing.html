@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pricing | A1 Property Solutions — Handyman & Maintenance Rates Boston MA</title>
-  <meta name="description" content="Transparent handyman and property maintenance pricing for Greater Boston. Starting rates for yard cleanup, repairs, HVAC, and maintenance packages. Free estimates." />
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SEO — EDIT these two lines to change what shows up in Google
+       • title     : keep under 60 characters
+       • description: keep under 160 characters
+  ═══════════════════════════════════════════════════════════════ -->
+  <title>Pricing | A1 Property Solutions — Boston MA</title>
+  <meta name="description" content="Transparent pricing for handyman, property maintenance, HVAC, spring cleanup, and the A1 HomeShield annual plan in Greater Boston. Free estimates always." />
+
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://a1propertypros.com/pricing.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,22 +19,40 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
-    :root{--navy:#0d1f3c;--navy-mid:#142850;--navy-deep:#07111f;--gold:#e8a020;--gold-dk:#c4861a;--gold-lt:#fdf3e0;--white:#ffffff;--off:#f5f7fa;--border:#dde3ed;--text:#1c2333;--muted:#5a6478;--r:8px;--shadow:0 4px 20px rgba(13,31,60,.10);--shadow-lg:0 12px 40px rgba(13,31,60,.16)}
+    /* ═══════════════════════════════════════════════════════════════
+       SITE COLORS — change any value here to re-skin the whole page
+       --navy   : dark background color (nav, hero, shield section)
+       --gold   : accent / button color
+       --green  : spring promo section background
+       ═══════════════════════════════════════════════════════════════ */
+    :root{
+      --navy:#0d1f3c;--navy-mid:#142850;--navy-deep:#07111f;
+      --gold:#e8a020;--gold-dk:#c4861a;--gold-lt:#fdf3e0;
+      --green:#2d6a2d;--green-dk:#1f4d1f;--green-lt:#edf7ed;
+      --white:#fff;--off:#f5f7fa;--border:#dde3ed;
+      --text:#1c2333;--muted:#5a6478;
+      --r:8px;--shadow:0 4px 20px rgba(13,31,60,.10);--shadow-lg:0 12px 40px rgba(13,31,60,.16)
+    }
+
+    /* ── base reset & typography — do not edit ── */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{font-family:'Source Sans 3',sans-serif;color:var(--text);background:var(--white);line-height:1.65}
     img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}
-    h1,h2,h3,h4{font-family:'Oswald',sans-serif;letter-spacing:.02em;line-height:1.15}
+    h1,h2,h3,h4,h5{font-family:'Oswald',sans-serif;letter-spacing:.02em;line-height:1.15}
     .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
-    section{padding:88px 0}
-    .pill{display:inline-block;background:var(--gold);color:var(--navy);font-family:'Oswald',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 13px;border-radius:4px;margin-bottom:14px}
+    .pill{display:inline-block;background:var(--gold);color:var(--navy);font-family:'Oswald',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 13px;border-radius:4px;margin-bottom:12px}
     .section-h{font-size:clamp(1.75rem,3.8vw,2.5rem);color:var(--navy);margin-bottom:14px}
-    .section-p{color:var(--muted);font-size:1.05rem;max-width:520px;line-height:1.7}
+    .section-p{color:var(--muted);font-size:1.05rem;line-height:1.7}
     .btn{display:inline-block;font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:.06em;border-radius:var(--r);transition:all .2s;cursor:pointer;border:none}
-    .btn-gold{background:var(--gold);color:var(--navy);padding:14px 32px;font-size:.97rem}
+    .btn-gold{background:var(--gold);color:var(--navy);padding:13px 30px;font-size:.95rem}
     .btn-gold:hover{background:var(--gold-dk);transform:translateY(-2px)}
-    .btn-outline{background:transparent;color:var(--navy);border:2px solid var(--navy);padding:12px 28px;font-size:.92rem}
+    .btn-outline{background:transparent;color:var(--navy);border:2px solid var(--navy);padding:11px 26px;font-size:.92rem}
     .btn-outline:hover{background:var(--navy);color:#fff}
+    .btn-green{background:var(--green);color:#fff;padding:13px 30px;font-size:.95rem;border-radius:var(--r);font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:.06em;transition:all .2s;border:none;display:inline-block}
+    .btn-green:hover{background:var(--green-dk);transform:translateY(-2px)}
+    .btn-ghost-white{background:rgba(255,255,255,.12);color:#fff;border:2px solid rgba(255,255,255,.28);padding:11px 22px;border-radius:var(--r);font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:.06em;font-size:.92rem;transition:all .2s;display:inline-block}
+    .btn-ghost-white:hover{background:rgba(255,255,255,.22)}
     .topbar{background:var(--gold);color:var(--navy);font-size:.84rem;font-weight:600;text-align:center;padding:9px 24px;letter-spacing:.03em}
     .topbar a{color:var(--navy);font-weight:700}
     nav{background:var(--navy);position:sticky;top:0;z-index:200;box-shadow:0 2px 16px rgba(0,0,0,.4)}
@@ -50,6 +75,136 @@
     .page-hero h1{font-size:clamp(2rem,5vw,3rem);color:#fff;margin-bottom:14px}
     .page-hero h1 span{color:var(--gold)}
     .page-hero p{color:rgba(255,255,255,.65);font-size:1.08rem;max-width:520px;margin:0 auto}
+    .pricing-main{padding:72px 0;background:var(--off)}
+
+    /* ── expand card system — do not edit ── */
+    .xcard{border-radius:14px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:20px;transition:box-shadow .2s}
+    .xcard:hover{box-shadow:var(--shadow-lg)}
+    .xcard-hd{display:flex;align-items:center;justify-content:space-between;padding:22px 28px;cursor:pointer;user-select:none;-webkit-user-select:none;gap:16px}
+    .xcard-hd-left{display:flex;align-items:center;gap:16px;min-width:0}
+    .xcard-ico{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.35rem;flex-shrink:0}
+    .xcard-title-block h3{font-size:1.15rem;margin-bottom:3px}
+    .xcard-title-block .sub{font-size:.86rem;line-height:1.5}
+    .xcard-meta{display:flex;align-items:center;gap:20px;flex-shrink:0}
+    .xcard-price{font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;white-space:nowrap}
+    .xcard-tags{display:flex;gap:8px;flex-wrap:wrap}
+    .xtag{font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:12px;white-space:nowrap}
+    .xcard-chevron{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;transition:transform .3s,background .2s}
+    .xcard.open .xcard-chevron{transform:rotate(180deg)}
+    .xcard-body{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.4,0,.2,1)}
+    .xcard.open .xcard-body{max-height:2000px}
+    .xcard-body-inner{padding:0 28px 28px}
+    .xcard-default .xcard-hd{background:var(--white)}
+    .xcard-default .xcard-ico{background:linear-gradient(135deg,var(--navy),var(--navy-mid))}
+    .xcard-default .xcard-hd h3{color:var(--navy)}
+    .xcard-default .xcard-hd .sub{color:var(--muted)}
+    .xcard-default .xcard-price{color:var(--gold-dk)}
+    .xcard-default .xtag{background:var(--gold-lt);color:var(--navy);border:1px solid rgba(232,160,32,.3)}
+    .xcard-default .xcard-chevron{background:var(--off);color:var(--navy)}
+    .xcard-default .xcard-hd:hover .xcard-chevron{background:var(--gold);color:var(--navy)}
+    .xcard-default .xcard-body{background:var(--white);border-top:1px solid var(--border)}
+    .xcard-spring .xcard-hd{background:linear-gradient(135deg,#1a3d1a,#2d6a2d)}
+    .xcard-spring .xcard-ico{background:rgba(168,224,99,.18);border:1px solid rgba(168,224,99,.3)}
+    .xcard-spring .xcard-hd h3{color:#fff}
+    .xcard-spring .xcard-hd .sub{color:rgba(255,255,255,.65)}
+    .xcard-spring .xcard-price{color:#a8e063}
+    .xcard-spring .xtag{background:rgba(168,224,99,.15);border:1px solid rgba(168,224,99,.3);color:#a8e063}
+    .xcard-spring .xcard-chevron{background:rgba(255,255,255,.12);color:#fff}
+    .xcard-spring .xcard-hd:hover .xcard-chevron{background:rgba(168,224,99,.35)}
+    .xcard-spring .xcard-body{background:linear-gradient(160deg,#1a3d1a,#2d6a2d);border-top:1px solid rgba(255,255,255,.12)}
+    .xcard-shield .xcard-hd{background:linear-gradient(135deg,var(--navy),var(--navy-mid))}
+    .xcard-shield .xcard-ico{background:rgba(232,160,32,.15);border:1px solid rgba(232,160,32,.3)}
+    .xcard-shield .xcard-hd h3{color:#fff}
+    .xcard-shield .xcard-hd .sub{color:rgba(255,255,255,.55)}
+    .xcard-shield .xcard-price{color:var(--gold)}
+    .xcard-shield .xtag{background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.25);color:var(--gold)}
+    .xcard-shield .xcard-chevron{background:rgba(255,255,255,.08);color:#fff}
+    .xcard-shield .xcard-hd:hover .xcard-chevron{background:rgba(232,160,32,.3)}
+    .xcard-shield .xcard-body{background:var(--navy-mid);border-top:1px solid rgba(255,255,255,.1)}
+
+    /* ── pricing table — do not edit ── */
+    .price-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+    .price-table thead tr{background:var(--navy);color:#fff}
+    .price-table thead th{padding:11px 18px;text-align:left;font-family:'Oswald',sans-serif;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+    .price-table tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
+    .price-table tbody tr:last-child{border-bottom:none}
+    .price-table tbody tr:hover{background:var(--off)}
+    .price-table td{padding:13px 18px;font-size:.93rem;color:var(--text);vertical-align:top}
+    .price-table td:last-child{font-family:'Oswald',sans-serif;font-size:.98rem;color:var(--navy);font-weight:600;white-space:nowrap}
+    .td-note{font-size:.76rem;color:var(--muted);margin-top:2px;font-family:'Source Sans 3',sans-serif;font-weight:400}
+
+    /* ── spring body — do not edit ── */
+    .spring-body-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .spring-addon-list{display:flex;flex-direction:column;gap:0}
+    .base-row{display:flex;justify-content:space-between;align-items:center;background:rgba(168,224,99,.1);border:1px solid rgba(168,224,99,.25);border-radius:8px;padding:11px 14px;margin-bottom:8px}
+    .base-name{color:#fff;font-size:.9rem;font-weight:600;display:flex;align-items:center;gap:8px}
+    .base-badge{font-size:.68rem;background:rgba(168,224,99,.25);color:#a8e063;padding:2px 8px;border-radius:10px}
+    .base-price{font-family:'Oswald',sans-serif;color:#a8e063;font-size:1rem;font-weight:700}
+    .addon-row{display:flex;justify-content:space-between;align-items:center;padding:10px 4px;border-bottom:1px solid rgba(255,255,255,.09)}
+    .addon-row:last-child{border-bottom:none}
+    .addon-name{color:rgba(255,255,255,.85);font-size:.89rem;display:flex;align-items:center;gap:8px}
+    .addon-p{font-family:'Oswald',sans-serif;color:#a8e063;font-size:.95rem;font-weight:700;white-space:nowrap}
+    .addon-p small{font-family:'Source Sans 3',sans-serif;color:rgba(255,255,255,.38);font-size:.7rem;font-weight:400;margin-left:2px}
+    .spring-bundles-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:10px;padding:18px}
+    .spring-bundles-box h4{color:rgba(255,255,255,.55);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+    .bundle-tags{display:flex;flex-wrap:wrap;gap:8px}
+    .bundle-tag{background:rgba(168,224,99,.12);border:1px solid rgba(168,224,99,.28);color:#a8e063;font-size:.79rem;font-weight:600;padding:4px 12px;border-radius:20px}
+    .spring-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+    .spring-blurb{color:rgba(255,255,255,.7);font-size:.92rem;line-height:1.65;margin-bottom:18px}
+    .spring-from{display:inline-flex;align-items:baseline;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:12px 18px;margin-bottom:16px}
+    .sf-label{color:rgba(255,255,255,.5);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
+    .sf-price{font-family:'Oswald',sans-serif;font-size:2.4rem;color:#a8e063;font-weight:700;line-height:1}
+    .sf-unit{color:rgba(255,255,255,.45);font-size:.82rem}
+    .spring-note{font-size:.78rem;color:rgba(255,255,255,.38);margin-bottom:28px}
+
+    /* ── shield body — do not edit ── */
+    .shield-body-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .shield-body-col h4{font-family:'Oswald',sans-serif;color:rgba(255,255,255,.55);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+    .si-item{display:flex;align-items:flex-start;gap:11px;margin-bottom:14px}
+    .si-ico{width:34px;height:34px;border-radius:8px;background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.2);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+    .si-item h5{color:#fff;font-size:.92rem;margin-bottom:3px}
+    .si-item p{color:rgba(255,255,255,.45);font-size:.81rem;line-height:1.5}
+    .shield-perks{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+    .perk-tag{background:rgba(232,160,32,.1);border:1px solid rgba(232,160,32,.2);color:var(--gold);font-size:.76rem;font-weight:600;padding:4px 12px;border-radius:20px}
+    .vs-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:18px 20px;margin-bottom:16px}
+    .vs-box h4{margin-bottom:12px}
+    .vs-grid{display:grid;grid-template-columns:1fr 1px 1fr;gap:16px}
+    .vs-col h5{font-family:'Oswald',sans-serif;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+    .vs-col.them h5{color:rgba(255,255,255,.35)}
+    .vs-col.us h5{color:var(--gold)}
+    .vs-div{background:rgba(255,255,255,.08)}
+    .vs-col li{font-size:.82rem;padding:3px 0;display:flex;align-items:flex-start;gap:6px}
+    .vs-col.them li{color:rgba(255,255,255,.42)}
+    .vs-col.us li{color:rgba(255,255,255,.8)}
+    .xi{color:#e55;flex-shrink:0}.ci{color:var(--gold);flex-shrink:0}
+    .shield-note-txt{color:rgba(255,255,255,.3);font-size:.77rem;line-height:1.55;margin-top:12px}
+
+    /* ── packages — do not edit ── */
+    .pkgs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .pkg{background:var(--off);border-radius:12px;padding:26px 22px;border:2px solid var(--border);position:relative;transition:border-color .2s,box-shadow .2s}
+    .pkg:hover,.pkg.feat{border-color:var(--gold);box-shadow:var(--shadow)}
+    .pkg-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-family:'Oswald',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 12px;border-radius:20px;white-space:nowrap}
+    .pkg-name{font-family:'Oswald',sans-serif;font-size:1.25rem;color:var(--navy);margin-bottom:6px}
+    .pkg-price{font-family:'Oswald',sans-serif;font-size:1.7rem;color:var(--gold-dk);font-weight:700;margin-bottom:4px}
+    .pkg-price em{font-size:.9rem;color:var(--muted);font-family:'Source Sans 3',sans-serif;font-weight:400;font-style:normal}
+    .pkg-desc{color:var(--muted);font-size:.85rem;margin-bottom:16px;line-height:1.6}
+    .pkg-list{margin-bottom:20px}
+    .pkg-list li{display:flex;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:1px solid var(--border);font-size:.87rem}
+    .pkg-list li:last-child{border-bottom:none}
+    .chk{color:var(--gold-dk);font-weight:700;flex-shrink:0}
+    .pkg-btn{display:block;text-align:center}
+
+    /* ── faq, cta, footer — do not edit ── */
+    .faq-sec{background:var(--white);padding:72px 0}
+    .faq-hd{text-align:center;margin-bottom:40px}
+    .faq-list{max-width:720px;margin:0 auto}
+    .faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+    .faq-item:first-child{border-top:1px solid var(--border)}
+    .faq-q{font-family:'Oswald',sans-serif;font-size:1.05rem;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px}
+    .faq-arrow{color:var(--gold);font-size:1rem;transition:transform .2s;flex-shrink:0}
+    .faq-q.open .faq-arrow{transform:rotate(180deg)}
+    .faq-a{display:none;color:var(--muted);font-size:.93rem;margin-top:10px;line-height:1.7}
+    .faq-a.open{display:block}
     .cta-band{background:var(--gold);padding:60px 0;text-align:center}
     .cta-band h2{font-size:clamp(1.6rem,3.5vw,2.2rem);color:var(--navy);margin-bottom:10px}
     .cta-band p{color:var(--navy);opacity:.75;margin-bottom:28px;font-size:1.02rem}
@@ -72,61 +227,28 @@
     .ft-bottom a:hover{color:var(--gold)}
     .ft-links{display:flex;gap:20px}
 
-    /* ── PRICING PAGE ── */
-    .pricing-sec{background:var(--white)}
-    .pricing-note{background:var(--gold-lt);border-left:4px solid var(--gold);border-radius:0 var(--r) var(--r) 0;padding:16px 20px;margin-bottom:52px;font-size:.95rem;color:var(--text)}
-    .pricing-note strong{color:var(--navy)}
-    .pricing-note a{color:var(--gold-dk);font-weight:700}
-    .pricing-cat{margin-bottom:56px;scroll-margin-top:88px}
-    .cat-hd{display:flex;align-items:center;gap:14px;margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--border)}
-    .cat-ico{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--navy),var(--navy-mid));display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
-    .cat-hd h2{font-size:1.55rem;color:var(--navy)}
-    table{width:100%;border-collapse:collapse;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border)}
-    thead tr{background:var(--navy);color:#fff}
-    thead th{padding:13px 20px;text-align:left;font-family:'Oswald',sans-serif;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
-    tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
-    tbody tr:last-child{border-bottom:none}
-    tbody tr:hover{background:var(--off)}
-    td{padding:14px 20px;font-size:.95rem;color:var(--text);vertical-align:top}
-    td:last-child{font-family:'Oswald',sans-serif;font-size:1rem;color:var(--navy);font-weight:600;white-space:nowrap}
-    td .note{font-size:.78rem;color:var(--muted);margin-top:2px;font-family:'Source Sans 3',sans-serif;font-weight:400}
-
-    .pkgs-sec{background:var(--off)}
-    .pkgs-hd{text-align:center;margin-bottom:48px}
-    .pkgs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .pkg{background:var(--white);border-radius:14px;padding:34px 28px;border:2px solid var(--border);position:relative;transition:border-color .2s,box-shadow .2s}
-    .pkg:hover,.pkg.feat{border-color:var(--gold);box-shadow:var(--shadow-lg)}
-    .pkg-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-family:'Oswald',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 14px;border-radius:20px;white-space:nowrap}
-    .pkg-name{font-family:'Oswald',sans-serif;font-size:1.35rem;color:var(--navy);margin-bottom:8px}
-    .pkg-price{font-family:'Oswald',sans-serif;font-size:1.9rem;color:var(--gold-dk);font-weight:700;margin-bottom:4px}
-    .pkg-price em{font-size:.95rem;color:var(--muted);font-family:'Source Sans 3',sans-serif;font-weight:400;font-style:normal}
-    .pkg-desc{color:var(--muted);font-size:.88rem;margin-bottom:20px;line-height:1.6}
-    .pkg-list{margin-bottom:26px}
-    .pkg-list li{display:flex;align-items:flex-start;gap:9px;padding:7px 0;border-bottom:1px solid var(--border);font-size:.9rem}
-    .pkg-list li:last-child{border-bottom:none}
-    .chk{color:var(--gold-dk);font-weight:700;flex-shrink:0;margin-top:1px}
-    .pkg-btn{display:block;width:100%;text-align:center}
-
-    .faq-sec{background:var(--white)}
-    .faq-hd{text-align:center;margin-bottom:44px}
-    .faq-list{max-width:740px;margin:0 auto}
-    .faq-item{border-bottom:1px solid var(--border);padding:18px 0}
-    .faq-item:first-child{border-top:1px solid var(--border)}
-    .faq-q{font-family:'Oswald',sans-serif;font-size:1.08rem;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
-    .faq-arrow{color:var(--gold);font-size:1.1rem;transition:transform .2s;flex-shrink:0}
-    .faq-q.open .faq-arrow{transform:rotate(180deg)}
-    .faq-a{display:none;color:var(--muted);font-size:.95rem;margin-top:12px;line-height:1.7}
-    .faq-a.open{display:block}
-
-    @media(max-width:900px){.pkgs-grid{grid-template-columns:1fr 1fr}.ft-grid{grid-template-columns:1fr 1fr;gap:28px}}
-    @media(max-width:768px){section{padding:60px 0}.nav-links{display:none}.hbg{display:flex}.pkgs-grid{grid-template-columns:1fr}thead th:nth-child(2),td:nth-child(2){display:none}}
-    @media(max-width:520px){.ft-grid{grid-template-columns:1fr}.ft-bottom{flex-direction:column;text-align:center}}
+    @media(max-width:900px){.spring-body-grid,.shield-body-grid{grid-template-columns:1fr}.pkgs-grid{grid-template-columns:1fr 1fr}.ft-grid{grid-template-columns:1fr 1fr;gap:28px}.vs-grid{grid-template-columns:1fr}.vs-div{display:none}}
+    @media(max-width:768px){.nav-links{display:none}.hbg{display:flex}.pkgs-grid{grid-template-columns:1fr}.price-table thead th:nth-child(2),.price-table td:nth-child(2){display:none}.xcard-hd{padding:18px 20px}.xcard-body-inner{padding:0 20px 22px}.xcard-meta{gap:10px}}
+    @media(max-width:520px){.ft-grid{grid-template-columns:1fr}.ft-bottom{flex-direction:column;text-align:center}.xcard-tags{display:none}}
   </style>
 </head>
 <body>
 
-  <div class="topbar">📞 Call or text anytime: <a href="tel:6176026160">(617) 602-6160</a> &nbsp;·&nbsp; Serving Boston &amp; Surrounding Areas</div>
+  <!-- ═══════════════════════════════════════════════════════════════
+       TOP BAR
+       EDIT: the phone number in two spots — the display text and
+       the href="tel:..." link (digits only, no dashes)
+  ═══════════════════════════════════════════════════════════════ -->
+  <div class="topbar">
+    📞 Call or text anytime: <a href="tel:6173026160">(617) 302-6160</a>
+    &nbsp;·&nbsp; Serving Boston &amp; Surrounding Areas
+  </div>
 
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       NAVIGATION
+       EDIT: nothing here needs changing unless you rename a page file
+  ═══════════════════════════════════════════════════════════════ -->
   <nav>
     <div class="wrap nav-inner">
       <a href="index.html" class="logo">A1 <span>Property</span> Solutions</a>
@@ -140,186 +262,965 @@
       <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
     <div class="mob-menu" id="mob">
-      <a href="about.html">About</a><a href="index.html#services">Services</a><a href="pricing.html">Pricing</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact Us</a>
+      <a href="about.html">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact Us</a>
     </div>
   </nav>
 
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       PAGE HERO — the dark banner at the top of the page
+       EDIT: the h1 headline and the paragraph below it
+  ═══════════════════════════════════════════════════════════════ -->
   <section class="page-hero">
     <div class="wrap">
       <div class="pill">Transparent Pricing</div>
+
+      <!-- EDIT: main headline — the word in <span> shows in gold -->
       <h1>Fair Rates, <span>No Surprises.</span></h1>
-      <p>Upfront pricing on all our services. Call for a free custom quote on your project.</p>
+
+      <!-- EDIT: subtitle paragraph under the headline -->
+      <p>Click any service below to see full details and pricing. Free estimates always — just call.</p>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════
-       PRICING TABLES — EDIT: service names & prices
-       Anchor IDs (exterior, handyman, etc.) are linked
-       from service cards on homepage
-  ══════════════════════════════════════════════ -->
-  <section class="pricing-sec">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       PRICING CARDS — all seven expandable sections live here
+       HOW THEY WORK:
+         • Each card has a visible HEADER (always shown)
+         • Click the header to expand and see full details
+         • Only one card is open at a time
+         • The Spring Cleanup card opens automatically on page load
+
+       WHAT YOU CAN EDIT IN EVERY CARD HEADER:
+         • The emoji icon
+         • The card title (h3)
+         • The short subtitle description (.sub)
+         • The "From $XX" summary price (.xcard-price)
+         • The small tag labels (.xtag) — add or remove as needed
+  ═══════════════════════════════════════════════════════════════ -->
+  <div class="pricing-main">
     <div class="wrap">
-      <div class="pricing-note">
-        <strong>Note:</strong> Prices listed are starting estimates. Final pricing depends on property size, condition, and scope. We always provide a clear quote before starting any work. <a href="contact.html">Contact us for a free estimate →</a>
+
+      <!-- EDIT: the disclaimer note that appears above all cards -->
+      <div style="background:var(--gold-lt);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:14px 18px;margin-bottom:28px;font-size:.92rem;color:var(--text)">
+        <strong style="color:var(--navy)">Note:</strong>
+        All prices are starting estimates. Final pricing depends on property size, condition, and scope.
+        We always give you a clear quote before work begins.
+        <a href="contact.html" style="color:var(--gold-dk);font-weight:700">Get a free estimate →</a>
       </div>
 
-      <div class="pricing-cat" id="exterior">
-        <div class="cat-hd"><div class="cat-ico">🌿</div><h2>Yard Cleanup &amp; Exterior</h2></div>
-        <table>
-          <thead><tr><th>Service</th><th>Details</th><th>Starting At</th></tr></thead>
-          <tbody>
-            <tr><td>Basic Yard Cleanup</td><td>Raking, debris removal, general tidying</td><td>$125</td></tr>
-            <tr><td>Full Yard Cleanup</td><td>Leaves, branches, debris, edging</td><td>$200</td></tr>
-            <tr><td>Gutter Cleaning</td><td>Single-story home, debris cleared</td><td>$150</td></tr>
-            <tr><td>Seasonal Cleanup (Spring/Fall)</td><td>Full property prep for season change</td><td>$275</td></tr>
-            <tr><td>Debris Removal / Hauling</td><td>Per load — call for large volumes</td><td>$100</td></tr>
-            <tr><td>Trimming &amp; Pruning</td><td>Shrubs, hedges, overgrowth</td><td>$95</td></tr>
-          </tbody>
-        </table>
-      </div>
 
-      <div class="pricing-cat" id="handyman">
-        <div class="cat-hd"><div class="cat-ico">🔨</div><h2>Handyman &amp; Repairs</h2></div>
-        <table>
-          <thead><tr><th>Service</th><th>Details</th><th>Starting At</th></tr></thead>
-          <tbody>
-            <tr><td>Hourly Rate<div class="note">2-hour minimum</div></td><td>General handyman work</td><td>$75/hr</td></tr>
-            <tr><td>Door Repair / Adjustment</td><td>Hinges, locks, sticking doors</td><td>$95</td></tr>
-            <tr><td>Drywall Patch</td><td>Small holes, cracks — finish &amp; paint-ready</td><td>$125</td></tr>
-            <tr><td>Fixture Installation</td><td>Light fixtures, ceiling fans, outlets</td><td>$85</td></tr>
-            <tr><td>Furniture Assembly</td><td>Per item, standard flat-pack</td><td>$65</td></tr>
-            <tr><td>Caulking / Weatherstripping</td><td>Windows, doors, showers</td><td>$75</td></tr>
-            <tr><td>Custom / Project Work</td><td>Call for a quote on larger jobs</td><td>Free Estimate</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <!-- ═══════════════════════════════════════════════════════════
+           🌱 CARD 1 — SPRING CLEANUP PROMO
+           This card opens automatically when the page loads.
+           When spring is over, you can either:
+             (a) Delete this entire card
+             (b) Change the season label and update prices/services
+           ═══════════════════════════════════════════════════════════ -->
+      <div class="xcard xcard-spring" id="card-spring">
 
-      <div class="pricing-cat" id="maintenance">
-        <div class="cat-hd"><div class="cat-ico">🏢</div><h2>Property Maintenance</h2></div>
-        <table>
-          <thead><tr><th>Service</th><th>Details</th><th>Starting At</th></tr></thead>
-          <tbody>
-            <tr><td>Property Walk-Through Inspection</td><td>Visual inspection, written punch list</td><td>$100</td></tr>
-            <tr><td>Monthly Maintenance Visit</td><td>2-hr check-in and minor repairs (residential)</td><td>$200/mo</td></tr>
-            <tr><td>Commercial Monthly Package</td><td>Custom scope — call for details</td><td>From $350/mo</td></tr>
-            <tr><td>Vacation Property Check-In</td><td>Per visit — report with photos</td><td>$75</td></tr>
-            <tr><td>Tenant Turnover Prep</td><td>Cleaning, minor repairs, touch-ups</td><td>$250</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="pricing-cat" id="hvac">
-        <div class="cat-hd"><div class="cat-ico">❄️</div><h2>HVAC/R Maintenance</h2></div>
-        <table>
-          <thead><tr><th>Service</th><th>Details</th><th>Starting At</th></tr></thead>
-          <tbody>
-            <tr><td>Air Filter Replacement</td><td>Standard residential — filter included</td><td>$45</td></tr>
-            <tr><td>HVAC Inspection &amp; Cleaning</td><td>Coil cleaning, basic tune-up</td><td>$125</td></tr>
-            <tr><td>Walk-In Cooler PM</td><td>Condenser/evaporator clean, temp check</td><td>$175</td></tr>
-            <tr><td>Walk-In Freezer PM</td><td>Full preventative maintenance visit</td><td>$200</td></tr>
-            <tr><td>Ice Machine Clean &amp; Inspect</td><td>Sanitize, descale, inspect</td><td>$150</td></tr>
-            <tr><td>Commercial HVAC/R Contract</td><td>Quarterly PM visits — call for quote</td><td>Free Estimate</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════
-       PACKAGES — EDIT: names, prices, included items
-  ══════════════════════════════════════════════ -->
-  <section class="pkgs-sec">
-    <div class="wrap">
-      <div class="pkgs-hd">
-        <div class="pill">Bundle &amp; Save</div>
-        <h2 class="section-h">Maintenance Packages</h2>
-        <p class="section-p" style="margin:0 auto">Regular service at a predictable price — great for property managers and busy homeowners.</p>
-      </div>
-      <div class="pkgs-grid">
-        <div class="pkg">
-          <div class="pkg-name">Essential</div>
-          <div class="pkg-price">$199 <em>/ month</em></div>
-          <div class="pkg-desc">Great for single-family homeowners who want regular upkeep.</div>
-          <ul class="pkg-list">
-            <li><span class="chk">✓</span> 1 maintenance visit/month</li>
-            <li><span class="chk">✓</span> Minor repairs up to 1 hour</li>
-            <li><span class="chk">✓</span> Air filter check/replacement</li>
-            <li><span class="chk">✓</span> Property walk-through report</li>
-            <li><span class="chk">✓</span> Priority scheduling</li>
-          </ul>
-          <a href="contact.html" class="btn btn-outline pkg-btn">Get Started</a>
+        <!-- ── HEADER (always visible) ──────────────────────────
+             EDIT: icon, title, subtitle, price summary, tag labels -->
+        <div class="xcard-hd" onclick="toggleCard('card-spring')">
+          <div class="xcard-hd-left">
+            <!-- EDIT: swap the emoji for any season/service icon -->
+            <div class="xcard-ico">🌱</div>
+            <div class="xcard-title-block">
+              <!-- EDIT: card title -->
+              <h3>Spring Cleanup Special</h3>
+              <!-- EDIT: one-line description shown under the title -->
+              <div class="sub">Limited-time offer — leaf removal, trimming, gutters &amp; more</div>
+            </div>
+          </div>
+          <div class="xcard-meta">
+            <!-- EDIT: the price shown on the collapsed card header -->
+            <div class="xcard-price">From $100</div>
+            <div class="xcard-tags">
+              <!-- EDIT: small tag labels — delete a <span> to remove, copy to add -->
+              <span class="xtag">🌱 Spring 2025</span>
+              <span class="xtag">Add-Ons Available</span>
+            </div>
+            <div class="xcard-chevron">▼</div>
+          </div>
         </div>
-        <div class="pkg feat">
-          <div class="pkg-badge">Most Popular</div>
-          <div class="pkg-name">Pro</div>
-          <div class="pkg-price">$349 <em>/ month</em></div>
-          <div class="pkg-desc">Ideal for multi-unit residential or small commercial properties.</div>
-          <ul class="pkg-list">
-            <li><span class="chk">✓</span> 2 maintenance visits/month</li>
-            <li><span class="chk">✓</span> Minor repairs up to 2 hours</li>
-            <li><span class="chk">✓</span> HVAC filter service included</li>
-            <li><span class="chk">✓</span> Exterior &amp; gutter check</li>
-            <li><span class="chk">✓</span> Property walk-through report</li>
-            <li><span class="chk">✓</span> Priority same-day response</li>
-          </ul>
-          <a href="contact.html" class="btn btn-gold pkg-btn">Get Started</a>
-        </div>
-        <div class="pkg">
-          <div class="pkg-name">Commercial</div>
-          <div class="pkg-price">Custom <em>pricing</em></div>
-          <div class="pkg-desc">Built around your property's specific needs. We scope it together.</div>
-          <ul class="pkg-list">
-            <li><span class="chk">✓</span> Custom visit schedule</li>
-            <li><span class="chk">✓</span> HVAC/R preventative maintenance</li>
-            <li><span class="chk">✓</span> Full exterior &amp; interior rounds</li>
-            <li><span class="chk">✓</span> Detailed visit reports</li>
-            <li><span class="chk">✓</span> Dedicated point of contact</li>
-            <li><span class="chk">✓</span> Emergency response available</li>
-          </ul>
-          <a href="contact.html" class="btn btn-outline pkg-btn">Request a Quote</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ══════════════════════════════════════════════
-       FAQ — EDIT: questions and answers
-  ══════════════════════════════════════════════ -->
+        <!-- ── EXPANDED BODY ────────────────────────────────────── -->
+        <div class="xcard-body">
+          <div class="xcard-body-inner">
+            <div class="spring-body-grid">
+
+              <!-- LEFT COLUMN: description, starting price, buttons -->
+              <div>
+                <!-- EDIT: the paragraph description in the expanded view -->
+                <p class="spring-blurb">
+                  Winter is gone — your yard doesn't have to look like it.
+                  Start with leaf &amp; debris removal and add any services your
+                  property needs. Bundle services to save.
+                </p>
+
+                <!-- EDIT: the large "Starting at $XX" display price -->
+                <div class="spring-from">
+                  <span class="sf-label">Starting at</span>
+                  <span class="sf-price">$100</span>
+                  <span class="sf-unit">leaf &amp; debris cleanup</span>
+                </div>
+
+                <!-- EDIT: the small note under the price (expiry, availability, etc.) -->
+                <p class="spring-note">🗓️ Spring season pricing — book now for best availability</p>
+
+                <!-- EDIT: button text and links -->
+                <div class="spring-cta-row">
+                  <a href="contact.html" class="btn-green">Book Spring Cleanup</a>
+                  <a href="tel:6173026160" class="btn-ghost-white">📞 Call to Schedule</a>
+                </div>
+              </div>
+
+              <!-- RIGHT COLUMN: base service + add-on list + bundles -->
+              <div>
+
+                <!-- EDIT: the base/included service row (highlighted green) -->
+                <div class="base-row">
+                  <div class="base-name">
+                    ✅ Leaf &amp; Debris Removal
+                    <span class="base-badge">BASE</span>  <!-- EDIT or remove this badge -->
+                  </div>
+                  <div class="base-price">$100+</div>  <!-- EDIT: base price -->
+                </div>
+
+                <!-- ─────────────────────────────────────────────────────
+                     ADD-ON SERVICES LIST
+                     EDIT: change name or price on any row
+                     ADD A NEW ADD-ON: copy one <div class="addon-row">
+                       block and paste it before the closing </div>
+                     REMOVE AN ADD-ON: delete the entire <div class="addon-row"> block
+                ───────────────────────────────────────────────────── -->
+                <div class="spring-addon-list">
+
+                  <!-- ADD-ON ROW — EDIT: emoji, service name, price -->
+                  <div class="addon-row">
+                    <div class="addon-name">✂️ Shrub &amp; Hedge Trimming</div>
+                    <div class="addon-p">$75+ <small>add-on</small></div>
+                  </div>
+
+                  <div class="addon-row">
+                    <div class="addon-name">🌾 Lawn Edging &amp; Borders</div>
+                    <div class="addon-p">$65+ <small>add-on</small></div>
+                  </div>
+
+                  <div class="addon-row">
+                    <div class="addon-name">🍂 Gutter Cleaning</div>
+                    <div class="addon-p">$165+ <small>add-on</small></div>
+                  </div>
+
+                  <div class="addon-row">
+                    <div class="addon-name">💦 Light Pressure Washing</div>
+                    <div class="addon-p">$125+ <small>add-on</small></div>
+                  </div>
+
+                  <div class="addon-row">
+                    <div class="addon-name">🚛 Debris Hauling &amp; Disposal</div>
+                    <div class="addon-p">$75+ <small>per load</small></div>
+                  </div>
+
+                </div><!-- /spring-addon-list -->
+
+                <!-- ─────────────────────────────────────────────────────
+                     BUNDLE TAG LABELS
+                     EDIT: change any bundle name
+                     ADD A BUNDLE: copy a <span class="bundle-tag"> and paste it
+                     REMOVE A BUNDLE: delete that <span> line
+                ───────────────────────────────────────────────────── -->
+                <div class="spring-bundles-box" style="margin-top:16px">
+                  <h4>💡 Popular Bundles — Ask for a Custom Quote</h4>
+                  <div class="bundle-tags">
+                    <span class="bundle-tag">Full Yard Refresh</span>
+                    <span class="bundle-tag">Curb Appeal Package</span>
+                    <span class="bundle-tag">Spring + Gutters Combo</span>
+                    <span class="bundle-tag">Pre-Summer Prep</span>
+                  </div>
+                </div>
+
+              </div><!-- /right column -->
+            </div><!-- /spring-body-grid -->
+          </div>
+        </div><!-- /xcard-body -->
+      </div><!-- /card-spring -->
+
+
+      <!-- ═══════════════════════════════════════════════════════════
+           🛡️ CARD 2 — A1 HOMESHIELD ANNUAL PLAN
+           ═══════════════════════════════════════════════════════════ -->
+      <div class="xcard xcard-shield" id="card-shield">
+
+        <!-- ── HEADER ──────────────────────────────────────────── -->
+        <div class="xcard-hd" onclick="toggleCard('card-shield')">
+          <div class="xcard-hd-left">
+            <div class="xcard-ico">🛡️</div>
+            <div class="xcard-title-block">
+              <!-- EDIT: plan name and subtitle -->
+              <h3>A1 HomeShield Annual Plan</h3>
+              <div class="sub">2 seasonal visits, HVAC filters, minor repairs &amp; written property report</div>
+            </div>
+          </div>
+          <div class="xcard-meta">
+            <!-- EDIT: annual price shown in the collapsed header -->
+            <div class="xcard-price">$100/yr</div>
+            <div class="xcard-tags">
+              <!-- EDIT: tag labels for the plan -->
+              <span class="xtag">Spring &amp; Fall Visits</span>
+              <span class="xtag">10% Off Extra Services</span>
+            </div>
+            <div class="xcard-chevron">▼</div>
+          </div>
+        </div>
+
+        <!-- ── EXPANDED BODY ────────────────────────────────────── -->
+        <div class="xcard-body">
+          <div class="xcard-body-inner">
+            <div class="shield-body-grid">
+
+              <!-- LEFT COLUMN: what's included + perks + CTA -->
+              <div>
+                <div class="shield-body-col">
+                  <!-- EDIT: section heading for the included items list -->
+                  <h4>What's Included Each Visit</h4>
+
+                  <!-- ─────────────────────────────────────────────────
+                       INCLUDED ITEMS
+                       EDIT: icon, title, and description on any item
+                       ADD AN ITEM: copy a <div class="si-item"> block and paste it
+                       REMOVE AN ITEM: delete the whole <div class="si-item"> block
+                  ───────────────────────────────────────────────── -->
+
+                  <div class="si-item">
+                    <div class="si-ico">🌿</div>
+                    <div>
+                      <!-- EDIT: item title and description -->
+                      <h5>Seasonal Property Walkthrough</h5>
+                      <p>Spring prep or fall winterization — we assess and handle priority exterior items each visit.</p>
+                    </div>
+                  </div>
+
+                  <div class="si-item">
+                    <div class="si-ico">❄️</div>
+                    <div>
+                      <h5>HVAC Filter Check &amp; Swap</h5>
+                      <p>Air filter inspected and replaced every visit so your system runs all season long.</p>
+                    </div>
+                  </div>
+
+                  <div class="si-item">
+                    <div class="si-ico">🔨</div>
+                    <div>
+                      <h5>Minor Repairs &amp; Punch List</h5>
+                      <!-- EDIT: update the "1 hour" if you change the time allowance -->
+                      <p>Up to 1 hour of handyman work — doors, caulking, fixtures, and more.</p>
+                    </div>
+                  </div>
+
+                  <div class="si-item">
+                    <div class="si-ico">📋</div>
+                    <div>
+                      <h5>Written Property Report</h5>
+                      <p>Simple written summary of work done and anything to keep an eye on.</p>
+                    </div>
+                  </div>
+
+                  <!-- ─────────────────────────────────────────────────
+                       MEMBER PERK TAGS
+                       EDIT: change any tag text
+                       ADD A PERK: copy a <span class="perk-tag"> and paste it
+                       REMOVE A PERK: delete that <span> line
+                  ───────────────────────────────────────────────── -->
+                  <div class="shield-perks">
+                    <span class="perk-tag">⚡ Priority Scheduling</span>
+                    <span class="perk-tag">📞 Direct Line to John</span>
+                    <span class="perk-tag">💰 10% Off Extra Services</span>
+                    <span class="perk-tag">🔔 Seasonal Reminders</span>
+                  </div>
+
+                  <!-- EDIT: button text -->
+                  <a href="contact.html" class="btn btn-gold">Join the HomeShield Plan →</a>
+                </div>
+              </div>
+
+              <!-- RIGHT COLUMN: comparison vs big-box + fine print -->
+              <div>
+                <div class="vs-box">
+                  <h4 style="color:rgba(255,255,255,.55);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px">
+                    Why HomeShield Beats Big-Box Plans
+                  </h4>
+                  <div class="vs-grid">
+
+                    <!-- EDIT: "them" column — what big-box plans do wrong -->
+                    <div class="vs-col them">
+                      <h5>Big Box Plans</h5>
+                      <ul>
+                        <li><span class="xi">✗</span> You buy your own materials</li>
+                        <li><span class="xi">✗</span> Store associate, not a specialist</li>
+                        <li><span class="xi">✗</span> Interior tasks only</li>
+                        <li><span class="xi">✗</span> No yard or exterior work</li>
+                      </ul>
+                    </div>
+
+                    <div class="vs-div"></div>
+
+                    <!-- EDIT: "us" column — your advantages -->
+                    <div class="vs-col us">
+                      <h5>A1 HomeShield</h5>
+                      <ul>
+                        <li><span class="ci">✓</span> Materials quoted upfront</li>
+                        <li><span class="ci">✓</span> John Liriano, owner-operator</li>
+                        <li><span class="ci">✓</span> Interior &amp; exterior work</li>
+                        <li><span class="ci">✓</span> Yard, gutters, HVAC &amp; repairs</li>
+                      </ul>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- EDIT: the fine-print disclaimer under the comparison -->
+                <p class="shield-note-txt">
+                  Pay once a year. No contracts, no auto-billing without your approval.
+                  Additional services beyond the included scope are quoted separately
+                  at your 10% member discount rate.
+                </p>
+              </div>
+
+            </div><!-- /shield-body-grid -->
+          </div>
+        </div><!-- /xcard-body -->
+      </div><!-- /card-shield -->
+
+
+      <!-- ═══════════════════════════════════════════════════════════
+           🌿 CARD 3 — YARD CLEANUP & EXTERIOR PRICING TABLE
+
+           HOW TO EDIT PRICING ROWS:
+             • Change a price  → edit the text inside the last <td>
+             • Change a name   → edit the text in the first <td>
+             • Add a note      → add <div class="td-note">your note</div>
+                                 inside the first <td>, after the service name
+
+           HOW TO ADD A NEW ROW:
+             Copy this block and paste it before the </tbody> tag:
+               <tr>
+                 <td>Service Name</td>
+                 <td>Short description of what's included</td>
+                 <td>$XX</td>
+               </tr>
+
+           HOW TO DELETE A ROW:
+             Delete the entire <tr>...</tr> block for that service
+           ═══════════════════════════════════════════════════════════ -->
+      <div class="xcard xcard-default" id="card-exterior">
+        <div class="xcard-hd" onclick="toggleCard('card-exterior')">
+          <div class="xcard-hd-left">
+            <div class="xcard-ico">🌿</div>
+            <div class="xcard-title-block">
+              <!-- EDIT: card title and subtitle -->
+              <h3>Yard Cleanup &amp; Exterior</h3>
+              <div class="sub">Leaf removal, gutter cleaning, trimming, pressure washing &amp; debris hauling</div>
+            </div>
+          </div>
+          <div class="xcard-meta">
+            <!-- EDIT: lowest starting price for this category -->
+            <div class="xcard-price">From $65</div>
+            <div class="xcard-tags">
+              <span class="xtag">Residential &amp; Commercial</span>
+            </div>
+            <div class="xcard-chevron">▼</div>
+          </div>
+        </div>
+        <div class="xcard-body">
+          <div class="xcard-body-inner">
+            <table class="price-table">
+              <thead>
+                <tr>
+                  <th>Service</th>
+                  <th>Details</th>      <!-- this column hides on mobile -->
+                  <th>Starting At</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <!-- EDIT each row: service name | details | price -->
+                <tr>
+                  <td>
+                    Leaf &amp; Debris Removal
+                    <!-- EDIT or delete this note -->
+                    <div class="td-note">🌱 Spring special — see promo above</div>
+                  </td>
+                  <td>Raking, clearing, bagging</td>
+                  <td>$100</td>
+                </tr>
+
+                <tr>
+                  <td>Full Yard Cleanup</td>
+                  <td>Leaves, branches, debris, edging</td>
+                  <td>$200</td>
+                </tr>
+
+                <tr>
+                  <td>Shrub &amp; Hedge Trimming</td>
+                  <td>Shaping, pruning, overgrowth</td>
+                  <td>$75</td>
+                </tr>
+
+                <tr>
+                  <td>Lawn Edging &amp; Borders</td>
+                  <td>Crisp edges along beds and walks</td>
+                  <td>$65</td>
+                </tr>
+
+                <tr>
+                  <td>Gutter Cleaning</td>
+                  <td>Single-story home, flush &amp; clear</td>
+                  <td>$165</td>
+                </tr>
+
+                <tr>
+                  <td>Light Pressure Washing</td>
+                  <td>Walkways, patios, front steps</td>
+                  <td>$125</td>
+                </tr>
+
+                <tr>
+                  <td>Seasonal Cleanup (Spring/Fall)</td>
+                  <td>Full property prep for season change</td>
+                  <td>$275</td>
+                </tr>
+
+                <tr>
+                  <td>Debris Hauling &amp; Disposal</td>
+                  <td>Per load — call for large volumes</td>
+                  <td>$75</td>
+                </tr>
+
+                <!-- ADD NEW ROW HERE — copy the <tr> block above -->
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div><!-- /card-exterior -->
+
+
+      <!-- ═══════════════════════════════════════════════════════════
+           🔨 CARD 4 — HANDYMAN & REPAIRS PRICING TABLE
+           Same editing rules as Card 3 above
+           ═══════════════════════════════════════════════════════════ -->
+      <div class="xcard xcard-default" id="card-handyman">
+        <div class="xcard-hd" onclick="toggleCard('card-handyman')">
+          <div class="xcard-hd-left">
+            <div class="xcard-ico">🔨</div>
+            <div class="xcard-title-block">
+              <h3>Handyman &amp; Repairs</h3>
+              <div class="sub">Doors, drywall, fixtures, mounting, assembly &amp; general repairs</div>
+            </div>
+          </div>
+          <div class="xcard-meta">
+            <!-- EDIT: the headline rate shown on the collapsed header -->
+            <div class="xcard-price">$85/hr</div>
+            <div class="xcard-tags">
+              <span class="xtag">2-hr Minimum</span>
+            </div>
+            <div class="xcard-chevron">▼</div>
+          </div>
+        </div>
+        <div class="xcard-body">
+          <div class="xcard-body-inner">
+            <table class="price-table">
+              <thead>
+                <tr><th>Service</th><th>Details</th><th>Starting At</th></tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td>
+                    Hourly Rate
+                    <!-- EDIT: update if you change the minimum -->
+                    <div class="td-note">2-hour minimum applies</div>
+                  </td>
+                  <td>General handyman work</td>
+                  <td>$85/hr</td>   <!-- EDIT: your hourly rate -->
+                </tr>
+
+                <tr>
+                  <td>Door Repair / Adjustment</td>
+                  <td>Hinges, locks, sticking doors</td>
+                  <td>$95</td>
+                </tr>
+
+                <tr>
+                  <td>Drywall Patch</td>
+                  <td>Small holes, cracks — finish &amp; paint-ready</td>
+                  <td>$125</td>
+                </tr>
+
+                <tr>
+                  <td>Fixture Installation</td>
+                  <td>Light fixtures, ceiling fans, outlets</td>
+                  <td>$85</td>
+                </tr>
+
+                <tr>
+                  <td>Furniture Assembly</td>
+                  <td>Per item, standard flat-pack</td>
+                  <td>$65</td>
+                </tr>
+
+                <tr>
+                  <td>Caulking / Weatherstripping</td>
+                  <td>Windows, doors, showers</td>
+                  <td>$75</td>
+                </tr>
+
+                <tr>
+                  <td>Mounting (TV, shelves, mirrors)</td>
+                  <td>Includes hardware &amp; level check</td>
+                  <td>$85</td>
+                </tr>
+
+                <tr>
+                  <td>Custom / Project Work</td>
+                  <td>Call for a quote on larger jobs</td>
+                  <td>Free Estimate</td>
+                </tr>
+
+                <!-- ADD NEW ROW HERE -->
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div><!-- /card-handyman -->
+
+
+      <!-- ═══════════════════════════════════════════════════════════
+           🏢 CARD 5 — PROPERTY MAINTENANCE PRICING TABLE
+           Same editing rules as Card 3 above
+           ═══════════════════════════════════════════════════════════ -->
+      <div class="xcard xcard-default" id="card-maintenance">
+        <div class="xcard-hd" onclick="toggleCard('card-maintenance')">
+          <div class="xcard-hd-left">
+            <div class="xcard-ico">🏢</div>
+            <div class="xcard-title-block">
+              <h3>Property Maintenance</h3>
+              <div class="sub">Inspections, monthly visits, tenant turnover &amp; vacation check-ins</div>
+            </div>
+          </div>
+          <div class="xcard-meta">
+            <div class="xcard-price">From $75</div>
+            <div class="xcard-tags">
+              <span class="xtag">Residential</span>
+              <span class="xtag">Commercial</span>
+            </div>
+            <div class="xcard-chevron">▼</div>
+          </div>
+        </div>
+        <div class="xcard-body">
+          <div class="xcard-body-inner">
+            <table class="price-table">
+              <thead>
+                <tr><th>Service</th><th>Details</th><th>Starting At</th></tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td>Property Walk-Through Inspection</td>
+                  <td>Visual inspection, written punch list</td>
+                  <td>$100</td>
+                </tr>
+
+                <tr>
+                  <td>Monthly Maintenance Visit</td>
+                  <td>2-hr check-in and minor repairs (residential)</td>
+                  <td>$200/mo</td>
+                </tr>
+
+                <tr>
+                  <td>Commercial Monthly Package</td>
+                  <td>Custom scope — call for details</td>
+                  <td>From $350/mo</td>
+                </tr>
+
+                <tr>
+                  <td>Vacation Property Check-In</td>
+                  <td>Per visit — report with photos</td>
+                  <td>$75</td>
+                </tr>
+
+                <tr>
+                  <td>Tenant Turnover Prep</td>
+                  <td>Cleaning, minor repairs, touch-ups</td>
+                  <td>$250</td>
+                </tr>
+
+                <!-- ADD NEW ROW HERE -->
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div><!-- /card-maintenance -->
+
+
+      <!-- ═══════════════════════════════════════════════════════════
+           ❄️ CARD 6 — HVAC/R MAINTENANCE PRICING TABLE
+           Same editing rules as Card 3 above
+           ═══════════════════════════════════════════════════════════ -->
+      <div class="xcard xcard-default" id="card-hvac">
+        <div class="xcard-hd" onclick="toggleCard('card-hvac')">
+          <div class="xcard-hd-left">
+            <div class="xcard-ico">❄️</div>
+            <div class="xcard-title-block">
+              <h3>HVAC/R Maintenance</h3>
+              <div class="sub">Air filters, walk-in coolers, freezers, ice machines &amp; commercial contracts</div>
+            </div>
+          </div>
+          <div class="xcard-meta">
+            <div class="xcard-price">From $45</div>
+            <div class="xcard-tags">
+              <span class="xtag">Residential</span>
+              <span class="xtag">Commercial</span>
+            </div>
+            <div class="xcard-chevron">▼</div>
+          </div>
+        </div>
+        <div class="xcard-body">
+          <div class="xcard-body-inner">
+            <table class="price-table">
+              <thead>
+                <tr><th>Service</th><th>Details</th><th>Starting At</th></tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td>Air Filter Replacement</td>
+                  <td>Standard residential — filter included</td>
+                  <td>$45</td>
+                </tr>
+
+                <tr>
+                  <td>HVAC Inspection &amp; Cleaning</td>
+                  <td>Coil cleaning, basic tune-up</td>
+                  <td>$125</td>
+                </tr>
+
+                <tr>
+                  <td>Walk-In Cooler PM</td>
+                  <td>Condenser/evaporator clean, temp check</td>
+                  <td>$175</td>
+                </tr>
+
+                <tr>
+                  <td>Walk-In Freezer PM</td>
+                  <td>Full preventative maintenance visit</td>
+                  <td>$200</td>
+                </tr>
+
+                <tr>
+                  <td>Ice Machine Clean &amp; Inspect</td>
+                  <td>Sanitize, descale, inspect</td>
+                  <td>$150</td>
+                </tr>
+
+                <tr>
+                  <td>Commercial HVAC/R Contract</td>
+                  <td>Quarterly PM visits — call for quote</td>
+                  <td>Free Estimate</td>
+                </tr>
+
+                <!-- ADD NEW ROW HERE -->
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div><!-- /card-hvac -->
+
+
+      <!-- ═══════════════════════════════════════════════════════════
+           📦 CARD 7 — MONTHLY MAINTENANCE PACKAGES
+
+           HOW TO EDIT PACKAGES:
+             • Change a package name    → edit the .pkg-name text
+             • Change a package price   → edit the .pkg-price text
+             • Change a description     → edit the .pkg-desc text
+             • Add an included item     → copy a <li> and paste before </ul>
+             • Remove an included item  → delete the entire <li> line
+             • Change button text       → edit the <a> text at the bottom
+
+           TO ADD A 4TH PACKAGE:
+             Copy an entire <div class="pkg">...</div> block
+             and paste it inside the .pkgs-grid div
+
+           TO MARK A PACKAGE AS "FEATURED" (gold border):
+             Add the class "feat" to the <div class="pkg"> tag:
+             <div class="pkg feat">
+           ═══════════════════════════════════════════════════════════ -->
+      <div class="xcard xcard-default" id="card-packages">
+        <div class="xcard-hd" onclick="toggleCard('card-packages')">
+          <div class="xcard-hd-left">
+            <div class="xcard-ico">📦</div>
+            <div class="xcard-title-block">
+              <h3>Monthly Maintenance Packages</h3>
+              <div class="sub">Essential, Pro, and Commercial — recurring service at a predictable price</div>
+            </div>
+          </div>
+          <div class="xcard-meta">
+            <!-- EDIT: lowest package price shown on the collapsed header -->
+            <div class="xcard-price">From $199/mo</div>
+            <div class="xcard-tags">
+              <span class="xtag">Bundle &amp; Save</span>
+            </div>
+            <div class="xcard-chevron">▼</div>
+          </div>
+        </div>
+        <div class="xcard-body">
+          <div class="xcard-body-inner">
+            <div class="pkgs-grid">
+
+              <!-- ── PACKAGE 1: ESSENTIAL ──────────────────────── -->
+              <div class="pkg">
+                <div class="pkg-name">Essential</div>           <!-- EDIT: package name -->
+                <div class="pkg-price">$199 <em>/ month</em></div>  <!-- EDIT: price -->
+                <div class="pkg-desc">For single-family homeowners who want regular, worry-free upkeep.</div>  <!-- EDIT: description -->
+                <ul class="pkg-list">
+                  <!-- EDIT: each line item — copy to add, delete to remove -->
+                  <li><span class="chk">✓</span> 1 maintenance visit/month</li>
+                  <li><span class="chk">✓</span> Minor repairs up to 1 hour</li>
+                  <li><span class="chk">✓</span> Air filter check/replacement</li>
+                  <li><span class="chk">✓</span> Property walk-through report</li>
+                  <li><span class="chk">✓</span> Priority scheduling</li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline pkg-btn">Get Started</a>  <!-- EDIT: button text -->
+              </div>
+
+              <!-- ── PACKAGE 2: PRO (featured — has gold border) ── -->
+              <div class="pkg feat">
+                <!-- EDIT: the badge label shown above the card -->
+                <div class="pkg-badge">Most Popular</div>
+                <div class="pkg-name">Pro</div>
+                <div class="pkg-price">$349 <em>/ month</em></div>
+                <div class="pkg-desc">Ideal for multi-unit residential or small commercial properties.</div>
+                <ul class="pkg-list">
+                  <li><span class="chk">✓</span> 2 maintenance visits/month</li>
+                  <li><span class="chk">✓</span> Minor repairs up to 2 hours</li>
+                  <li><span class="chk">✓</span> HVAC filter service included</li>
+                  <li><span class="chk">✓</span> Exterior &amp; gutter check</li>
+                  <li><span class="chk">✓</span> Property walk-through report</li>
+                  <li><span class="chk">✓</span> Priority same-day response</li>
+                </ul>
+                <a href="contact.html" class="btn btn-gold pkg-btn">Get Started</a>
+              </div>
+
+              <!-- ── PACKAGE 3: COMMERCIAL ─────────────────────── -->
+              <div class="pkg">
+                <div class="pkg-name">Commercial</div>
+                <div class="pkg-price">Custom <em>pricing</em></div>
+                <div class="pkg-desc">Built around your property's specific needs — we scope it out together.</div>
+                <ul class="pkg-list">
+                  <li><span class="chk">✓</span> Custom visit schedule</li>
+                  <li><span class="chk">✓</span> HVAC/R preventative maintenance</li>
+                  <li><span class="chk">✓</span> Full exterior &amp; interior rounds</li>
+                  <li><span class="chk">✓</span> Detailed visit reports</li>
+                  <li><span class="chk">✓</span> Dedicated point of contact</li>
+                  <li><span class="chk">✓</span> Emergency response available</li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline pkg-btn">Request a Quote</a>
+              </div>
+
+            </div><!-- /pkgs-grid -->
+          </div>
+        </div>
+      </div><!-- /card-packages -->
+
+    </div><!-- /wrap -->
+  </div><!-- /pricing-main -->
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FAQ SECTION
+       HOW TO ADD A NEW QUESTION:
+         Copy the full <div class="faq-item">...</div> block below
+         and paste it before the closing </div> of .faq-list.
+         Change the question text inside .faq-q and the answer
+         text inside .faq-a. Do not touch the <span class="faq-arrow">
+         — that's the ▾ chevron icon handled by JavaScript.
+
+       HOW TO REMOVE A QUESTION:
+         Delete the entire <div class="faq-item">...</div> block.
+  ═══════════════════════════════════════════════════════════════ -->
   <section class="faq-sec">
     <div class="wrap">
-      <div class="faq-hd"><div class="pill">Common Questions</div><h2 class="section-h">Pricing FAQs</h2></div>
+      <div class="faq-hd">
+        <div class="pill">Common Questions</div>
+        <!-- EDIT: FAQ section heading -->
+        <h2 class="section-h">Pricing FAQs</h2>
+      </div>
       <div class="faq-list">
-        <div class="faq-item"><div class="faq-q">Do you charge for estimates? <span class="faq-arrow">▾</span></div><div class="faq-a">No — estimates are always free. Call or text with your project details and we'll give you a clear quote before any work begins.</div></div>
-        <div class="faq-item"><div class="faq-q">What's the minimum for a handyman call? <span class="faq-arrow">▾</span></div><div class="faq-a">There's a 2-hour minimum for hourly handyman work. For flat-rate jobs (furniture assembly, door repair, etc.), we quote the job directly — no hourly minimum applies.</div></div>
-        <div class="faq-item"><div class="faq-q">Are materials included? <span class="faq-arrow">▾</span></div><div class="faq-a">Most prices listed are for labor only. Materials are billed separately at cost. We'll always tell you upfront what materials are needed and what they'll cost.</div></div>
-        <div class="faq-item"><div class="faq-q">Do you offer discounts for recurring service? <span class="faq-arrow">▾</span></div><div class="faq-a">Yes — our monthly maintenance packages offer significant savings compared to individual service calls. See the packages above or call us to discuss a custom arrangement.</div></div>
-        <div class="faq-item"><div class="faq-q">What forms of payment do you accept? <span class="faq-arrow">▾</span></div><div class="faq-a">We accept cash, check, Venmo, Zelle, and major credit cards. Payment is due upon job completion unless you're on a monthly package.</div></div>
-        <div class="faq-item"><div class="faq-q">What if the job takes longer than expected? <span class="faq-arrow">▾</span></div><div class="faq-a">If a job is going to run over the quoted time or scope, we'll always communicate with you before doing additional work. No surprise bills — ever.</div></div>
+
+        <!-- FAQ ITEM — EDIT: question text and answer text -->
+        <div class="faq-item">
+          <div class="faq-q">Do you charge for estimates? <span class="faq-arrow">▾</span></div>
+          <div class="faq-a">No — estimates are always free. Call or text with your project details and we'll give you a clear quote before any work begins.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">What's the minimum for a handyman call? <span class="faq-arrow">▾</span></div>
+          <div class="faq-a">There's a 2-hour minimum for hourly handyman work. For flat-rate jobs (furniture assembly, door repair, etc.) we quote the job directly — no hourly minimum applies.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Are materials included in the prices? <span class="faq-arrow">▾</span></div>
+          <div class="faq-a">Most prices are for labor only. Materials are billed separately at cost — we always tell you upfront what's needed and how much it'll be. No surprises.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How does the A1 HomeShield Plan work? <span class="faq-arrow">▾</span></div>
+          <div class="faq-a">You pay $100 once a year and get two seasonal visits — spring and fall. Each visit includes a property walkthrough, HVAC filter swap, up to 1 hour of minor repairs, and a written report. HomeShield members also get 10% off any extra services booked during the year.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Can I bundle spring cleanup services? <span class="faq-arrow">▾</span></div>
+          <div class="faq-a">Absolutely — and we recommend it. Bundling leaf removal, gutters, trimming, and pressure washing into one visit saves money and time. Call us and we'll build a custom quote around what your property needs.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">What forms of payment do you accept? <span class="faq-arrow">▾</span></div>
+          <!-- EDIT: update your accepted payment methods here -->
+          <div class="faq-a">We accept cash, check, Venmo, Zelle, and major credit cards. Payment is due upon job completion unless you're on a monthly package or annual HomeShield plan.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">What if the job takes longer than expected? <span class="faq-arrow">▾</span></div>
+          <div class="faq-a">If a job is going to run over the quoted scope, we'll always communicate with you before doing additional work. No surprise bills — ever.</div>
+        </div>
+
+        <!-- ADD NEW FAQ HERE: copy a faq-item block above and paste it here -->
+
       </div>
     </div>
   </section>
 
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       BOTTOM CTA BANNER
+       EDIT: headline, paragraph, phone number (two spots)
+  ═══════════════════════════════════════════════════════════════ -->
   <section class="cta-band">
     <div class="wrap">
       <h2>Not Sure What You Need? Just Call.</h2>
       <p>We'll talk through your project and give you a free, no-obligation estimate.</p>
-      <a href="tel:6176026160" class="btn-navy">📞 Call (617) 602-6160</a>
+      <a href="tel:6173026160" class="btn-navy">📞 Call (617) 302-6160</a>
     </div>
   </section>
 
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER
+       EDIT: social media links — replace the Facebook and Instagram
+       href values with your actual profile URLs
+  ═══════════════════════════════════════════════════════════════ -->
   <footer>
     <div class="ft-grid">
-      <div class="ft-brand"><div class="logo">A1 <span>Property</span> Solutions</div><p>Reliable property maintenance, handyman repairs, and yard cleanup across Greater Boston.</p><div class="ft-social"><a href="https://www.facebook.com/profile.php?id=61572055553393" target="_blank" rel="noopener" class="soc-btn" aria-label="Facebook">📘</a><a href="https://www.instagram.com/a1prosolutions?igsh=MWhndnA4NDRhMHc1dw%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="soc-btn" aria-label="Instagram">📷</a></div></div>
-      <div class="ft-col"><h4>Pages</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="pricing.html">Pricing</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a></div>
-      <div class="ft-col"><h4>Services</h4><a href="index.html#services">Yard Cleanup</a><a href="index.html#services">Handyman &amp; Repairs</a><a href="index.html#services">Property Maintenance</a><a href="index.html#services">HVAC/R Maintenance</a></div>
-      <div class="ft-col"><h4>Contact</h4><a href="tel:6176026160">(617) 602-6160</a><a href="contact.html">Send a Message</a><div class="hrs">Mon–Fri: 5 AM – 7 PM<br>Sat: 5 AM – 3 PM</div></div>
+
+      <div class="ft-brand">
+        <div class="logo">A1 <span>Property</span> Solutions</div>
+        <!-- EDIT: short tagline under the logo in the footer -->
+        <p>Reliable property maintenance, handyman repairs, and yard cleanup across Greater Boston.</p>
+        <div class="ft-social">
+          <!-- EDIT: your Facebook page URL -->
+          <a href="https://www.facebook.com/profile.php?id=61572055553393" target="_blank" rel="noopener" class="soc-btn" aria-label="Facebook">📘</a>
+          <!-- EDIT: your Instagram URL -->
+          <a href="https://www.instagram.com/a1prosolutions?igsh=MWhndnA4NDRhMHc1dw%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="soc-btn" aria-label="Instagram">📷</a>
+        </div>
+      </div>
+
+      <div class="ft-col">
+        <h4>Pages</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="ft-col">
+        <h4>Services</h4>
+        <a href="index.html#services">Yard Cleanup</a>
+        <a href="index.html#services">Handyman &amp; Repairs</a>
+        <a href="index.html#services">Property Maintenance</a>
+        <a href="index.html#services">HVAC/R Maintenance</a>
+      </div>
+
+      <div class="ft-col">
+        <h4>Contact</h4>
+        <!-- EDIT: phone number (two spots — href and display text) -->
+        <a href="tel:6173026160">(617) 302-6160</a>
+        <!-- EDIT: your email address -->
+        <a href="mailto:a1prosolutionsma@gmail.com">a1prosolutionsma@gmail.com</a>
+        <a href="contact.html">Send a Message</a>
+        <!-- EDIT: your business hours -->
+        <div class="hrs">Mon–Fri: 5 AM – 7 PM<br>Sat: 5 AM – 3 PM</div>
+      </div>
+
     </div>
-    <div class="ft-bottom"><p>© 2026 <span>A1 Property Solutions</span> · Boston, MA · All Rights Reserved</p><div class="ft-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
+    <div class="ft-bottom">
+      <!-- EDIT: update year if needed -->
+      <p>© 2026 <span>A1 Property Solutions</span> · Boston, MA · All Rights Reserved</p>
+      <div class="ft-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
   </footer>
 
+
   <script>
-    document.getElementById('hbg').addEventListener('click',function(){document.getElementById('mob').classList.toggle('open')});
-    document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')})});
+    // ── Mobile hamburger menu ────────────────────────────────────────
+    document.getElementById('hbg').addEventListener('click', function() {
+      document.getElementById('mob').classList.toggle('open');
+    });
+
+    // ── Expand / collapse cards ──────────────────────────────────────
+    // Clicking a card header opens it and closes any other open card.
+    // To make a different card open by default on page load, change
+    // 'card-spring' at the bottom of this script to the card's id.
+    function toggleCard(id) {
+      const card = document.getElementById(id);
+      const isOpen = card.classList.contains('open');
+      document.querySelectorAll('.xcard').forEach(c => c.classList.remove('open'));
+      if (!isOpen) card.classList.add('open');
+    }
+
+    // ── FAQ accordion ────────────────────────────────────────────────
+    document.querySelectorAll('.faq-q').forEach(function(q) {
+      q.addEventListener('click', function() {
+        this.classList.toggle('open');
+        this.nextElementSibling.classList.toggle('open');
+      });
+    });
+
+    // ── Default open card on page load ──────────────────────────────
+    // EDIT: change 'card-spring' to any card id to open a different
+    // card by default. Card IDs are:
+    //   card-spring      🌱 Spring Cleanup Promo
+    //   card-shield      🛡️ HomeShield Annual Plan
+    //   card-exterior    🌿 Yard Cleanup & Exterior
+    //   card-handyman    🔨 Handyman & Repairs
+    //   card-maintenance 🏢 Property Maintenance
+    //   card-hvac        ❄️ HVAC/R Maintenance
+    //   card-packages    📦 Monthly Packages
+    document.getElementById('card-spring').classList.add('open');
   </script>
+
 </body>
 </html>
