@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════════════
+       SEO — EDIT: description
+  ═══════════════════════════════════════════════ -->
+  <title>Pricing | A1 Property Solutions — Handyman & Property Maintenance Rates, Boston MA</title>
+  <meta name="description" content="Transparent handyman and property maintenance pricing for Boston-area residential and commercial clients. Hourly rates, project estimates, and maintenance packages." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.a1propertysolutions.com/pricing.html" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ─── PRICING PAGE SPECIFIC STYLES ─────────────── */
+
+    /* Pricing intro disclaimer */
+    .pricing-note {
+      background: var(--gold-light);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin-bottom: 48px;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .pricing-note strong { color: var(--navy); }
+
+    /* Category headers */
+    .pricing-category {
+      margin-bottom: 56px;
+      scroll-margin-top: 90px;  /* offset for sticky nav */
+    }
+    .cat-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--border);
+    }
+    .cat-icon { font-size: 2rem; }
+    .cat-header h2 { font-size: 1.6rem; color: var(--navy); }
+
+    /* Pricing table */
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+    .pricing-table thead tr {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .pricing-table thead th {
+      padding: 14px 20px;
+      text-align: left;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .pricing-table tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+    .pricing-table tbody tr:last-child { border-bottom: none; }
+    .pricing-table tbody tr:hover { background: var(--light-bg); }
+    .pricing-table td {
+      padding: 14px 20px;
+      font-size: 0.97rem;
+      color: var(--text);
+    }
+    .pricing-table td:last-child {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.05rem;
+      color: var(--navy);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .price-note { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
+
+    /* Packages section */
+    .packages-section { background: var(--light-bg); }
+    .packages-header { text-align: center; margin-bottom: 48px; }
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .package-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 36px 30px;
+      border: 2px solid var(--border);
+      position: relative;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .package-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); }
+    .package-card.featured {
+      border-color: var(--gold);
+      box-shadow: var(--shadow-md);
+    }
+    .package-badge {
+      position: absolute;
+      top: -12px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .package-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .package-price {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2rem;
+      color: var(--gold-dark);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .package-price span { font-size: 1rem; color: var(--muted); font-family: 'Source Sans 3', sans-serif; font-weight: 400; }
+    .package-desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 20px; }
+    .package-includes { list-style: none; margin-bottom: 28px; }
+    .package-includes li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.93rem;
+      color: var(--text);
+    }
+    .package-includes li:last-child { border-bottom: none; }
+    .package-includes .check { color: var(--gold-dark); font-weight: 700; flex-shrink: 0; }
+    .package-cta { width: 100%; text-align: center; display: block; }
+
+    /* FAQ section */
+    .faq-section { background: var(--white); }
+    .faq-header { text-align: center; margin-bottom: 48px; }
+    .faq-list { max-width: 760px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-q {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-q .arrow { color: var(--gold); font-size: 1.2rem; transition: transform 0.2s; }
+    .faq-q.open .arrow { transform: rotate(180deg); }
+    .faq-a {
+      display: none;
+      color: var(--muted);
+      font-size: 0.97rem;
+      margin-top: 12px;
+      line-height: 1.65;
+    }
+    .faq-a.open { display: block; }
+
+    @media (max-width: 768px) {
+      .pricing-table thead th:nth-child(2) { display: none; }
+      .pricing-table td:nth-child(2)       { display: none; }
+    }
+    @media (max-width: 520px) {
+      .pricing-table { font-size: 0.88rem; }
+      .pricing-table td, .pricing-table th { padding: 12px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    📞 Call or text anytime: <a href="tel:6173026160">(617) 302-6160</a>
+    &nbsp;·&nbsp; Serving Boston &amp; Surrounding Areas
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">A1 <span>Property</span> Solutions</a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="pricing.html" class="active">Pricing</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="about.html">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-label">Transparent Pricing</div>
+      <h1>Fair Rates, <span>No Surprises.</span></h1>
+      <p>Upfront pricing on all our services. Call for a free custom quote on your specific project.</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PRICING TABLES — EDIT: service names and prices
+       The tables use anchors (id="exterior" etc.) so
+       service cards on the homepage can link directly
+       to each section
+  ═══════════════════════════════════════════════ -->
+  <section style="background:var(--white); padding:72px 0;">
+    <div class="container">
+
+      <!-- EDIT: update this disclaimer to match your actual pricing policy -->
+      <div class="pricing-note">
+        <strong>Note:</strong> All prices listed are starting estimates. Final pricing depends on property size, condition, and scope of work. We always provide a clear quote before starting. <a href="contact.html" style="color:var(--gold-dark);font-weight:700;">Contact us for a free estimate →</a>
+      </div>
+
+      <!-- YARD CLEANUP & EXTERIOR -->
+      <div class="pricing-category" id="exterior">
+        <div class="cat-header">
+          <span class="cat-icon">🌿</span>
+          <h2>Yard Cleanup &amp; Exterior</h2>
+        </div>
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Details</th>
+              <th>Starting At</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- EDIT: update service names, details, and prices -->
+            <tr>
+              <td>Basic Yard Cleanup</td>
+              <td>Raking, debris removal, general tidying</td>
+              <td>$125</td>
+            </tr>
+            <tr>
+              <td>Full Yard Cleanup</td>
+              <td>Leaves, branches, debris, edging</td>
+              <td>$200</td>
+            </tr>
+            <tr>
+              <td>Gutter Cleaning</td>
+              <td>Single-story home, debris cleared</td>
+              <td>$150</td>
+            </tr>
+            <tr>
+              <td>Seasonal Cleanup (Spring/Fall)</td>
+              <td>Full property prep for season change</td>
+              <td>$275</td>
+            </tr>
+            <tr>
+              <td>Debris Removal / Hauling</td>
+              <td>Per load — call for large volumes</td>
+              <td>$100</td>
+            </tr>
+            <tr>
+              <td>Trimming &amp; Pruning</td>
+              <td>Shrubs, hedges, overgrowth</td>
+              <td>$95</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- HANDYMAN & REPAIRS -->
+      <div class="pricing-category" id="handyman">
+        <div class="cat-header">
+          <span class="cat-icon">🔨</span>
+          <h2>Handyman &amp; Repairs</h2>
+        </div>
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Details</th>
+              <th>Starting At</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- EDIT: update these to match your actual service offerings and rates -->
+            <tr>
+              <td>Hourly Rate</td>
+              <td>General handyman work — 2 hr minimum</td>
+              <td>$75/hr</td>
+            </tr>
+            <tr>
+              <td>Door Repair / Adjustment</td>
+              <td>Hinges, locks, sticking doors</td>
+              <td>$95</td>
+            </tr>
+            <tr>
+              <td>Drywall Patch</td>
+              <td>Small holes, cracks — finish &amp; paint-ready</td>
+              <td>$125</td>
+            </tr>
+            <tr>
+              <td>Fixture Installation</td>
+              <td>Light fixtures, ceiling fans, outlets</td>
+              <td>$85</td>
+            </tr>
+            <tr>
+              <td>Furniture Assembly</td>
+              <td>Per item, standard flat-pack</td>
+              <td>$65</td>
+            </tr>
+            <tr>
+              <td>Caulking / Weatherstripping</td>
+              <td>Windows, doors, showers</td>
+              <td>$75</td>
+            </tr>
+            <tr>
+              <td>Custom / Project Work</td>
+              <td>Call for a quote on larger jobs</td>
+              <td>Free Estimate</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- PROPERTY MAINTENANCE -->
+      <div class="pricing-category" id="maintenance">
+        <div class="cat-header">
+          <span class="cat-icon">🏢</span>
+          <h2>Property Maintenance</h2>
+        </div>
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Details</th>
+              <th>Starting At</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Property Walk-Through Inspection</td>
+              <td>Visual inspection, written punch list</td>
+              <td>$100</td>
+            </tr>
+            <tr>
+              <td>Monthly Maintenance Visit</td>
+              <td>2-hr check-in and minor repairs (residential)</td>
+              <td>$200/mo</td>
+            </tr>
+            <tr>
+              <td>Commercial Monthly Package</td>
+              <td>Custom scope — call for details</td>
+              <td>From $350/mo</td>
+            </tr>
+            <tr>
+              <td>Vacation Property Check-In</td>
+              <td>Per visit — report with photos</td>
+              <td>$75</td>
+            </tr>
+            <tr>
+              <td>Tenant Turnover Cleaning &amp; Prep</td>
+              <td>Cleaning, minor repairs, touch-ups</td>
+              <td>$250</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- HVAC/R -->
+      <div class="pricing-category" id="hvac">
+        <div class="cat-header">
+          <span class="cat-icon">❄️</span>
+          <h2>HVAC/R Maintenance</h2>
+        </div>
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Details</th>
+              <th>Starting At</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- EDIT: update with your real HVAC/R service pricing -->
+            <tr>
+              <td>Air Filter Replacement</td>
+              <td>Standard residential — filter included</td>
+              <td>$45</td>
+            </tr>
+            <tr>
+              <td>HVAC Inspection &amp; Cleaning</td>
+              <td>Coil cleaning, basic tune-up</td>
+              <td>$125</td>
+            </tr>
+            <tr>
+              <td>Walk-In Cooler PM</td>
+              <td>Condenser/evaporator clean, temp check</td>
+              <td>$175</td>
+            </tr>
+            <tr>
+              <td>Walk-In Freezer PM</td>
+              <td>Full preventative maintenance visit</td>
+              <td>$200</td>
+            </tr>
+            <tr>
+              <td>Ice Machine Clean &amp; Inspect</td>
+              <td>Sanitize, descale, inspect</td>
+              <td>$150</td>
+            </tr>
+            <tr>
+              <td>Commercial HVAC/R Contract</td>
+              <td>Quarterly PM visits — call for quote</td>
+              <td>Free Estimate</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       MAINTENANCE PACKAGES — EDIT: package names,
+       prices, and included services
+  ═══════════════════════════════════════════════ -->
+  <section class="packages-section">
+    <div class="container">
+      <div class="packages-header">
+        <div class="section-label">Bundle &amp; Save</div>
+        <h2 class="section-title">Maintenance Packages</h2>
+        <p class="section-sub" style="margin:0 auto;">Regular service at a predictable price. Great for property managers and busy homeowners.</p>
+      </div>
+
+      <div class="packages-grid">
+
+        <!-- PACKAGE 1 — EDIT: name, price, description, included items -->
+        <div class="package-card">
+          <div class="package-name">Essential</div>
+          <div class="package-price">$199 <span>/ month</span></div>
+          <div class="package-desc">Great for single-family homeowners who want regular upkeep without the hassle.</div>
+          <ul class="package-includes">
+            <li><span class="check">✓</span> 1 maintenance visit per month</li>
+            <li><span class="check">✓</span> Minor repairs up to 1 hour</li>
+            <li><span class="check">✓</span> Air filter check/replacement</li>
+            <li><span class="check">✓</span> Property walk-through report</li>
+            <li><span class="check">✓</span> Priority scheduling</li>
+          </ul>
+          <a href="contact.html" class="btn-outline-navy package-cta">Get Started</a>
+        </div>
+
+        <!-- PACKAGE 2 — featured/recommended -->
+        <div class="package-card featured">
+          <div class="package-badge">Most Popular</div>
+          <div class="package-name">Pro</div>
+          <div class="package-price">$349 <span>/ month</span></div>
+          <div class="package-desc">Ideal for multi-unit residential or small commercial properties.</div>
+          <ul class="package-includes">
+            <li><span class="check">✓</span> 2 maintenance visits per month</li>
+            <li><span class="check">✓</span> Minor repairs up to 2 hours</li>
+            <li><span class="check">✓</span> HVAC filter service included</li>
+            <li><span class="check">✓</span> Exterior &amp; gutter check</li>
+            <li><span class="check">✓</span> Property walk-through report</li>
+            <li><span class="check">✓</span> Priority same-day response</li>
+          </ul>
+          <a href="contact.html" class="btn-primary package-cta">Get Started</a>
+        </div>
+
+        <!-- PACKAGE 3 — EDIT -->
+        <div class="package-card">
+          <div class="package-name">Commercial</div>
+          <div class="package-price">Custom <span>pricing</span></div>
+          <div class="package-desc">Built around your property's specific needs. We'll scope it together.</div>
+          <ul class="package-includes">
+            <li><span class="check">✓</span> Custom visit schedule</li>
+            <li><span class="check">✓</span> HVAC/R preventative maintenance</li>
+            <li><span class="check">✓</span> Full exterior &amp; interior rounds</li>
+            <li><span class="check">✓</span> Detailed visit reports</li>
+            <li><span class="check">✓</span> Dedicated point of contact</li>
+            <li><span class="check">✓</span> Emergency response available</li>
+          </ul>
+          <a href="contact.html" class="btn-outline-navy package-cta">Request a Quote</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       FAQ — EDIT: questions and answers
+  ═══════════════════════════════════════════════ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="faq-header">
+        <div class="section-label">Common Questions</div>
+        <h2 class="section-title">Pricing FAQs</h2>
+      </div>
+      <div class="faq-list">
+
+        <!-- EDIT: update Q&A to match your real policies -->
+        <div class="faq-item">
+          <div class="faq-q">Do you charge for estimates? <span class="arrow">▾</span></div>
+          <div class="faq-a">No — estimates are always free. Call or text us with your project details and we'll give you a clear quote before any work begins.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">What's the minimum for a handyman call? <span class="arrow">▾</span></div>
+          <div class="faq-a">There's a 2-hour minimum for hourly handyman work. For flat-rate jobs (like furniture assembly or a door repair), we quote the job directly — no hourly minimum applies.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Are materials included in the pricing? <span class="arrow">▾</span></div>
+          <div class="faq-a">Most prices listed are for labor only. Materials are billed separately at cost. We'll always tell you upfront what materials are needed and what they'll cost.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Do you offer discounts for recurring service? <span class="arrow">▾</span></div>
+          <div class="faq-a">Yes — our monthly maintenance packages offer significant savings compared to individual service calls. See the packages above, or call us to discuss a custom arrangement.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">What forms of payment do you accept? <span class="arrow">▾</span></div>
+          <!-- EDIT: update with your actual accepted payment methods -->
+          <div class="faq-a">We accept cash, check, Venmo, Zelle, and major credit cards. Payment is due upon job completion unless you're on a monthly package.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">What if the job takes longer than expected? <span class="arrow">▾</span></div>
+          <div class="faq-a">If a job is going to run over the quoted time or scope, we'll always communicate with you before doing additional work. No surprise bills — ever.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Not Sure What You Need? Just Call.</h2>
+      <p>We'll talk through your project and give you a free, no-obligation estimate.</p>
+      <a href="tel:6173026160" class="btn-primary">📞 Call (617) 302-6160</a>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">A1 <span>Property</span> Solutions</div>
+        <p>Reliable property maintenance, handyman repairs, and yard cleanup across Greater Boston.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/YOUR_PAGE" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">📘</a>
+          <a href="https://www.instagram.com/YOUR_HANDLE" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">📷</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="index.html#services">Yard Cleanup</a>
+        <a href="index.html#services">Handyman &amp; Repairs</a>
+        <a href="index.html#services">Property Maintenance</a>
+        <a href="index.html#services">HVAC/R Maintenance</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:6173026160">(617) 302-6160</a>
+        <a href="contact.html">Send a Message</a>
+        <p style="margin-top:12px;font-size:0.85rem;color:rgba(255,255,255,0.45);">Mon–Fri: 5 AM – 7 PM<br>Sat: 5 AM – 3 PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 <span>A1 Property Solutions</span> · Boston, MA · All Rights Reserved</p>
+      <div style="display:flex;gap:20px;"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    });
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(function(q) {
+      q.addEventListener('click', function() {
+        this.classList.toggle('open');
+        this.nextElementSibling.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

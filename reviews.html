@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════════════
+       SEO — EDIT: description
+  ═══════════════════════════════════════════════ -->
+  <title>Customer Reviews | A1 Property Solutions — 5-Star Handyman Boston MA</title>
+  <meta name="description" content="Read 5-star reviews from Boston-area homeowners and commercial clients. A1 Property Solutions is rated #1 for reliable handyman and property maintenance across Greater Boston." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.a1propertysolutions.com/reviews.html" />
+
+  <!-- Review Schema — helps Google show star ratings in search results -->
+  <!-- EDIT: update ratingValue, reviewCount, and add individual Review objects as you accumulate reviews -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "A1 Property Solutions",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "24",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Sarah M." },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "Fast response, fair price, and the work was done perfectly. Will definitely use A1 again.",
+        "datePublished": "2025-09-14"
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "James R." },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "Finally found a reliable handyman in Boston. Showed up on time and knocked out a whole list of repairs.",
+        "datePublished": "2025-10-02"
+      }
+    ]
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ─── REVIEWS PAGE SPECIFIC STYLES ──────────────── */
+
+    /* Rating summary bar */
+    .rating-summary { background: var(--navy); color: var(--white); padding: 56px 0; }
+    .rating-inner {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 64px;
+      align-items: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .big-score { text-align: center; }
+    .big-score .score {
+      font-family: 'Oswald', sans-serif;
+      font-size: 5rem;
+      color: var(--gold);
+      font-weight: 700;
+      line-height: 1;
+    }
+    .big-score .stars-lg { font-size: 1.6rem; color: var(--gold); letter-spacing: 3px; margin: 6px 0; }
+    .big-score .count    { color: rgba(255,255,255,0.55); font-size: 0.9rem; }
+
+    .rating-bars { flex: 1; }
+    .rating-bars h3 { color: var(--white); margin-bottom: 18px; font-size: 1.1rem; }
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+    }
+    .bar-label { color: rgba(255,255,255,0.6); width: 40px; flex-shrink: 0; }
+    .bar-track {
+      flex: 1;
+      background: rgba(255,255,255,0.12);
+      border-radius: 4px;
+      height: 8px;
+      overflow: hidden;
+    }
+    .bar-fill { background: var(--gold); height: 100%; border-radius: 4px; }
+    .bar-count { color: rgba(255,255,255,0.55); width: 28px; text-align: right; flex-shrink: 0; }
+
+    /* Platform badges */
+    .platform-strip { background: var(--light-bg); padding: 32px 0; border-bottom: 1px solid var(--border); }
+    .platform-inner { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
+    .platform-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 20px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--navy);
+      box-shadow: var(--shadow-sm);
+    }
+    .platform-badge .p-icon { font-size: 1.4rem; }
+    .platform-badge .p-stars { color: var(--gold); font-size: 0.88rem; }
+    .platform-badge a { color: var(--gold-dark); font-size: 0.82rem; font-weight: 700; display: block; }
+
+    /* Reviews grid */
+    .reviews-section { background: var(--white); }
+    .reviews-header { margin-bottom: 48px; }
+    .reviews-header .section-sub { max-width: 100%; }
+    .filter-row { display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap; }
+    .filter-btn {
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 7px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn.active, .filter-btn:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .review-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 24px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .review-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .review-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+    .reviewer-info .name { font-family: 'Oswald', sans-serif; font-size: 1rem; color: var(--navy); }
+    .reviewer-info .location { font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
+    .review-platform { font-size: 1.4rem; }
+    .review-stars { color: var(--gold); font-size: 1rem; margin-bottom: 12px; }
+    .review-service-tag {
+      display: inline-block;
+      background: var(--gold-light);
+      border: 1px solid rgba(232,160,32,0.3);
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .review-text { color: var(--text); font-size: 0.95rem; line-height: 1.6; font-style: italic; }
+    .review-date { font-size: 0.8rem; color: var(--muted); margin-top: 14px; }
+
+    /* Leave a review CTA */
+    .leave-review { background: var(--light-bg); padding: 60px 0; }
+    .review-cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .review-platform-cta {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 32px;
+      border: 1px solid var(--border);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .review-platform-cta .rp-icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .review-platform-cta h4 { color: var(--navy); font-size: 1.1rem; margin-bottom: 6px; }
+    .review-platform-cta p  { color: var(--muted); font-size: 0.88rem; margin-bottom: 20px; }
+
+    @media (max-width: 768px) {
+      .rating-inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+      .review-cta-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    📞 Call or text anytime: <a href="tel:6173026160">(617) 302-6160</a>
+    &nbsp;·&nbsp; Serving Boston &amp; Surrounding Areas
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">A1 <span>Property</span> Solutions</a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="reviews.html" class="active">Reviews</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="about.html">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-label">Customer Reviews</div>
+      <h1>What Boston <span>Homeowners</span> Are Saying</h1>
+      <p>Real reviews from real clients across Greater Boston. We let our work speak for itself.</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       RATING SUMMARY — EDIT: ratingValue, reviewCount,
+       and update bar percentages (bar-fill widths)
+       to match your actual Google review breakdown
+  ═══════════════════════════════════════════════ -->
+  <section class="rating-summary">
+    <div class="container">
+      <div class="rating-inner">
+        <div class="big-score">
+          <!-- EDIT: update score and review count -->
+          <div class="score">5.0</div>
+          <div class="stars-lg">★★★★★</div>
+          <div class="count">Based on 24+ reviews</div>
+        </div>
+        <div class="rating-bars">
+          <h3>Rating Breakdown</h3>
+          <!-- EDIT: update widths (percentages) as your reviews accumulate -->
+          <div class="bar-row">
+            <span class="bar-label">5 ★</span>
+            <div class="bar-track"><div class="bar-fill" style="width:96%"></div></div>
+            <span class="bar-count">23</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">4 ★</span>
+            <div class="bar-track"><div class="bar-fill" style="width:4%"></div></div>
+            <span class="bar-count">1</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">3 ★</span>
+            <div class="bar-track"><div class="bar-fill" style="width:0%"></div></div>
+            <span class="bar-count">0</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">2 ★</span>
+            <div class="bar-track"><div class="bar-fill" style="width:0%"></div></div>
+            <span class="bar-count">0</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">1 ★</span>
+            <div class="bar-track"><div class="bar-fill" style="width:0%"></div></div>
+            <span class="bar-count">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PLATFORM LINKS — EDIT: replace # links with
+       your actual Google Business and Facebook URLs
+  ═══════════════════════════════════════════════ -->
+  <div class="platform-strip">
+    <div class="container">
+      <div class="platform-inner">
+        <div class="platform-badge">
+          <span class="p-icon">🔍</span>
+          <div>
+            <div>Google Reviews</div>
+            <div class="p-stars">★★★★★ 5.0</div>
+            <!-- EDIT: replace with your Google Business Profile review URL -->
+            <a href="https://g.page/YOUR_GOOGLE_BUSINESS/review" target="_blank" rel="noopener">View on Google →</a>
+          </div>
+        </div>
+        <div class="platform-badge">
+          <span class="p-icon">📘</span>
+          <div>
+            <div>Facebook Reviews</div>
+            <div class="p-stars">★★★★★ 5.0</div>
+            <!-- EDIT: replace with your Facebook page reviews URL -->
+            <a href="https://www.facebook.com/YOUR_PAGE/reviews" target="_blank" rel="noopener">View on Facebook →</a>
+          </div>
+        </div>
+        <div class="platform-badge">
+          <span class="p-icon">📋</span>
+          <div>
+            <div>NextDoor</div>
+            <div class="p-stars">Highly Recommended</div>
+            <!-- EDIT: add your Nextdoor profile link if you have one -->
+            <a href="#" target="_blank" rel="noopener">View on Nextdoor →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       REVIEWS GRID — EDIT: add your real reviews here
+       Copy one review-card block and paste to add more.
+       Be sure to update: name, location, service tag,
+       review text, platform icon, and date
+  ═══════════════════════════════════════════════ -->
+  <section class="reviews-section">
+    <div class="container">
+      <div class="reviews-header">
+        <div class="section-label">All Reviews</div>
+        <h2 class="section-title">Customer Feedback</h2>
+        <p class="section-sub">Showing all verified reviews from Google, Facebook, and direct clients.</p>
+      </div>
+
+      <div class="reviews-grid">
+
+        <!-- REVIEW CARD — EDIT each one with real review data -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="name">Sarah M.</div>
+              <div class="location">📍 Brookline, MA</div>
+            </div>
+            <span class="review-platform" title="Google Review">🔍</span>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-service-tag">Handyman Repair</div>
+          <p class="review-text">"Fast response, fair price, and the work was done perfectly. Will definitely use A1 again for our property."</p>
+          <div class="review-date">September 2025</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="name">James R.</div>
+              <div class="location">📍 Somerville, MA</div>
+            </div>
+            <span class="review-platform" title="Google Review">🔍</span>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-service-tag">Handyman &amp; Repairs</div>
+          <p class="review-text">"Finally found a reliable handyman in Boston. They showed up on time, communicated clearly, and knocked out a whole list of repairs."</p>
+          <div class="review-date">October 2025</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="name">Maria T.</div>
+              <div class="location">📍 Boston, MA</div>
+            </div>
+            <span class="review-platform" title="Google Review">🔍</span>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-service-tag">Commercial Maintenance</div>
+          <p class="review-text">"We use A1 for all our commercial property maintenance. They're consistent, professional, and easy to work with. Highly recommend."</p>
+          <div class="review-date">November 2025</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="name">Kevin O.</div>
+              <div class="location">📍 Cambridge, MA</div>
+            </div>
+            <span class="review-platform" title="Facebook Review">📘</span>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-service-tag">Yard Cleanup</div>
+          <p class="review-text">"Called on a Tuesday, they came out Wednesday and completely transformed my yard. Incredibly responsive and the price was more than fair."</p>
+          <div class="review-date">August 2025</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="name">Linda P.</div>
+              <div class="location">📍 Newton, MA</div>
+            </div>
+            <span class="review-platform" title="Google Review">🔍</span>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-service-tag">HVAC Maintenance</div>
+          <p class="review-text">"Had them come out for an HVAC inspection. Thorough, knowledgeable, and explained everything clearly. Signed up for their monthly plan after."</p>
+          <div class="review-date">July 2025</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="name">David C.</div>
+              <div class="location">📍 Quincy, MA</div>
+            </div>
+            <span class="review-platform" title="Google Review">🔍</span>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-service-tag">Property Maintenance</div>
+          <p class="review-text">"As a landlord with multiple units, finding a reliable maintenance company is everything. A1 has been a game-changer for my properties."</p>
+          <div class="review-date">December 2025</div>
+        </div>
+
+        <!-- ADD NEW REVIEWS: copy a review-card block above and paste here -->
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       LEAVE A REVIEW — EDIT: update platform links
+  ═══════════════════════════════════════════════ -->
+  <section class="leave-review">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:40px;">
+        <div class="section-label">Share Your Experience</div>
+        <h2 class="section-title">Had a Great Experience?</h2>
+        <p class="section-sub" style="margin:0 auto;">Your review helps other Boston homeowners find reliable service. It only takes a minute!</p>
+      </div>
+      <div class="review-cta-grid">
+        <div class="review-platform-cta">
+          <div class="rp-icon">🔍</div>
+          <h4>Leave a Google Review</h4>
+          <p>Google reviews help us show up when local homeowners search for property maintenance.</p>
+          <!-- EDIT: replace with your Google Business review link -->
+          <a href="https://g.page/YOUR_GOOGLE_BUSINESS/review" target="_blank" rel="noopener" class="btn-primary" style="display:block;text-align:center;">Review on Google</a>
+        </div>
+        <div class="review-platform-cta">
+          <div class="rp-icon">📘</div>
+          <h4>Leave a Facebook Review</h4>
+          <p>Facebook reviews help neighbors in your area discover A1 Property Solutions.</p>
+          <!-- EDIT: replace with your Facebook reviews link -->
+          <a href="https://www.facebook.com/YOUR_PAGE/reviews" target="_blank" rel="noopener" class="btn-primary" style="display:block;text-align:center;background:#1877f2;">Review on Facebook</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Ready to Join Our Happy Customers?</h2>
+      <p>Call or text today — we'll get your property taken care of.</p>
+      <a href="tel:6173026160" class="btn-primary">📞 Call (617) 302-6160</a>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">A1 <span>Property</span> Solutions</div>
+        <p>Reliable property maintenance, handyman repairs, and yard cleanup across Greater Boston.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/YOUR_PAGE" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">📘</a>
+          <a href="https://www.instagram.com/YOUR_HANDLE" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">📷</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="index.html#services">Yard Cleanup</a>
+        <a href="index.html#services">Handyman &amp; Repairs</a>
+        <a href="index.html#services">Property Maintenance</a>
+        <a href="index.html#services">HVAC/R Maintenance</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:6173026160">(617) 302-6160</a>
+        <a href="contact.html">Send a Message</a>
+        <p style="margin-top:12px;font-size:0.85rem;color:rgba(255,255,255,0.45);">Mon–Fri: 5 AM – 7 PM<br>Sat: 5 AM – 3 PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 <span>A1 Property Solutions</span> · Boston, MA · All Rights Reserved</p>
+      <div style="display:flex;gap:20px;"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

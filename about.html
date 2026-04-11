@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════════════
+       SEO — EDIT: description
+  ═══════════════════════════════════════════════ -->
+  <title>About Us | A1 Property Solutions — Boston Handyman & Property Maintenance</title>
+  <meta name="description" content="Learn about A1 Property Solutions — Boston's dependable handyman and property maintenance company serving residential and commercial clients across Greater Boston." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.a1propertysolutions.com/about.html" />
+
+  <meta property="og:title"       content="About A1 Property Solutions | Boston Handyman" />
+  <meta property="og:description" content="Our story, mission, and the values that drive our work across Greater Boston." />
+  <meta property="og:url"         content="https://www.a1propertysolutions.com/about.html" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ─── ABOUT PAGE SPECIFIC STYLES ──────────────── */
+
+    /* Owner / team section */
+    .owner-section { background: var(--white); }
+    .owner-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 64px;
+      align-items: center;
+    }
+    /* EDIT: replace placeholder with <img src="images/owner.jpg"> */
+    .owner-photo {
+      background: var(--light-bg);
+      border-radius: 14px;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 7rem;
+      border: 3px solid var(--border);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+    .owner-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
+    .owner-content p { color: var(--muted); margin-bottom: 16px; font-size: 1.05rem; }
+    .owner-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .owner-title { color: var(--gold-dark); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 20px; }
+
+    /* Mission & values */
+    .mission-section { background: var(--navy); color: var(--white); }
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .mission-text .section-title { color: var(--white); }
+    .mission-text p { color: rgba(255,255,255,0.72); margin-bottom: 18px; font-size: 1.05rem; }
+    .mission-quote {
+      border-left: 4px solid var(--gold);
+      padding-left: 20px;
+      margin: 28px 0;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.55;
+    }
+    .values-list { list-style: none; }
+    .values-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .values-list .val-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .values-list h4 { color: var(--white); margin-bottom: 4px; font-size: 1rem; }
+    .values-list p  { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+
+    /* Credentials / certifications */
+    .creds-section { background: var(--light-bg); }
+    .creds-header { text-align: center; margin-bottom: 48px; }
+    .creds-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .cred-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 28px 24px;
+      border: 1px solid var(--border);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .cred-card .cred-icon { font-size: 2.2rem; margin-bottom: 12px; }
+    .cred-card h4 { color: var(--navy); font-size: 1rem; margin-bottom: 6px; }
+    .cred-card p  { color: var(--muted); font-size: 0.88rem; }
+
+    /* Timeline / history */
+    .history-section { background: var(--white); }
+    .history-header { text-align: center; margin-bottom: 52px; }
+    .timeline { position: relative; max-width: 700px; margin: 0 auto; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .timeline-item {
+      display: flex;
+      gap: 28px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    .timeline-dot {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      z-index: 1;
+      box-shadow: 0 0 0 4px var(--white), 0 0 0 6px rgba(232,160,32,0.25);
+    }
+    .timeline-body { padding-top: 12px; }
+    .timeline-body h4 { color: var(--navy); font-size: 1.1rem; margin-bottom: 6px; }
+    .timeline-body p  { color: var(--muted); font-size: 0.95rem; }
+
+    /* Social media section */
+    .social-section { background: var(--gold-light); padding: 60px 0; }
+    .social-header { text-align: center; margin-bottom: 40px; }
+    .social-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; max-width: 800px; margin: 0 auto; }
+    .social-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 36px 30px;
+      border: 1px solid var(--border);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .social-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .social-card .s-icon { font-size: 3rem; margin-bottom: 14px; }
+    .social-card h4 { color: var(--navy); font-size: 1.15rem; margin-bottom: 6px; }
+    .social-card p  { color: var(--muted); font-size: 0.9rem; margin-bottom: 20px; }
+    .social-card .btn-primary { width: 100%; text-align: center; }
+    .fb-btn  { background: #1877f2; }
+    .fb-btn:hover { background: #0e5fcc; }
+    .ig-btn  { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .ig-btn:hover { opacity: 0.9; }
+
+    @media (max-width: 768px) {
+      .owner-grid, .mission-grid { grid-template-columns: 1fr; gap: 36px; }
+      .owner-photo { min-height: 220px; }
+      .timeline::before { left: 24px; }
+      .timeline-dot { width: 48px; height: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR — EDIT: phone number -->
+  <div class="topbar">
+    📞 Call or text anytime: <a href="tel:6173026160">(617) 302-6160</a>
+    &nbsp;·&nbsp; Serving Boston &amp; Surrounding Areas
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">A1 <span>Property</span> Solutions</a>
+      <ul class="nav-links">
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="about.html">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-label">Our Story</div>
+      <h1>Built on <span>Hard Work</span> & Honesty</h1>
+      <p>We're a locally owned property maintenance company serving Greater Boston with reliable, professional service.</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       OWNER / INTRO — EDIT: name, title, bio paragraphs
+       Replace emoji with your actual photo (see README)
+  ═══════════════════════════════════════════════ -->
+  <section class="owner-section">
+    <div class="container">
+      <div class="owner-grid">
+
+        <!-- EDIT: Replace with real photo:
+             <img src="images/owner.jpg" alt="[Your Name] — Owner of A1 Property Solutions"> -->
+        <div class="owner-photo">👷</div>
+
+        <div class="owner-content">
+          <div class="section-label">Meet the Owner</div>
+
+          <!-- EDIT: owner's name -->
+          <div class="owner-name">[Your Name Here]</div>
+          <!-- EDIT: owner's title / credential -->
+          <div class="owner-title">Owner &amp; Operator · HVAC/R Technician</div>
+
+          <!-- EDIT: write your own bio here — 3-4 paragraphs is ideal -->
+          <p>
+            I started A1 Property Solutions because I saw a real need for a dependable, all-in-one property maintenance service in the Boston area. Too many homeowners and property managers were stuck juggling multiple contractors, dealing with no-shows, and getting hit with surprise fees.
+          </p>
+          <p>
+            With a background in HVAC/R and hands-on experience across all kinds of property work, I built this business to be the one call people can rely on — for everything from handyman repairs and yard cleanups to commercial refrigeration maintenance.
+          </p>
+          <p>
+            I take pride in showing up on time, communicating clearly, and doing the job right the first time. Your property is an investment. I treat it like one.
+          </p>
+
+          <div style="margin-top:24px; display:flex; gap:16px; flex-wrap:wrap;">
+            <a href="tel:6173026160" class="btn-primary">📞 Call (617) 302-6160</a>
+            <a href="contact.html" class="btn-outline-navy">Send a Message</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       MISSION & VALUES — EDIT: quote, values list
+  ═══════════════════════════════════════════════ -->
+  <section class="mission-section">
+    <div class="container">
+      <div class="mission-grid">
+
+        <div class="mission-text">
+          <div class="section-label">Our Mission</div>
+          <h2 class="section-title">Why We Do What We Do</h2>
+          <p>
+            Our mission is simple: make property maintenance stress-free for homeowners and businesses across Greater Boston.
+          </p>
+          <p>
+            We believe every property deserves consistent, professional upkeep — and every client deserves a contractor they can actually count on.
+          </p>
+          <!-- EDIT: this quote is a great place for your personal mission statement -->
+          <blockquote class="mission-quote">
+            "We built this business on the idea that good work, clear communication, and showing up when you say you will shouldn't be hard to find."
+          </blockquote>
+        </div>
+
+        <!-- EDIT: core values — change icons, titles, and descriptions -->
+        <ul class="values-list">
+          <li>
+            <span class="val-icon">🤝</span>
+            <div>
+              <h4>Reliability</h4>
+              <p>We show up when we say we will and follow through on every commitment.</p>
+            </div>
+          </li>
+          <li>
+            <span class="val-icon">💰</span>
+            <div>
+              <h4>Transparent Pricing</h4>
+              <p>No hidden fees. You get a clear quote before we start any work.</p>
+            </div>
+          </li>
+          <li>
+            <span class="val-icon">🏆</span>
+            <div>
+              <h4>Quality Workmanship</h4>
+              <p>We don't rush, and we don't cut corners. Every job is done right.</p>
+            </div>
+          </li>
+          <li>
+            <span class="val-icon">📞</span>
+            <div>
+              <h4>Clear Communication</h4>
+              <p>We keep you in the loop from the first call to the last nail.</p>
+            </div>
+          </li>
+          <li>
+            <span class="val-icon">🌆</span>
+            <div>
+              <h4>Community First</h4>
+              <p>We're a local Boston business — your neighbors, your community.</p>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       CREDENTIALS — EDIT: add your certifications,
+       insurance, licenses, etc.
+  ═══════════════════════════════════════════════ -->
+  <section class="creds-section">
+    <div class="container">
+      <div class="creds-header">
+        <div class="section-label">Credentials</div>
+        <h2 class="section-title">Trained, Insured &amp; Professional</h2>
+        <p class="section-sub" style="margin:0 auto;">We hold ourselves to a high standard so you can hire with confidence.</p>
+      </div>
+      <div class="creds-grid">
+
+        <!-- EDIT: update with your actual credentials -->
+        <div class="cred-card">
+          <div class="cred-icon">🛡️</div>
+          <h4>Fully Insured</h4>
+          <p>General liability insurance to protect your property and give you peace of mind.</p>
+        </div>
+        <div class="cred-card">
+          <div class="cred-icon">❄️</div>
+          <h4>HVAC/R Certified</h4>
+          <!-- EDIT: add your specific certification details here -->
+          <p>Certified HVAC/R technician with hands-on commercial and residential experience.</p>
+        </div>
+        <div class="cred-card">
+          <div class="cred-icon">⭐</div>
+          <h4>5-Star Rated</h4>
+          <p>Consistently 5-star reviews from homeowners and property managers across Boston.</p>
+        </div>
+        <div class="cred-card">
+          <div class="cred-icon">📍</div>
+          <h4>Locally Owned</h4>
+          <p>Boston-based and community-focused. Not a franchise — a real local business.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       HISTORY TIMELINE — EDIT: years and milestones
+       Add/remove timeline-item blocks as needed
+  ═══════════════════════════════════════════════ -->
+  <section class="history-section">
+    <div class="container">
+      <div class="history-header">
+        <div class="section-label">Our History</div>
+        <h2 class="section-title">How We Got Here</h2>
+      </div>
+      <div class="timeline">
+
+        <!-- EDIT: update years and milestone descriptions -->
+        <div class="timeline-item">
+          <div class="timeline-dot">2022</div>
+          <div class="timeline-body">
+            <h4>A1 Property Solutions Founded</h4>
+            <p>Started with a truck, a toolbox, and a commitment to reliable service in the Boston area.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot">2023</div>
+          <div class="timeline-body">
+            <h4>Expanded to Commercial Clients</h4>
+            <p>Added HVAC/R maintenance services, landing our first commercial property management accounts.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot">2024</div>
+          <div class="timeline-body">
+            <h4>100+ Jobs Completed</h4>
+            <p>Reached a major milestone with over 100 completed jobs and a perfect 5-star rating.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot">2025</div>
+          <div class="timeline-body">
+            <h4>Growing the Team</h4>
+            <!-- EDIT: update with your real 2025/2026 milestones -->
+            <p>Continued to grow our client base across Greater Boston with a reputation built on trust.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SOCIAL MEDIA — EDIT: update hrefs with your
+       actual Facebook and Instagram profile URLs
+  ═══════════════════════════════════════════════ -->
+  <section class="social-section">
+    <div class="container">
+      <div class="social-header">
+        <div class="section-label">Stay Connected</div>
+        <h2 class="section-title">Follow Us on Social Media</h2>
+        <p class="section-sub" style="margin:0 auto;">See our latest work, tips, and updates on Facebook and Instagram.</p>
+      </div>
+      <div class="social-cards">
+
+        <!-- EDIT: replace # with your Facebook page URL -->
+        <div class="social-card">
+          <div class="s-icon">📘</div>
+          <h4>Facebook</h4>
+          <p>Follow us for job photos, seasonal tips, and local updates.</p>
+          <!-- EDIT: replace with your Facebook URL -->
+          <a href="https://www.facebook.com/YOUR_PAGE" target="_blank" rel="noopener" class="btn-primary fb-btn">Follow on Facebook</a>
+        </div>
+
+        <!-- EDIT: replace # with your Instagram profile URL -->
+        <div class="social-card">
+          <div class="s-icon">📷</div>
+          <h4>Instagram</h4>
+          <p>Before &amp; after photos, project highlights, and behind-the-scenes.</p>
+          <!-- EDIT: replace with your Instagram URL -->
+          <a href="https://www.instagram.com/YOUR_HANDLE" target="_blank" rel="noopener" class="btn-primary ig-btn">Follow on Instagram</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Ready to Work With Us?</h2>
+      <p>Give us a call — we're easy to reach and fast to respond.</p>
+      <a href="tel:6173026160" class="btn-primary">📞 Call (617) 302-6160</a>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">A1 <span>Property</span> Solutions</div>
+        <p>Reliable property maintenance, handyman repairs, and yard cleanup across Greater Boston.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/YOUR_PAGE" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">📘</a>
+          <a href="https://www.instagram.com/YOUR_HANDLE" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">📷</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="index.html#services">Yard Cleanup</a>
+        <a href="index.html#services">Handyman &amp; Repairs</a>
+        <a href="index.html#services">Property Maintenance</a>
+        <a href="index.html#services">HVAC/R Maintenance</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:6173026160">(617) 302-6160</a>
+        <a href="contact.html">Send a Message</a>
+        <p style="margin-top:12px;font-size:0.85rem;color:rgba(255,255,255,0.45);">Mon–Fri: 5 AM – 7 PM<br>Sat: 5 AM – 3 PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 <span>A1 Property Solutions</span> · Boston, MA · All Rights Reserved</p>
+      <div style="display:flex;gap:20px;"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
