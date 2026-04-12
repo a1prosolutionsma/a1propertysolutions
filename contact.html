@@ -98,6 +98,8 @@
     .form-sub{color:var(--muted);font-size:.95rem;margin-bottom:18px;line-height:1.65}
     .form-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
     .form-badge{background:var(--gold-lt);border:1px solid rgba(232,160,32,.28);color:var(--navy);font-size:.8rem;font-weight:700;padding:5px 10px;border-radius:14px}
+    .text-photo-note{background:var(--off);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:22px;color:var(--text);font-size:.88rem;line-height:1.6}
+    .text-photo-note a{color:var(--gold-dk);font-weight:700}
     .f-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
     .f-group{margin-bottom:18px}
     .f-group label{display:block;font-size:.85rem;font-weight:700;color:var(--navy);margin-bottom:6px;letter-spacing:.02em}
@@ -105,8 +107,7 @@
     .f-group input,.f-group select,.f-group textarea{width:100%;padding:11px 15px;border:1px solid var(--border);border-radius:var(--r);font-family:'Source Sans 3',sans-serif;font-size:.95rem;color:var(--text);background:var(--white);transition:border-color .2s,box-shadow .2s;outline:none;-webkit-appearance:none;appearance:none}
     .f-group input:focus,.f-group select:focus,.f-group textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(232,160,32,.14)}
     .f-group textarea{min-height:112px;resize:vertical}
-    .f-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235a6478' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:34px}
-    .file-help{font-size:.8rem;color:var(--muted);margin-top:6px;line-height:1.5}
+    .f-group select{background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235a6478' d='M6 8L1 3h10z'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 13px center;padding-right:34px}
     .form-submit{width:100%;padding:15px;font-size:1rem;letter-spacing:.06em;margin-top:6px;background:var(--gold);color:var(--navy);font-family:'Oswald',sans-serif;font-weight:700;border:none;border-radius:var(--r);cursor:pointer;transition:background .2s,transform .15s}
     .form-submit:hover{background:var(--gold-dk);transform:translateY(-2px)}
     .form-disc{font-size:.82rem;color:var(--muted);text-align:center;margin-top:12px;line-height:1.6}
@@ -157,7 +158,7 @@
     <div class="wrap">
       <div class="pill">Get In Touch</div>
       <h1>Get Your <span>Free Estimate</span></h1>
-      <p>Most projects fall between $150 and $500 depending on size, condition, access, and materials. Add details and photos for a faster, more accurate quote.</p>
+      <p>Most projects fall between $150 and $500 depending on size, condition, access, and materials. Add details below, and if you have pictures, text them to us for a faster quote.</p>
     </div>
   </section>
 
@@ -218,7 +219,11 @@
             <span class="form-badge">Fast response</span>
           </div>
 
-          <form id="form" action="https://formspree.io/f/xpqovbql" method="POST" enctype="multipart/form-data" autocomplete="on">
+          <div class="text-photo-note">
+            Have pictures of the job? <a href="sms:6173026160">Text them to (617) 302-6160</a> for a faster and more accurate quote.
+          </div>
+
+          <form id="form" action="https://formspree.io/f/xpqovbql" method="POST" autocomplete="on">
             <input type="hidden" name="_subject" value="New A1 Property Solutions estimate request" />
 
             <div class="f-row">
@@ -264,23 +269,16 @@
               </div>
             </div>
 
-            <div class="f-row">
-              <div class="f-group">
-                <label for="budget">Estimated Budget</label>
-                <select id="budget" name="budget">
-                  <option value="" disabled selected>Select budget…</option>
-                  <option value="100-200">$100 – $200</option>
-                  <option value="200-400">$200 – $400</option>
-                  <option value="400-800">$400 – $800</option>
-                  <option value="800+">$800+</option>
-                  <option value="not-sure">Not sure</option>
-                </select>
-              </div>
-              <div class="f-group">
-                <label for="photos">Upload Photos</label>
-                <input type="file" id="photos" name="photos" multiple accept="image/*" />
-                <div class="file-help">Optional but helpful. You can also text photos to (617) 302-6160 for a faster quote.</div>
-              </div>
+            <div class="f-group">
+              <label for="budget">Estimated Budget</label>
+              <select id="budget" name="budget">
+                <option value="" disabled selected>Select budget…</option>
+                <option value="100-200">$100 – $200</option>
+                <option value="200-400">$200 – $400</option>
+                <option value="400-800">$400 – $800</option>
+                <option value="800+">$800+</option>
+                <option value="not-sure">Not sure</option>
+              </select>
             </div>
 
             <div class="f-group"><label for="msg">Describe Your Project <span class="req">*</span></label><textarea id="msg" name="message" placeholder="Tell us what needs to be done, what the issue is, and anything that affects access, materials, or timing. The more detail you provide, the faster we can give you an accurate quote." required></textarea></div>
@@ -336,12 +334,13 @@
   </footer>
 
   <script>
-    document.getElementById('hbg').addEventListener('click',function(){document.getElementById('mob').classList.toggle('open')});
+    document.getElementById('hbg').addEventListener('click',function(){
+      document.getElementById('mob').classList.toggle('open')
+    });
 
     document.getElementById('form').addEventListener('submit', async function(e) {
       e.preventDefault();
       const btn = this.querySelector('.form-submit');
-      const originalText = btn.textContent;
       btn.textContent = 'Sending…';
       btn.disabled = true;
 
