@@ -397,8 +397,9 @@
     .ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;max-width:1080px;margin:0 auto 44px}
     .ft-brand p{font-size:.88rem;line-height:1.65;max-width:230px;color:rgba(255,255,255,.45)}
     .ft-social{display:flex;gap:10px;margin-top:18px}
-    .soc-btn{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);display:flex;align-items:center;justify-content:center;font-size:.95rem;color:rgba(255,255,255,.65);transition:all .2s}
-    .soc-btn:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+    .soc-btn{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);display:flex;align-items:center;justify-content:center;transition:all .2s}
+    .soc-btn:hover{background:var(--gold);border-color:var(--gold)}
+    .social-logo{width:18px;height:18px;object-fit:contain;display:block}
     .ft-col h4{font-family:'Oswald',sans-serif;color:#fff;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
     .ft-col a{display:block;color:rgba(255,255,255,.48);font-size:.86rem;margin-bottom:9px;transition:color .2s}
     .ft-col a:hover{color:var(--gold)}
@@ -740,8 +741,12 @@
         <div class="logo"><img src="images/logog.png" alt="A1 Property Solutions logo"></div>
         <p>Reliable property maintenance, handyman repairs, and yard cleanup across Greater Boston.</p>
         <div class="ft-social">
-          <a href="https://www.facebook.com/profile.php?id=61572055553393" target="_blank" rel="noopener" class="soc-btn" aria-label="Facebook">📘</a>
-          <a href="https://www.instagram.com/a1prosolutions?igsh=MWhndnA4NDRhMHc1dw%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="soc-btn" aria-label="Instagram">📷</a>
+          <a href="https://www.facebook.com/profile.php?id=61572055553393" target="_blank" rel="noopener" class="soc-btn" aria-label="Facebook">
+            <img src="images/facebook.png" class="social-logo" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/a1prosolutions?igsh=MWhndnA4NDRhMHc1dw%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="soc-btn" aria-label="Instagram">
+            <img src="images/instagram.png" class="social-logo" alt="Instagram">
+          </a>
         </div>
       </div>
 
