@@ -69,19 +69,40 @@
     .platform-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .plat-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:22px;box-shadow:var(--shadow)}
     .plat-top{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-    .plat-icon{font-size:1.4rem}
     .plat-name{font-family:'Oswald',sans-serif;font-size:1rem;color:var(--navy)}
     .plat-sub{color:var(--muted);font-size:.86rem}
     .plat-rating{color:var(--gold);font-size:1rem;margin:10px 0 6px}
     .plat-note{font-size:.82rem;color:var(--muted);line-height:1.55;margin-bottom:14px}
     .plat-link{color:var(--gold-dk);font-weight:700;font-size:.9rem}
 
+    .platform-logo,
+    .review-logo,
+    .social-logo{
+      object-fit:contain;
+      display:block;
+      flex-shrink:0;
+    }
+
+    .platform-logo{
+      width:24px;
+      height:24px;
+    }
+
+    .review-logo{
+      width:22px;
+      height:22px;
+    }
+
+    .social-logo{
+      width:18px;
+      height:18px;
+    }
+
     .reviews-sec{background:var(--white)}
     .review-block{margin-bottom:54px}
     .review-block:last-child{margin-bottom:0}
     .block-hd{display:flex;justify-content:space-between;align-items:end;gap:18px;flex-wrap:wrap;margin-bottom:24px}
     .block-title{display:flex;align-items:center;gap:10px}
-    .block-icon{font-size:1.35rem}
     .block-title h3{color:var(--navy);font-size:1.4rem}
     .block-title p{color:var(--muted);font-size:.92rem}
     .review-link{color:var(--gold-dk);font-weight:700;font-size:.92rem}
@@ -91,7 +112,6 @@
     .rev-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
     .rev-name{font-family:'Oswald',sans-serif;font-size:1rem;color:var(--navy)}
     .rev-loc{font-size:.8rem;color:var(--muted);margin-top:2px}
-    .rev-plat{font-size:1.3rem}
     .rev-stars{color:var(--gold);font-size:.95rem}
     .rev-text{color:var(--text);font-size:.93rem;line-height:1.65;font-style:italic;flex:1}
     .rev-date{font-size:.78rem;color:var(--muted)}
@@ -100,7 +120,7 @@
     .leave-sec{background:var(--off);padding:64px 0}
     .leave-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:780px;margin:0 auto}
     .leave-card{background:var(--white);border-radius:14px;padding:32px;border:1px solid var(--border);text-align:center;box-shadow:var(--shadow)}
-    .leave-card .li{font-size:2.4rem;margin-bottom:12px}
+    .leave-card .li{display:flex;justify-content:center;margin-bottom:12px}
     .leave-card h4{color:var(--navy);font-size:1.1rem;margin-bottom:6px}
     .leave-card p{color:var(--muted);font-size:.88rem;margin-bottom:20px;line-height:1.6}
     .leave-card .lb{display:block;text-align:center;padding:13px 20px;border-radius:var(--r);font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:.06em;transition:all .2s}
@@ -119,8 +139,8 @@
     .ft-brand .logo img{height:66px;width:auto}
     .ft-brand p{font-size:.88rem;line-height:1.65;max-width:230px;color:rgba(255,255,255,.45)}
     .ft-social{display:flex;gap:10px;margin-top:18px}
-    .soc-btn{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);display:flex;align-items:center;justify-content:center;font-size:.95rem;color:rgba(255,255,255,.65);transition:all .2s}
-    .soc-btn:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+    .soc-btn{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);display:flex;align-items:center;justify-content:center;transition:all .2s}
+    .soc-btn:hover{background:var(--gold);border-color:var(--gold)}
     .ft-col h4{font-family:'Oswald',sans-serif;color:#fff;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
     .ft-col a{display:block;color:rgba(255,255,255,.48);font-size:.86rem;margin-bottom:9px;transition:color .2s}
     .ft-col a:hover{color:var(--gold)}
@@ -176,10 +196,7 @@
     <div class="wrap">
       <div class="pill">Customer Reviews</div>
       <h1>See What <span>Customers</span> Are Saying</h1>
-      <p>  </p>
-
-    
-      </div>
+      <p></p>
     </div>
   </section>
 
@@ -188,40 +205,40 @@
       <div class="platform-inner">
         <div class="plat-card">
           <div class="plat-top">
-            <div class="plat-icon">🔍</div>
+            <img src="images/google.png" class="platform-logo" alt="Google">
             <div>
               <div class="plat-name">Google Reviews</div>
-              <div class="plat-sub">   </div>
+              <div class="plat-sub"></div>
             </div>
           </div>
           <div class="plat-rating">★★★★★</div>
-          <div class="plat-note">   </div>
+          <div class="plat-note"></div>
           <a class="plat-link" href="https://g.page/r/CVxrB5_T8yDwEAE/review" target="_blank" rel="noopener">View on Google →</a>
         </div>
 
         <div class="plat-card">
           <div class="plat-top">
-            <div class="plat-icon">📘</div>
+            <img src="images/facebook.png" class="platform-logo" alt="Facebook">
             <div>
               <div class="plat-name">Facebook Reviews</div>
-              <div class="plat-sub">   </div>
+              <div class="plat-sub"></div>
             </div>
           </div>
           <div class="plat-rating">★★★★★</div>
-          <div class="plat-note">    </div>
+          <div class="plat-note"></div>
           <a class="plat-link" href="https://www.facebook.com/profile.php?id=61572055553393" target="_blank" rel="noopener">View on Facebook →</a>
         </div>
 
         <div class="plat-card">
           <div class="plat-top">
-            <div class="plat-icon">📷</div>
+            <img src="images/instagram.png" class="platform-logo" alt="Instagram">
             <div>
               <div class="plat-name">Instagram</div>
               <div class="plat-sub">Show recent work and before/after photos</div>
             </div>
           </div>
           <div class="plat-rating">Project Photos</div>
-          <div class="plat-note">   </div>
+          <div class="plat-note"></div>
           <a class="plat-link" href="https://www.instagram.com/a1prosolutions?igsh=MWhndnA4NDRhMHc1dw%3D%3D&utm_source=qr" target="_blank" rel="noopener">View on Instagram →</a>
         </div>
       </div>
@@ -234,7 +251,7 @@
       <div class="review-block">
         <div class="block-hd">
           <div class="block-title">
-            <div class="block-icon">🔍</div>
+            <img src="images/google.png" class="platform-logo" alt="Google">
             <div>
               <h3>Reviews From Google</h3>
               <p>Replace these cards with real reviews copied from your Google Business Profile.</p>
@@ -250,7 +267,7 @@
                 <div class="rev-name">Customer Name</div>
                 <div class="rev-loc">📍 City, MA</div>
               </div>
-              <span class="rev-plat" title="Google">🔍</span>
+              <img src="images/google.png" class="review-logo" alt="Google">
             </div>
             <div class="rev-stars">★★★★★</div>
             <p class="rev-text">“Paste a real Google review here.”</p>
@@ -263,7 +280,7 @@
                 <div class="rev-name">Customer Name</div>
                 <div class="rev-loc">📍 City, MA</div>
               </div>
-              <span class="rev-plat" title="Google">🔍</span>
+              <img src="images/google.png" class="review-logo" alt="Google">
             </div>
             <div class="rev-stars">★★★★★</div>
             <p class="rev-text">“Paste another real Google review here.”</p>
@@ -276,7 +293,7 @@
                 <div class="rev-name">Customer Name</div>
                 <div class="rev-loc">📍 City, MA</div>
               </div>
-              <span class="rev-plat" title="Google">🔍</span>
+              <img src="images/google.png" class="review-logo" alt="Google">
             </div>
             <div class="rev-stars">★★★★★</div>
             <p class="rev-text">“Paste another real Google review here.”</p>
@@ -289,7 +306,7 @@
       <div class="review-block">
         <div class="block-hd">
           <div class="block-title">
-            <div class="block-icon">📘</div>
+            <img src="images/facebook.png" class="platform-logo" alt="Facebook">
             <div>
               <h3>Reviews From Facebook</h3>
               <p>Replace these cards with real reviews or recommendations copied from Facebook.</p>
@@ -305,7 +322,7 @@
                 <div class="rev-name">Customer Name</div>
                 <div class="rev-loc">📍 City, MA</div>
               </div>
-              <span class="rev-plat" title="Facebook">📘</span>
+              <img src="images/facebook.png" class="review-logo" alt="Facebook">
             </div>
             <div class="rev-stars">★★★★★</div>
             <p class="rev-text">“Paste a real Facebook review or recommendation here.”</p>
@@ -318,7 +335,7 @@
                 <div class="rev-name">Customer Name</div>
                 <div class="rev-loc">📍 City, MA</div>
               </div>
-              <span class="rev-plat" title="Facebook">📘</span>
+              <img src="images/facebook.png" class="review-logo" alt="Facebook">
             </div>
             <div class="rev-stars">★★★★★</div>
             <p class="rev-text">“Paste another real Facebook review here.”</p>
@@ -331,7 +348,7 @@
                 <div class="rev-name">Customer Name</div>
                 <div class="rev-loc">📍 City, MA</div>
               </div>
-              <span class="rev-plat" title="Facebook">📘</span>
+              <img src="images/facebook.png" class="review-logo" alt="Facebook">
             </div>
             <div class="rev-stars">★★★★★</div>
             <p class="rev-text">“Paste another real Facebook review here.”</p>
@@ -339,8 +356,7 @@
           </div>
         </div>
       </div>
-
-     
+    </div>
   </section>
 
   <section class="leave-sec">
@@ -352,13 +368,17 @@
       </div>
       <div class="leave-grid">
         <div class="leave-card">
-          <div class="li">🔍</div>
+          <div class="li">
+            <img src="images/google.png" class="platform-logo" alt="Google">
+          </div>
           <h4>Leave a Google Review</h4>
           <p>Google reviews help local customers find your business when they search for handyman and property maintenance services.</p>
           <a href="https://g.page/r/CVxrB5_T8yDwEAE/review" target="_blank" rel="noopener" class="lb google-btn">Review on Google</a>
         </div>
         <div class="leave-card">
-          <div class="li">📘</div>
+          <div class="li">
+            <img src="images/facebook.png" class="platform-logo" alt="Facebook">
+          </div>
           <h4>Leave a Facebook Review</h4>
           <p>Facebook reviews help neighbors and local homeowners feel more confident reaching out for service.</p>
           <a href="https://www.facebook.com/profile.php?id=61572055553393" target="_blank" rel="noopener" class="lb fb-btn">Review on Facebook</a>
@@ -381,8 +401,12 @@
         <div class="logo"><img src="images/logog.png" alt="A1 Property Solutions logo"></div>
         <p>Reliable property maintenance, handyman repairs, and yard cleanup across Greater Boston.</p>
         <div class="ft-social">
-          <a href="https://www.facebook.com/profile.php?id=61572055553393" target="_blank" rel="noopener" class="soc-btn" aria-label="Facebook">📘</a>
-          <a href="https://www.instagram.com/a1prosolutions?igsh=MWhndnA4NDRhMHc1dw%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="soc-btn" aria-label="Instagram">📷</a>
+          <a href="https://www.facebook.com/profile.php?id=61572055553393" target="_blank" rel="noopener" class="soc-btn" aria-label="Facebook">
+            <img src="images/facebook.png" class="social-logo" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/a1prosolutions?igsh=MWhndnA4NDRhMHc1dw%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="soc-btn" aria-label="Instagram">
+            <img src="images/instagram.png" class="social-logo" alt="Instagram">
+          </a>
         </div>
       </div>
       <div class="ft-col">
