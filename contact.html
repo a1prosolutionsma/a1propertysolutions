@@ -16,7 +16,9 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{font-family:'Source Sans 3',sans-serif;color:var(--text);background:var(--white);line-height:1.65}
-    img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    ul{list-style:none}
     h1,h2,h3,h4{font-family:'Oswald',sans-serif;letter-spacing:.02em;line-height:1.15}
     .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
     section{padding:88px 0}
@@ -60,8 +62,8 @@
     .ft-brand .logo{font-size:1.2rem;margin-bottom:14px}
     .ft-brand p{font-size:.88rem;line-height:1.65;max-width:230px;color:rgba(255,255,255,.45)}
     .ft-social{display:flex;gap:10px;margin-top:18px}
-    .soc-btn{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);display:flex;align-items:center;justify-content:center;font-size:.95rem;color:rgba(255,255,255,.65);transition:all .2s}
-    .soc-btn:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+    .soc-btn{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);display:flex;align-items:center;justify-content:center;transition:all .2s}
+    .soc-btn:hover{background:var(--gold);border-color:var(--gold)}
     .ft-col h4{font-family:'Oswald',sans-serif;color:#fff;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
     .ft-col a{display:block;color:rgba(255,255,255,.48);font-size:.86rem;margin-bottom:9px;transition:color .2s}
     .ft-col a:hover{color:var(--gold)}
@@ -107,7 +109,7 @@
     .f-group input,.f-group select,.f-group textarea{width:100%;padding:11px 15px;border:1px solid var(--border);border-radius:var(--r);font-family:'Source Sans 3',sans-serif;font-size:.95rem;color:var(--text);background:var(--white);transition:border-color .2s,box-shadow .2s;outline:none;-webkit-appearance:none;appearance:none}
     .f-group input:focus,.f-group select:focus,.f-group textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(232,160,32,.14)}
     .f-group textarea{min-height:112px;resize:vertical}
-    .f-group select{background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235a6478' d='M6 8L1 3h10z'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 13px center;padding-right:34px}
+    .f-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235a6478' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:34px}
     .form-submit{width:100%;padding:15px;font-size:1rem;letter-spacing:.06em;margin-top:6px;background:var(--gold);color:var(--navy);font-family:'Oswald',sans-serif;font-weight:700;border:none;border-radius:var(--r);cursor:pointer;transition:background .2s,transform .15s}
     .form-submit:hover{background:var(--gold-dk);transform:translateY(-2px)}
     .form-disc{font-size:.82rem;color:var(--muted);text-align:center;margin-top:12px;line-height:1.6}
@@ -122,7 +124,20 @@
     .social-row{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
     .soc-pill{display:flex;align-items:center;gap:9px;background:var(--off);border:1px solid var(--border);border-radius:40px;padding:12px 22px;font-size:.93rem;font-weight:600;color:var(--navy);transition:all .2s;box-shadow:var(--shadow)}
     .soc-pill:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
-    .soc-pill .si{font-size:1.2rem}
+
+    .social-logo{
+      width:18px;
+      height:18px;
+      object-fit:contain;
+      display:block;
+      flex-shrink:0;
+    }
+
+    .social-inline{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
 
     @media(max-width:900px){.contact-layout{grid-template-columns:1fr}.c-sidebar{position:static}.ft-grid{grid-template-columns:1fr 1fr;gap:28px}}
     @media(max-width:768px){section{padding:60px 0}.nav-links{display:none}.hbg{display:flex}.f-row{grid-template-columns:1fr}.form-box{padding:26px 20px}}
@@ -308,9 +323,24 @@
         <p class="section-p" style="margin:0 auto">See our latest work, tips, and updates on social media.</p>
       </div>
       <div class="social-row">
-        <a href="https://www.facebook.com/profile.php?id=61572055553393" target="_blank" rel="noopener" class="soc-pill"><span class="si">📘</span> Follow on Facebook</a>
-        <a href="https://www.instagram.com/a1prosolutions?igsh=MWhndnA4NDRhMHc1dw%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="soc-pill"><span class="si">📷</span> Follow on Instagram</a>
-        <a href="https://g.page/r/CVxrB5_T8yDwEAE/review" target="_blank" rel="noopener" class="soc-pill"><span class="si">🔍</span> Google Business Profile</a>
+        <a href="https://www.facebook.com/profile.php?id=61572055553393" target="_blank" rel="noopener" class="soc-pill">
+          <span class="social-inline">
+            <img src="images/facebook.png" class="social-logo" alt="Facebook">
+            Follow on Facebook
+          </span>
+        </a>
+        <a href="https://www.instagram.com/a1prosolutions?igsh=MWhndnA4NDRhMHc1dw%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="soc-pill">
+          <span class="social-inline">
+            <img src="images/instagram.png" class="social-logo" alt="Instagram">
+            Follow on Instagram
+          </span>
+        </a>
+        <a href="https://g.page/r/CVxrB5_T8yDwEAE/review" target="_blank" rel="noopener" class="soc-pill">
+          <span class="social-inline">
+            <img src="images/google.png" class="social-logo" alt="Google">
+            Google Business Profile
+          </span>
+        </a>
       </div>
     </div>
   </div>
@@ -325,7 +355,18 @@
 
   <footer>
     <div class="ft-grid">
-      <div class="ft-brand"><div class="logo"><img src="images/logog.png" alt="A1 Property Solutions logo"></div><p>Reliable property maintenance, handyman repairs, and yard cleanup across Greater Boston.</p><div class="ft-social"><a href="https://www.facebook.com/profile.php?id=61572055553393" target="_blank" rel="noopener" class="soc-btn" aria-label="Facebook">📘</a><a href="https://www.instagram.com/a1prosolutions?igsh=MWhndnA4NDRhMHc1dw%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="soc-btn" aria-label="Instagram">📷</a></div></div>
+      <div class="ft-brand">
+        <div class="logo"><img src="images/logog.png" alt="A1 Property Solutions logo"></div>
+        <p>Reliable property maintenance, handyman repairs, and yard cleanup across Greater Boston.</p>
+        <div class="ft-social">
+          <a href="https://www.facebook.com/profile.php?id=61572055553393" target="_blank" rel="noopener" class="soc-btn" aria-label="Facebook">
+            <img src="images/facebook.png" class="social-logo" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/a1prosolutions?igsh=MWhndnA4NDRhMHc1dw%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="soc-btn" aria-label="Instagram">
+            <img src="images/instagram.png" class="social-logo" alt="Instagram">
+          </a>
+        </div>
+      </div>
       <div class="ft-col"><h4>Pages</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="pricing.html">Pricing</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a></div>
       <div class="ft-col"><h4>Services</h4><a href="index.html#services">Yard Cleanup</a><a href="index.html#services">Handyman &amp; Repairs</a><a href="index.html#services">Property Maintenance</a><a href="index.html#services">HVAC/R Maintenance</a></div>
       <div class="ft-col"><h4>Contact</h4><a href="tel:6173026160">(617) 302-6160</a><a href="mailto:a1prosolutionsma@gmail.com">a1prosolutionsma@gmail.com</a><a href="contact.html">Send a Message</a><div class="hrs">Mon–Fri: 5 AM – 7 PM<br>Sat: 5 AM – 3 PM</div></div>
