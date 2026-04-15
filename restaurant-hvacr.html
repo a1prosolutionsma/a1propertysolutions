@@ -146,6 +146,19 @@
     .aside h3{color:var(--navy);font-size:1.3rem;margin-bottom:12px}
     .aside p{color:var(--muted);font-size:.94rem;margin-bottom:16px}
     .aside ul{display:grid;gap:10px;font-size:.9rem;color:var(--text);margin-bottom:20px}
+    .field-example{background:linear-gradient(180deg,#f7fafc 0%,#eef5fb 100%)}
+    .example-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:start;margin-top:34px}
+    .example-copy{background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:var(--shadow)}
+    .example-copy h3{color:var(--navy);font-size:1.4rem;margin-bottom:12px}
+    .example-copy p{color:var(--muted);font-size:1rem;margin-bottom:16px}
+    .example-points{display:grid;gap:10px;margin:18px 0}
+    .example-points li{background:var(--ice);border:1px solid #cfe2f5;border-radius:12px;padding:12px 14px;color:var(--text);font-size:.93rem}
+    .example-note{font-size:.92rem;color:var(--muted);padding-top:6px;border-top:1px solid var(--border)}
+    .example-gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .example-card{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+    .example-card img{width:100%;height:100%;max-height:280px;object-fit:cover}
+    .example-card figcaption{padding:14px 16px;color:var(--muted);font-size:.9rem;line-height:1.55}
+    .example-card.wide{grid-column:1 / -1}
     .process{background:var(--gold-lt)}
     .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px}
     .step{background:#fff;border:1px solid rgba(232,160,32,.25);border-radius:14px;padding:24px;box-shadow:var(--shadow)}
@@ -178,8 +191,8 @@
     .ft-links{display:flex;gap:20px}
     .ft-bottom a{color:rgba(255,255,255,.38)}
     .ft-bottom a:hover{color:var(--gold)}
-    @media(max-width:980px){.hero-grid,.service-grid,.systems-grid,.steps,.ft-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:768px){section{padding:60px 0}.nav-links{display:none}.hbg{display:flex}.hero{padding:72px 0 62px}.hero-grid,.service-grid,.systems-grid,.steps{grid-template-columns:1fr}.aside{position:static}}
+    @media(max-width:980px){.hero-grid,.service-grid,.systems-grid,.steps,.ft-grid,.example-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){section{padding:60px 0}.nav-links{display:none}.hbg{display:flex}.hero{padding:72px 0 62px}.hero-grid,.service-grid,.systems-grid,.steps,.example-grid,.example-gallery{grid-template-columns:1fr}.aside{position:static}.example-card.wide{grid-column:auto}}
     @media(max-width:520px){.ft-grid{grid-template-columns:1fr}.ft-bottom{flex-direction:column;text-align:center}}
   </style>
 </head>
@@ -309,6 +322,40 @@
           </ul>
           <a href="contact.html" class="btn btn-navy">Build a PM Program</a>
         </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="field-example">
+    <div class="wrap">
+      <div class="pill">Real Field Example</div>
+      <h2 class="section-h">What Delayed Walk-In Maintenance Can Look Like</h2>
+      <p class="section-p">Restaurant refrigeration problems do not always start with a full breakdown. More often, they build up quietly through restricted airflow, deteriorating coil condition, and damaged fan components until the system struggles to hold temperature consistently.</p>
+      <div class="example-grid">
+        <div class="example-copy">
+          <h3>Neglected evaporator condition puts product and uptime at risk</h3>
+          <p>Here is a real example of a neglected walk-in cooler/freezer evaporator section. The coil is heavily deteriorated and restricted, and one of the fan blades is broken. Conditions like this reduce airflow, make the system work harder, and lead to inefficient cooling or freezing.</p>
+          <ul class="example-points">
+            <li>Restricted coil surfaces can choke airflow and reduce cooling performance.</li>
+            <li>Damaged fan blades affect circulation and can make temperatures less stable across the box.</li>
+            <li>When issues like these are left alone, food and other temperature-sensitive products are put at risk.</li>
+          </ul>
+          <p class="example-note">This is why recurring PM matters for restaurants, bars, cafes, and hospitality properties. Catching this kind of wear early is usually far less disruptive than dealing with spoilage, emergency service, or equipment downtime during operating hours.</p>
+        </div>
+        <div class="example-gallery">
+          <figure class="example-card">
+            <img src="images/walk-in-freezer-coil-condition.jpeg" alt="Deteriorated walk-in cooler or freezer evaporator coil showing severe buildup and neglect">
+            <figcaption>Heavily deteriorated coil condition that can restrict airflow and make the unit less effective.</figcaption>
+          </figure>
+          <figure class="example-card">
+            <img src="images/walk-in-freezer-fan-damage.jpeg" alt="Walk-in freezer evaporator fan with a broken blade">
+            <figcaption>Broken fan blade reducing proper air movement inside the evaporator section.</figcaption>
+          </figure>
+          <figure class="example-card wide">
+            <img src="images/walk-in-freezer-overview.jpeg" alt="Overview of a neglected walk-in freezer evaporator setup in a commercial kitchen">
+            <figcaption>Wider field view of the walk-in evaporator setup, included to show the overall condition of the equipment section.</figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </section>
