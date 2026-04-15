@@ -99,8 +99,18 @@
     .logo{display:flex;align-items:center}
     .logo img{height:66px;width:auto}
     .nav-links{display:flex;gap:24px;align-items:center}
+    .nav-links li{position:relative}
     .nav-links a{color:rgba(255,255,255,.82);font-size:.92rem;font-weight:600;letter-spacing:.04em;transition:color .2s}
     .nav-links a:hover,.nav-links a.active{color:var(--gold)}
+    .nav-dd{position:relative}
+    .nav-dd-toggle{display:inline-flex;align-items:center;gap:7px}
+    .nav-dd-toggle::after{content:'▾';font-size:.7rem;color:rgba(255,255,255,.6);transition:transform .2s,color .2s}
+    .nav-dd:hover .nav-dd-toggle::after,.nav-dd:focus-within .nav-dd-toggle::after,.nav-dd.open .nav-dd-toggle::after{transform:translateY(1px);color:var(--gold)}
+    .nav-drop{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);min-width:228px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow-lg);padding:10px;display:none}
+    .nav-dd:hover .nav-drop,.nav-dd:focus-within .nav-drop,.nav-dd.open .nav-drop{display:block}
+    .nav-drop::before{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%) rotate(45deg);width:16px;height:16px;background:#fff;border-left:1px solid var(--border);border-top:1px solid var(--border)}
+    .nav-drop a{display:block;color:var(--navy);padding:10px 12px;border-radius:8px;font-size:.88rem;font-weight:700;letter-spacing:.02em;background:#fff}
+    .nav-drop a:hover,.nav-drop a.active{background:var(--gold-lt);color:var(--navy)}
     .nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:8px 20px;border-radius:var(--r);font-weight:700!important}
     .nav-cta:hover{background:var(--gold-dk)!important;color:#fff!important}
     .hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px;background:none;border:none}
@@ -109,6 +119,7 @@
     .mob-menu.open{display:block}
     .mob-menu a{display:block;color:rgba(255,255,255,.85);font-size:1rem;font-weight:600;padding:13px 28px;border-bottom:1px solid rgba(255,255,255,.07)}
     .mob-menu a:hover{color:var(--gold)}
+    .mob-menu .mob-sub{padding-left:42px;font-size:.94rem;color:rgba(255,255,255,.68)}
     .hero{background:linear-gradient(145deg,#07111f 0%,#0d1f3c 45%,#17335f 100%);color:#fff;padding:88px 0 78px}
     .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
     .hero h1{font-size:clamp(2.4rem,5vw,3.8rem);margin-bottom:16px}
@@ -187,17 +198,30 @@
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
         <li><a href="index.html#services">Services</a></li>
-        <li><a href="pricing.html" class="active">Pricing</a></li>
+        <li class="nav-dd">
+          <a href="pricing.html" class="nav-dd-toggle active" aria-haspopup="true" aria-expanded="false">Pricing</a>
+          <div class="nav-drop">
+            <a href="pricing.html">All Pricing</a>
+            <a href="residential-pricing.html">Residential Pricing</a>
+            <a href="commercial-pricing.html" class="active">Commercial Pricing</a>
+            <a href="home-shield.html">HomeShield Plan</a>
+            <a href="restaurant-hvacr.html">Restaurant HVAC/R</a>
+          </div>
+        </li>
         <li><a href="reviews.html">Reviews</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
       </ul>
-      <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="hbg" id="hbg" aria-label="Menu" aria-controls="mob" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
     <div class="mob-menu" id="mob">
       <a href="about.html">About</a>
       <a href="index.html#services">Services</a>
-      <a href="pricing.html">Pricing</a>
+      <a href="pricing.html">All Pricing</a>
+      <a href="residential-pricing.html" class="mob-sub">Residential Pricing</a>
+      <a href="commercial-pricing.html" class="mob-sub">Commercial Pricing</a>
+      <a href="home-shield.html" class="mob-sub">HomeShield Plan</a>
+      <a href="restaurant-hvacr.html" class="mob-sub">Restaurant HVAC/R</a>
       <a href="reviews.html">Reviews</a>
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact Us</a>
@@ -454,9 +478,49 @@
     </div>
   </footer>
   <script>
-    document.getElementById('hbg').addEventListener('click', function() {
-      document.getElementById('mob').classList.toggle('open');
-    });
+    const menuButton = document.getElementById('hbg');
+    const mobileMenu = document.getElementById('mob');
+    const pricingToggle = document.querySelector('.nav-dd-toggle');
+    const pricingGroup = pricingToggle ? pricingToggle.closest('.nav-dd') : null;
+
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener('click', function() {
+        const isOpen = mobileMenu.classList.toggle('open');
+        menuButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+
+    if (pricingToggle && pricingGroup) {
+      const syncPricingState = function(isOpen) {
+        pricingGroup.classList.toggle('open', isOpen);
+        pricingToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      };
+
+      pricingToggle.addEventListener('click', function(e) {
+        if (window.innerWidth > 768) {
+          e.preventDefault();
+          syncPricingState(!pricingGroup.classList.contains('open'));
+        }
+      });
+
+      pricingGroup.addEventListener('mouseenter', function() {
+        if (window.innerWidth > 768) syncPricingState(true);
+      });
+
+      pricingGroup.addEventListener('mouseleave', function() {
+        if (window.innerWidth > 768) syncPricingState(false);
+      });
+
+      pricingGroup.addEventListener('focusin', function() {
+        if (window.innerWidth > 768) syncPricingState(true);
+      });
+
+      pricingGroup.addEventListener('focusout', function(e) {
+        if (window.innerWidth > 768 && !pricingGroup.contains(e.relatedTarget)) {
+          syncPricingState(false);
+        }
+      });
+    }
     document.querySelectorAll('.faq-q').forEach(function(q) {
       q.addEventListener('click', function() {
         this.nextElementSibling.classList.toggle('open');
