@@ -81,8 +81,18 @@
     .logo{display:flex;align-items:center;}
     .logo img{height:66px;width:auto;display:block;}
     .nav-links{display:flex;gap:26px;align-items:center}
+    .nav-links li{position:relative}
     .nav-links a{color:rgba(255,255,255,.8);font-size:.92rem;font-weight:600;letter-spacing:.04em;transition:color .2s}
     .nav-links a:hover,.nav-links a.active{color:var(--gold)}
+    .nav-dd{position:relative}
+    .nav-dd-toggle{display:inline-flex;align-items:center;gap:7px}
+    .nav-dd-toggle::after{content:'▾';font-size:.7rem;color:rgba(255,255,255,.6);transition:transform .2s,color .2s}
+    .nav-dd:hover .nav-dd-toggle::after{transform:translateY(1px);color:var(--gold)}
+    .nav-drop{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);min-width:228px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow-lg);padding:10px;display:none}
+    .nav-dd:hover .nav-drop{display:block}
+    .nav-drop::before{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%) rotate(45deg);width:16px;height:16px;background:#fff;border-left:1px solid var(--border);border-top:1px solid var(--border)}
+    .nav-drop a{display:block;color:var(--navy);padding:10px 12px;border-radius:8px;font-size:.88rem;font-weight:700;letter-spacing:.02em;background:#fff}
+    .nav-drop a:hover,.nav-drop a.active{background:var(--gold-lt);color:var(--navy)}
     .nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:8px 20px;border-radius:var(--r);font-weight:700!important}
     .nav-cta:hover{background:var(--gold-dk)!important;color:#fff!important}
     .hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px;background:none;border:none}
@@ -91,118 +101,44 @@
     .mob-menu.open{display:block}
     .mob-menu a{display:block;color:rgba(255,255,255,.85);font-size:1rem;font-weight:600;padding:13px 28px;border-bottom:1px solid rgba(255,255,255,.07)}
     .mob-menu a:hover{color:var(--gold)}
+    .mob-menu .mob-sub{padding-left:42px;font-size:.94rem;color:rgba(255,255,255,.68)}
     .page-hero{background:var(--navy);background-image:linear-gradient(150deg,#07111f 0%,#0d1f3c 50%,#152d56 100%);color:#fff;padding:72px 0 64px;text-align:center;position:relative;overflow:hidden}
     .page-hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;border:1px solid rgba(232,160,32,.09);top:-180px;right:-100px;pointer-events:none}
     .page-hero h1{font-size:clamp(2rem,5vw,3rem);color:#fff;margin-bottom:14px}
     .page-hero h1 span{color:var(--gold)}
     .page-hero p{color:rgba(255,255,255,.65);font-size:1.08rem;max-width:640px;margin:0 auto}
     .pricing-main{padding:72px 0;background:var(--off)}
-    .xcard{border-radius:14px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:20px;transition:box-shadow .2s}
-    .xcard:hover{box-shadow:var(--shadow-lg)}
-    .xcard-hd{display:flex;align-items:center;justify-content:space-between;padding:22px 28px;cursor:pointer;user-select:none;-webkit-user-select:none;gap:16px}
-    .xcard-hd-left{display:flex;align-items:center;gap:16px;min-width:0}
-    .xcard-ico{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.35rem;flex-shrink:0}
-    .xcard-title-block h3{font-size:1.15rem;margin-bottom:3px}
-    .xcard-title-block .sub{font-size:.86rem;line-height:1.5}
-    .xcard-meta{display:flex;align-items:center;gap:20px;flex-shrink:0}
-    .xcard-price{font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;white-space:nowrap}
-    .xcard-tags{display:flex;gap:8px;flex-wrap:wrap}
-    .xtag{font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:12px;white-space:nowrap}
-    .xcard-chevron{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;transition:transform .3s,background .2s}
-    .xcard.open .xcard-chevron{transform:rotate(180deg)}
-    .xcard-body{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.4,0,.2,1)}
-    .xcard.open .xcard-body{max-height:2200px}
-    .xcard-body-inner{padding:0 28px 28px}
-    .xcard-default .xcard-hd{background:var(--white)}
-    .xcard-default .xcard-ico{background:linear-gradient(135deg,var(--navy),var(--navy-mid))}
-    .xcard-default .xcard-hd h3{color:var(--navy)}
-    .xcard-default .xcard-hd .sub{color:var(--muted)}
-    .xcard-default .xcard-price{color:var(--gold-dk)}
-    .xcard-default .xtag{background:var(--gold-lt);color:var(--navy);border:1px solid rgba(232,160,32,.3)}
-    .xcard-default .xcard-chevron{background:var(--off);color:var(--navy)}
-    .xcard-default .xcard-hd:hover .xcard-chevron{background:var(--gold);color:var(--navy)}
-    .xcard-default .xcard-body{background:var(--white);border-top:1px solid var(--border)}
-    .xcard-spring .xcard-hd{background:linear-gradient(135deg,#1a3d1a,#2d6a2d)}
-    .xcard-spring .xcard-ico{background:rgba(168,224,99,.18);border:1px solid rgba(168,224,99,.3)}
-    .xcard-spring .xcard-hd h3{color:#fff}
-    .xcard-spring .xcard-hd .sub{color:rgba(255,255,255,.65)}
-    .xcard-spring .xcard-price{color:#a8e063}
-    .xcard-spring .xtag{background:rgba(168,224,99,.15);border:1px solid rgba(168,224,99,.3);color:#a8e063}
-    .xcard-spring .xcard-chevron{background:rgba(255,255,255,.12);color:#fff}
-    .xcard-spring .xcard-hd:hover .xcard-chevron{background:rgba(168,224,99,.35)}
-    .xcard-spring .xcard-body{background:linear-gradient(160deg,#1a3d1a,#2d6a2d);border-top:1px solid rgba(255,255,255,.12)}
-    .xcard-shield .xcard-hd{background:linear-gradient(135deg,var(--navy),var(--navy-mid))}
-    .xcard-shield .xcard-ico{background:rgba(232,160,32,.15);border:1px solid rgba(232,160,32,.3)}
-    .xcard-shield .xcard-hd h3{color:#fff}
-    .xcard-shield .xcard-hd .sub{color:rgba(255,255,255,.55)}
-    .xcard-shield .xcard-price{color:var(--gold)}
-    .xcard-shield .xtag{background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.25);color:var(--gold)}
-    .xcard-shield .xcard-chevron{background:rgba(255,255,255,.08);color:#fff}
-    .xcard-shield .xcard-hd:hover .xcard-chevron{background:rgba(232,160,32,.3)}
-    .xcard-shield .xcard-body{background:var(--navy-mid);border-top:1px solid rgba(255,255,255,.1)}
-    .price-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid var(--border)}
-    .price-table thead tr{background:var(--navy);color:#fff}
-    .price-table thead th{padding:11px 18px;text-align:left;font-family:'Oswald',sans-serif;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
-    .price-table tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
-    .price-table tbody tr:last-child{border-bottom:none}
-    .price-table tbody tr:hover{background:var(--off)}
-    .price-table td{padding:13px 18px;font-size:.93rem;color:var(--text);vertical-align:top}
-    .price-table td:last-child{font-family:'Oswald',sans-serif;font-size:.98rem;color:var(--navy);font-weight:600;white-space:nowrap}
-    .td-note{font-size:.76rem;color:var(--muted);margin-top:2px;font-family:'Source Sans 3',sans-serif;font-weight:400}
-    .spring-body-grid,.shield-body-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-    .spring-addon-list{display:flex;flex-direction:column;gap:0}
-    .base-row{display:flex;justify-content:space-between;align-items:center;background:rgba(168,224,99,.1);border:1px solid rgba(168,224,99,.25);border-radius:8px;padding:11px 14px;margin-bottom:8px}
-    .base-name{color:#fff;font-size:.9rem;font-weight:600;display:flex;align-items:center;gap:8px}
-    .base-badge{font-size:.68rem;background:rgba(168,224,99,.25);color:#a8e063;padding:2px 8px;border-radius:10px}
-    .base-price{font-family:'Oswald',sans-serif;color:#a8e063;font-size:1rem;font-weight:700}
-    .addon-row{display:flex;justify-content:space-between;align-items:center;padding:10px 4px;border-bottom:1px solid rgba(255,255,255,.09)}
-    .addon-row:last-child{border-bottom:none}
-    .addon-name{color:rgba(255,255,255,.85);font-size:.89rem;display:flex;align-items:center;gap:8px}
-    .addon-p{font-family:'Oswald',sans-serif;color:#a8e063;font-size:.95rem;font-weight:700;white-space:nowrap}
-    .addon-p small{font-family:'Source Sans 3',sans-serif;color:rgba(255,255,255,.38);font-size:.7rem;font-weight:400;margin-left:2px}
-    .spring-bundles-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:10px;padding:18px}
-    .spring-bundles-box h4{color:rgba(255,255,255,.55);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
-    .bundle-tags{display:flex;flex-wrap:wrap;gap:8px}
-    .bundle-tag{background:rgba(168,224,99,.12);border:1px solid rgba(168,224,99,.28);color:#a8e063;font-size:.79rem;font-weight:600;padding:4px 12px;border-radius:20px}
-    .spring-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
-    .spring-blurb{color:rgba(255,255,255,.7);font-size:.92rem;line-height:1.65;margin-bottom:18px}
-    .spring-from{display:inline-flex;align-items:baseline;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:12px 18px;margin-bottom:16px}
-    .sf-label{color:rgba(255,255,255,.5);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
-    .sf-price{font-family:'Oswald',sans-serif;font-size:2.4rem;color:#a8e063;font-weight:700;line-height:1}
-    .sf-unit{color:rgba(255,255,255,.45);font-size:.82rem}
-    .spring-note{font-size:.78rem;color:rgba(255,255,255,.38);margin-bottom:28px}
-    .shield-body-col h4{font-family:'Oswald',sans-serif;color:rgba(255,255,255,.55);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
-    .si-item{display:flex;align-items:flex-start;gap:11px;margin-bottom:14px}
-    .si-ico{width:34px;height:34px;border-radius:8px;background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.2);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
-    .si-item h5{color:#fff;font-size:.92rem;margin-bottom:3px}
-    .si-item p{color:rgba(255,255,255,.45);font-size:.81rem;line-height:1.5}
-    .shield-perks{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
-    .perk-tag{background:rgba(232,160,32,.1);border:1px solid rgba(232,160,32,.2);color:var(--gold);font-size:.76rem;font-weight:600;padding:4px 12px;border-radius:20px}
-    .vs-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:18px 20px;margin-bottom:16px}
-    .vs-box h4{margin-bottom:12px}
-    .vs-grid{display:grid;grid-template-columns:1fr 1px 1fr;gap:16px}
-    .vs-col h5{font-family:'Oswald',sans-serif;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
-    .vs-col.them h5{color:rgba(255,255,255,.35)}
-    .vs-col.us h5{color:var(--gold)}
-    .vs-div{background:rgba(255,255,255,.08)}
-    .vs-col li{font-size:.82rem;padding:3px 0;display:flex;align-items:flex-start;gap:6px}
-    .vs-col.them li{color:rgba(255,255,255,.42)}
-    .vs-col.us li{color:rgba(255,255,255,.8)}
-    .xi{color:#e55;flex-shrink:0}.ci{color:var(--gold);flex-shrink:0}
-    .shield-note-txt{color:rgba(255,255,255,.3);font-size:.77rem;line-height:1.55;margin-top:12px}
-    .pkgs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .pkg{background:var(--off);border-radius:12px;padding:26px 22px;border:2px solid var(--border);position:relative;transition:border-color .2s,box-shadow .2s}
-    .pkg:hover,.pkg.feat{border-color:var(--gold);box-shadow:var(--shadow)}
-    .pkg-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-family:'Oswald',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 12px;border-radius:20px;white-space:nowrap}
-    .pkg-name{font-family:'Oswald',sans-serif;font-size:1.25rem;color:var(--navy);margin-bottom:6px}
-    .pkg-price{font-family:'Oswald',sans-serif;font-size:1.7rem;color:var(--gold-dk);font-weight:700;margin-bottom:4px}
-    .pkg-price em{font-size:.9rem;color:var(--muted);font-family:'Source Sans 3',sans-serif;font-weight:400;font-style:normal}
-    .pkg-desc{color:var(--muted);font-size:.85rem;margin-bottom:16px;line-height:1.6}
-    .pkg-list{margin-bottom:20px}
-    .pkg-list li{display:flex;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:1px solid var(--border);font-size:.87rem}
-    .pkg-list li:last-child{border-bottom:none}
-    .chk{color:var(--gold-dk);font-weight:700;flex-shrink:0}
-    .pkg-btn{display:block;text-align:center}
+    .hub-note{background:var(--gold-lt);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:14px 18px;margin-bottom:18px;font-size:.92rem;color:var(--text)}
+    .hub-top{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:28px;box-shadow:var(--shadow)}
+    .hub-top-inner{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+    .hub-grid,.promo-grid,.overview-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .hub-grid,.promo-grid{margin-bottom:28px}
+    .hub-card,.promo-card,.overview-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
+    .hub-card h3,.promo-card h3,.overview-card h3{color:var(--navy);font-size:1.18rem;margin-bottom:6px}
+    .hub-card p,.promo-card p,.overview-card p{color:var(--muted);font-size:.92rem;line-height:1.65}
+    .hub-kicker{font-family:'Oswald',sans-serif;color:var(--navy);font-size:1.05rem;margin-bottom:4px}
+    .hub-card{background:linear-gradient(180deg,#fff 0%,#fbfcff 100%)}
+    .hub-card .btn{margin-top:4px}
+    .promo-card{position:relative;overflow:hidden}
+    .promo-card::after{content:'';position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--gold)}
+    .promo-card.spring{background:linear-gradient(160deg,#1a3d1a,#2d6a2d);border-color:rgba(168,224,99,.25)}
+    .promo-card.spring h3,.promo-card.spring .promo-price{color:#fff}
+    .promo-card.spring p,.promo-card.spring li{color:rgba(255,255,255,.76)}
+    .promo-card.spring::after{background:#a8e063}
+    .promo-card.shield{background:linear-gradient(160deg,var(--navy),var(--navy-mid));border-color:rgba(232,160,32,.22)}
+    .promo-card.shield h3,.promo-card.shield p,.promo-card.shield li{color:#fff}
+    .promo-card.shield p,.promo-card.shield li{color:rgba(255,255,255,.76)}
+    .promo-card.packages{background:#fffdf8;border-color:rgba(232,160,32,.24)}
+    .promo-badge{display:inline-block;margin-bottom:12px;padding:4px 10px;border-radius:14px;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.12);color:inherit;border:1px solid rgba(255,255,255,.14)}
+    .promo-card.packages .promo-badge{background:var(--gold-lt);border-color:rgba(232,160,32,.24);color:var(--navy)}
+    .promo-price{font-family:'Oswald',sans-serif;font-size:2rem;color:var(--gold);margin:10px 0 12px}
+    .promo-list{display:grid;gap:8px;margin:0 0 18px;padding:0}
+    .promo-list li{font-size:.88rem}
+    .overview-card ul{display:grid;gap:8px;margin:14px 0 18px}
+    .overview-card li{font-size:.9rem;color:var(--text);display:flex;align-items:flex-start;gap:8px}
+    .overview-card li span{color:var(--gold-dk);font-weight:700;flex-shrink:0}
+    .quick-link-band{background:var(--navy);border-radius:14px;padding:22px 24px;margin-bottom:28px;color:#fff;display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:center;box-shadow:var(--shadow-lg)}
+    .quick-link-band p{color:rgba(255,255,255,.64);font-size:.92rem}
     .faq-sec{background:var(--white);padding:72px 0}
     .faq-hd{text-align:center;margin-bottom:40px}
     .faq-list{max-width:720px;margin:0 auto}
@@ -235,9 +171,9 @@
     .ft-bottom a{color:rgba(255,255,255,.38)}
     .ft-bottom a:hover{color:var(--gold)}
     .ft-links{display:flex;gap:20px}
-    @media(max-width:900px){.spring-body-grid,.shield-body-grid{grid-template-columns:1fr}.pkgs-grid{grid-template-columns:1fr 1fr}.ft-grid{grid-template-columns:1fr 1fr;gap:28px}.vs-grid{grid-template-columns:1fr}.vs-div{display:none}}
-    @media(max-width:768px){.nav-links{display:none}.hbg{display:flex}.pkgs-grid{grid-template-columns:1fr}.price-table thead th:nth-child(2),.price-table td:nth-child(2){display:none}.xcard-hd{padding:18px 20px}.xcard-body-inner{padding:0 20px 22px}.xcard-meta{gap:10px}}
-    @media(max-width:520px){.ft-grid{grid-template-columns:1fr}.ft-bottom{flex-direction:column;text-align:center}.xcard-tags{display:none}}
+    @media(max-width:900px){.ft-grid{grid-template-columns:1fr 1fr;gap:28px}}
+    @media(max-width:768px){.nav-links{display:none}.hbg{display:flex}}
+    @media(max-width:520px){.ft-grid{grid-template-columns:1fr}.ft-bottom{flex-direction:column;text-align:center}}
   </style>
 </head>
 <body>
@@ -252,7 +188,16 @@
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
         <li><a href="index.html#services">Services</a></li>
-        <li><a href="pricing.html" class="active">Pricing</a></li>
+        <li class="nav-dd">
+          <a href="pricing.html" class="nav-dd-toggle active">Pricing</a>
+          <div class="nav-drop">
+            <a href="pricing.html" class="active">All Pricing</a>
+            <a href="residential-pricing.html">Residential Pricing</a>
+            <a href="commercial-pricing.html">Commercial Pricing</a>
+            <a href="home-shield.html">HomeShield Plan</a>
+            <a href="restaurant-hvacr.html">Restaurant HVAC/R</a>
+          </div>
+        </li>
         <li><a href="reviews.html">Reviews</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
@@ -262,7 +207,11 @@
     <div class="mob-menu" id="mob">
       <a href="about.html">About</a>
       <a href="index.html#services">Services</a>
-      <a href="pricing.html">Pricing</a>
+      <a href="pricing.html">All Pricing</a>
+      <a href="residential-pricing.html" class="mob-sub">Residential Pricing</a>
+      <a href="commercial-pricing.html" class="mob-sub">Commercial Pricing</a>
+      <a href="home-shield.html" class="mob-sub">HomeShield Plan</a>
+      <a href="restaurant-hvacr.html" class="mob-sub">Restaurant HVAC/R</a>
       <a href="reviews.html">Reviews</a>
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact Us</a>
@@ -273,408 +222,145 @@
     <div class="wrap">
       <div class="pill">Transparent Pricing</div>
       <h1>Fair Rates, <span>Clear Scope.</span></h1>
-      <p>Most projects fall between $150 and $500 depending on size, condition, access, and materials. Click any service below for starting prices. Free estimates always.</p>
+      <p>Use this page as a quick pricing hub. Choose the path that fits your property, check the current promotions, and then jump to the detailed page that matches your needs.</p>
     </div>
   </section>
 
   <div class="pricing-main">
     <div class="wrap">
-      <div style="background:var(--gold-lt);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:14px 18px;margin-bottom:18px;font-size:.92rem;color:var(--text)">
+      <div class="hub-note">
         <strong style="color:var(--navy)">Note:</strong>
-        All prices are starting estimates. Final pricing depends on property size, condition, access, travel, materials, and total scope. We always give you a clear quote before work begins.
+        This page is meant to help you choose the right pricing path quickly. Final pricing still depends on property size, access, materials, and total scope.
         <a href="contact.html" style="color:var(--gold-dk);font-weight:700">Get a free estimate →</a>
       </div>
 
-      <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:28px;box-shadow:var(--shadow)">
-        <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between">
+      <div class="hub-top">
+        <div class="hub-top-inner">
           <div>
-            <div style="font-family:'Oswald',sans-serif;color:var(--navy);font-size:1.05rem;margin-bottom:4px">Good to Know Before You Book</div>
+            <div class="hub-kicker">Good to Know Before You Book</div>
             <div style="color:var(--muted);font-size:.93rem">Minimum service call: <strong style="color:var(--navy)">$150</strong> · Large or material-heavy jobs may require a deposit · Any added work is approved before we continue.</div>
           </div>
           <a href="contact.html" class="btn btn-gold">Request a Quote</a>
         </div>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-bottom:28px">
-        <div style="background:linear-gradient(135deg,#fff8eb 0%,#ffffff 100%);border:1px solid rgba(232,160,32,.28);border-radius:14px;padding:22px;box-shadow:var(--shadow)">
-          <div style="font-family:'Oswald',sans-serif;color:var(--navy);font-size:1.2rem;margin-bottom:6px">Homeowner Pricing</div>
-          <div style="color:var(--muted);font-size:.92rem;line-height:1.65;margin-bottom:14px">See homeowner-focused pricing for repair lists, seasonal cleanup, home maintenance, and residential HVAC service across Greater Boston.</div>
+      <div style="margin-bottom:18px">
+        <div class="pill">Choose Your Path</div>
+        <h2 class="section-h">Start With the Pricing Page That Fits You Best</h2>
+        <p class="section-p">Instead of sorting through every type of work in one long list, choose the page that matches your property or service need.</p>
+      </div>
+
+      <div class="hub-grid">
+        <div class="hub-card">
+          <h3>Residential Pricing</h3>
+          <p>Best for homeowners who need repairs, seasonal cleanup, recurring upkeep, or residential HVAC service.</p>
+          <div class="promo-price" style="font-size:1.35rem;color:var(--gold-dk);margin:12px 0">Homeowner-focused pricing</div>
           <a href="residential-pricing.html" class="btn btn-outline">View Residential Pricing</a>
         </div>
-        <div style="background:linear-gradient(135deg,#eff5ff 0%,#ffffff 100%);border:1px solid rgba(20,40,80,.18);border-radius:14px;padding:22px;box-shadow:var(--shadow)">
-          <div style="font-family:'Oswald',sans-serif;color:var(--navy);font-size:1.2rem;margin-bottom:6px">Commercial Pricing</div>
-          <div style="color:var(--muted);font-size:.92rem;line-height:1.65;margin-bottom:14px">See business and property-manager pricing for monthly maintenance, turnover prep, common-area repairs, and commercial HVAC/R support.</div>
+        <div class="hub-card">
+          <h3>Commercial Pricing</h3>
+          <p>Best for business owners, landlords, and property managers looking for monthly maintenance, turnover help, or commercial service support.</p>
+          <div class="promo-price" style="font-size:1.35rem;color:var(--gold-dk);margin:12px 0">Business &amp; property manager pricing</div>
           <a href="commercial-pricing.html" class="btn btn-outline">View Commercial Pricing</a>
         </div>
+        <div class="hub-card">
+          <h3>Restaurant HVAC/R</h3>
+          <p>Best for restaurants, cafes, and hospitality clients needing walk-in cooler, freezer, ice machine, and HVAC/R maintenance.</p>
+          <div class="promo-price" style="font-size:1.35rem;color:var(--gold-dk);margin:12px 0">Hospitality-specific service page</div>
+          <a href="restaurant-hvacr.html" class="btn btn-outline">View Restaurant HVAC/R</a>
+        </div>
       </div>
 
-      <div style="background:var(--navy);border-radius:14px;padding:22px 24px;margin-bottom:28px;color:#fff;display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:center;box-shadow:var(--shadow-lg)">
+      <div style="margin-bottom:18px">
+        <div class="pill">Current Promotions</div>
+        <h2 class="section-h">Featured Offers and Plans</h2>
+        <p class="section-p">These are the offers we want people to notice first. Each one links to a more specific page if they want the full breakdown.</p>
+      </div>
+
+      <div class="promo-grid">
+        <div class="promo-card spring">
+          <div class="promo-badge">Spring Special</div>
+          <h3>Spring Cleanup</h3>
+          <p>Great for yard reset, curb appeal, gutters, trimming, and seasonal exterior cleanup after winter.</p>
+          <div class="promo-price">From $100</div>
+          <ul class="promo-list">
+            <li>Leaf and debris cleanup starting point</li>
+            <li>Popular add-ons like gutters, trimming, and wash-downs</li>
+            <li>Good fit for residential and commercial exterior resets</li>
+          </ul>
+          <a href="residential-pricing.html" class="btn btn-ghost-white" style="border-color:rgba(255,255,255,.22)">More Spring Cleanup Info</a>
+        </div>
+        <div class="promo-card shield">
+          <div class="promo-badge">Annual Plan</div>
+          <h3>HomeShield Basic</h3>
+          <p>A simple annual maintenance plan for homeowners who want seasonal check-ins and routine upkeep handled on a schedule.</p>
+          <div class="promo-price">$99/yr</div>
+          <ul class="promo-list">
+            <li>Two seasonal visits each year</li>
+            <li>Filter, detector, and simple upkeep checks</li>
+            <li>Preferred scheduling and easy follow-up</li>
+          </ul>
+          <a href="home-shield.html" class="btn btn-ghost-white" style="border-color:rgba(255,255,255,.22)">See HomeShield Details</a>
+        </div>
+        <div class="promo-card packages">
+          <div class="promo-badge">Recurring Service</div>
+          <h3>Monthly Maintenance Packages</h3>
+          <p>Recurring maintenance for homeowners, multi-unit properties, and commercial clients who want predictable service instead of one-off calls.</p>
+          <div class="promo-price" style="color:var(--gold-dk)">From $249/mo</div>
+          <ul class="promo-list">
+            <li>Essential plan for single-family homeowners</li>
+            <li>Pro plan for larger residential or mixed-use needs</li>
+            <li>Custom commercial packages available</li>
+          </ul>
+          <a href="commercial-pricing.html" class="btn btn-outline">See Package Options</a>
+        </div>
+      </div>
+
+      <div class="quick-link-band">
         <div>
-          <div style="font-family:'Oswald',sans-serif;font-size:1.2rem;color:#fff;margin-bottom:5px">Restaurant or hospitality client?</div>
-          <div style="color:rgba(255,255,255,.62);font-size:.92rem">We created a dedicated page for walk-in coolers, freezers, ice machines, and Boston restaurant HVAC/R maintenance.</div>
+          <div style="font-family:'Oswald',sans-serif;font-size:1.2rem;color:#fff;margin-bottom:5px">Need restaurant or hospitality pricing?</div>
+          <p>We separated that out so food-service clients can get straight to walk-ins, freezers, ice machines, and HVAC/R maintenance.</p>
         </div>
-        <a href="restaurant-hvacr.html" class="btn btn-gold">See Restaurant HVAC/R</a>
+        <a href="restaurant-hvacr.html" class="btn btn-gold">Go to Restaurant HVAC/R</a>
       </div>
 
-      <div class="xcard xcard-spring" id="card-spring">
-        <div class="xcard-hd" onclick="toggleCard('card-spring')">
-          <div class="xcard-hd-left">
-            <div class="xcard-ico">🌱</div>
-            <div class="xcard-title-block">
-              <h3>Spring Cleanup Special</h3>
-              <div class="sub">Leaf removal, trimming, gutters, wash-downs, and curb appeal add-ons</div>
-            </div>
-          </div>
-          <div class="xcard-meta">
-            <div class="xcard-price">From $100</div>
-            <div class="xcard-tags">
-              <span class="xtag">Spring 2026</span>
-              <span class="xtag">Bundle &amp; Save</span>
-            </div>
-            <div class="xcard-chevron">▼</div>
-          </div>
-        </div>
-        <div class="xcard-body">
-          <div class="xcard-body-inner">
-            <div class="spring-body-grid">
-              <div>
-                <p class="spring-blurb">
-                  Winter is gone — your yard doesn’t have to show it. Start with leaf and debris cleanup, then add the services your property actually needs. Bundle work into one visit to save time and money.
-                </p>
-                <div class="spring-from">
-                  <span class="sf-label">Starting at</span>
-                  <span class="sf-price">$100</span>
-                  <span class="sf-unit">leaf &amp; debris cleanup</span>
-                </div>
-                <p class="spring-note">🗓️ Seasonal pricing based on volume, access, and disposal requirements</p>
-                <div class="spring-cta-row">
-                  <a href="contact.html" class="btn-green">Book Spring Cleanup</a>
-                  <a href="tel:6173026160" class="btn-ghost-white">📞 Call to Schedule</a>
-                </div>
-              </div>
-              <div>
-                <div class="base-row">
-                  <div class="base-name">✅ Leaf &amp; Debris Removal <span class="base-badge">BASE</span></div>
-                  <div class="base-price">$100+</div>
-                </div>
-                <div class="spring-addon-list">
-                  <div class="addon-row"><div class="addon-name">✂️ Shrub &amp; Hedge Trimming</div><div class="addon-p">$95+ <small>add-on</small></div></div>
-                  <div class="addon-row"><div class="addon-name">🌾 Lawn Edging &amp; Borders</div><div class="addon-p">$85+ <small>add-on</small></div></div>
-                  <div class="addon-row"><div class="addon-name">🍂 Gutter Cleaning</div><div class="addon-p">$175+ <small>add-on</small></div></div>
-                  <div class="addon-row"><div class="addon-name">💦 Light Pressure Washing</div><div class="addon-p">$150+ <small>add-on</small></div></div>
-                  <div class="addon-row"><div class="addon-name">🚛 Debris Hauling &amp; Disposal</div><div class="addon-p">$95+ <small>per load</small></div></div>
-                </div>
-                <div class="spring-bundles-box" style="margin-top:16px">
-                  <h4>💡 Popular Bundles — Ask for a Custom Quote</h4>
-                  <div class="bundle-tags">
-                    <span class="bundle-tag">Full Yard Refresh</span>
-                    <span class="bundle-tag">Curb Appeal Package</span>
-                    <span class="bundle-tag">Spring + Gutters Combo</span>
-                    <span class="bundle-tag">Pre-Summer Prep</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div style="margin-bottom:18px">
+        <div class="pill">At a Glance</div>
+        <h2 class="section-h">Quick Starting Prices by Service Type</h2>
+        <p class="section-p">If you just want a fast overview, these are the most common starting points before we scope the job more precisely.</p>
       </div>
 
-    <div class="xcard xcard-shield" id="card-shield">
-  <div class="xcard-hd" onclick="toggleCard('card-shield')">
-    <div class="xcard-hd-left">
-      <div class="xcard-ico">🛡️</div>
-      <div class="xcard-title-block">
-        <h3>A1 HomeShield Basic</h3>
-        <div class="sub">2 seasonal maintenance visits to keep your home on track year-round</div>
-      </div>
-    </div>
-    <div class="xcard-meta">
-      <div class="xcard-price">$99/yr</div>
-      <div class="xcard-tags">
-        <span class="xtag">Spring &amp; Fall Visits</span>
-        <span class="xtag">5% Off Add-Ons</span>
-      </div>
-      <div class="xcard-chevron">▼</div>
-    </div>
-  </div>
-
-  <div class="xcard-body">
-    <div class="xcard-body-inner">
-      <div class="shield-body-grid">
-
-        <!-- LEFT -->
-        <div>
-          <div class="shield-body-col">
-            <h4>What's Included Each Visit</h4>
-
-            <div class="si-item">
-              <div class="si-ico">🌿</div>
-              <div>
-                <h5>Seasonal Property Walkthrough</h5>
-                <p>Visual check of key interior and exterior maintenance items.</p>
-              </div>
-            </div>
-
-            <div class="si-item">
-              <div class="si-ico">❄️</div>
-              <div>
-                <h5>HVAC Filter Check &amp; Swap</h5>
-                <p>Filter replaced if provided by customer or billed separately.</p>
-              </div>
-            </div>
-
-            <div class="si-item">
-              <div class="si-ico">🔋</div>
-              <div>
-                <h5>Smoke &amp; CO Detector Check</h5>
-                <p>Batteries replaced if supplied by customer.</p>
-              </div>
-            </div>
-
-            <div class="si-item">
-              <div class="si-ico">💡</div>
-              <div>
-                <h5>Light Bulb Replacement</h5>
-                <p>Easy-access bulbs replaced (customer-supplied).</p>
-              </div>
-            </div>
-
-            <div class="si-item">
-              <div class="si-ico">🚪</div>
-              <div>
-                <h5>Garage Door Lubrication</h5>
-                <p>Basic lubrication of moving parts to reduce wear.</p>
-              </div>
-            </div>
-
-            <div class="si-item">
-              <div class="si-ico">📋</div>
-              <div>
-                <h5>Simple Maintenance Summary</h5>
-                <p>Short text/email with any recommended next steps.</p>
-              </div>
-            </div>
-
-            <div class="shield-perks">
-              <span class="perk-tag">⚡ Preferred Scheduling</span>
-              <span class="perk-tag">📞 Direct Contact</span>
-              <span class="perk-tag">💰 5% Off Add-Ons</span>
-              <span class="perk-tag">🔔 Seasonal Reminders</span>
-            </div>
-
-            <a href="home-shield.html" class="btn btn-gold">Learn More →</a>
-          </div>
+      <div class="overview-grid">
+        <div class="overview-card">
+          <h3>Handyman &amp; Repairs</h3>
+          <p>Typical repair-list work, drywall patches, fixtures, mounting, and small punch-list jobs.</p>
+          <ul>
+            <li><span>•</span> Minimum service call: $150</li>
+            <li><span>•</span> Hourly handyman work: $95/hr</li>
+            <li><span>•</span> Most common on the residential page</li>
+          </ul>
+          <a href="residential-pricing.html" class="btn btn-outline">See Residential Repair Pricing</a>
         </div>
-
-        <!-- RIGHT -->
-        <div>
-          <div class="vs-box">
-            <h4 style="color:rgba(255,255,255,.55);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px">
-              What This Plan Covers
-            </h4>
-
-            <ul style="color:rgba(255,255,255,.7);font-size:.85rem;line-height:1.6">
-              <li>✓ Routine maintenance tasks</li>
-              <li>✓ Preventative upkeep</li>
-              <li>✓ Seasonal check-ins</li>
-              <li>✓ Simple service items</li>
-            </ul>
-          </div>
-
-          <p class="shield-note-txt">
-            This plan covers routine maintenance only. Repairs, materials, and project work are quoted separately.
-          </p>
+        <div class="overview-card">
+          <h3>Property Maintenance</h3>
+          <p>Monthly upkeep, walkthroughs, turnover prep, and recurring support for homes and managed properties.</p>
+          <ul>
+            <li><span>•</span> Residential monthly visits from $225/mo</li>
+            <li><span>•</span> Commercial packages from $450/mo</li>
+            <li><span>•</span> Custom scopes available for larger properties</li>
+          </ul>
+          <a href="commercial-pricing.html" class="btn btn-outline">See Commercial Maintenance Pricing</a>
         </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-      <div class="xcard xcard-default" id="exterior">
-        <div class="xcard-hd" onclick="toggleCard('exterior')">
-          <div class="xcard-hd-left">
-            <div class="xcard-ico">🌿</div>
-            <div class="xcard-title-block">
-              <h3>Yard Cleanup &amp; Exterior</h3>
-              <div class="sub">Leaf removal, gutter cleaning, trimming, pressure washing, and debris hauling</div>
-            </div>
-          </div>
-          <div class="xcard-meta">
-            <div class="xcard-price">From $85</div>
-            <div class="xcard-tags"><span class="xtag">Residential &amp; Commercial</span></div>
-            <div class="xcard-chevron">▼</div>
-          </div>
+        <div class="overview-card">
+          <h3>HVAC/R Service</h3>
+          <p>Residential filter service, inspections, and commercial refrigeration support depending on the property type.</p>
+          <ul>
+            <li><span>•</span> Residential filter replacement from $65</li>
+            <li><span>•</span> Walk-in cooler PM from $195</li>
+            <li><span>•</span> Ice machine clean and inspect from $175</li>
+          </ul>
+          <a href="restaurant-hvacr.html" class="btn btn-outline">See HVAC/R Pricing Paths</a>
         </div>
-        <div class="xcard-body"><div class="xcard-body-inner">
-          <table class="price-table">
-            <thead><tr><th>Service</th><th>Details</th><th>Starting At</th></tr></thead>
-            <tbody>
-              <tr><td>Leaf &amp; Debris Removal<div class="td-note">🌱 Spring special — see promo above</div></td><td>Raking, clearing, bagging, and basic tidy-up</td><td>$125</td></tr>
-              <tr><td>Full Yard Cleanup</td><td>Leaves, branches, debris, edging, and final cleanup</td><td>$250</td></tr>
-              <tr><td>Shrub &amp; Hedge Trimming</td><td>Shaping, pruning, and moderate overgrowth</td><td>$95</td></tr>
-              <tr><td>Lawn Edging &amp; Borders</td><td>Crisp edges along beds, walks, and curb lines</td><td>$85</td></tr>
-              <tr><td>Gutter Cleaning</td><td>Single-story home, flush and clear</td><td>$175</td></tr>
-              <tr><td>Light Pressure Washing</td><td>Walkways, patios, front steps, small areas</td><td>$150</td></tr>
-              <tr><td>Seasonal Cleanup (Spring/Fall)</td><td>Full property prep for season change</td><td>$325</td></tr>
-              <tr><td>Debris Hauling &amp; Disposal</td><td>Per load — volume and dump fees may vary</td><td>$95</td></tr>
-            </tbody>
-          </table>
-        </div></div>
-      </div>
-
-      <div class="xcard xcard-default" id="handyman">
-        <div class="xcard-hd" onclick="toggleCard('handyman')">
-          <div class="xcard-hd-left">
-            <div class="xcard-ico">🔨</div>
-            <div class="xcard-title-block">
-              <h3>Handyman &amp; Repairs</h3>
-              <div class="sub">Doors, drywall, fixtures, mounting, assembly, and general repairs</div>
-            </div>
-          </div>
-          <div class="xcard-meta">
-            <div class="xcard-price">$95/hr</div>
-            <div class="xcard-tags"><span class="xtag">2-hr Minimum</span><span class="xtag">$150 Service Call Min</span></div>
-            <div class="xcard-chevron">▼</div>
-          </div>
-        </div>
-        <div class="xcard-body"><div class="xcard-body-inner">
-          <table class="price-table">
-            <thead><tr><th>Service</th><th>Details</th><th>Starting At</th></tr></thead>
-            <tbody>
-              <tr><td>Hourly Rate<div class="td-note">2-hour minimum applies for hourly handyman work</div></td><td>General handyman work</td><td>$95/hr</td></tr>
-              <tr><td>Door Repair / Adjustment</td><td>Hinges, locks, sticking doors, strike alignment</td><td>$125</td></tr>
-              <tr><td>Drywall Patch</td><td>Small holes and cracks — finish and paint-ready</td><td>$145</td></tr>
-              <tr><td>Fixture Installation</td><td>Light fixtures, ceiling fans, outlets, replacements</td><td>$110</td></tr>
-              <tr><td>Furniture Assembly</td><td>Per item, standard flat-pack assembly</td><td>$85</td></tr>
-              <tr><td>Caulking / Weatherstripping</td><td>Windows, doors, showers, draft sealing</td><td>$95</td></tr>
-              <tr><td>Mounting (TV, shelves, mirrors)</td><td>Includes hardware, leveling, and secure install</td><td>$110</td></tr>
-              <tr><td>Custom / Project Work</td><td>Larger or specialty work quoted by scope</td><td>Free Estimate</td></tr>
-            </tbody>
-          </table>
-        </div></div>
-      </div>
-
-      <div class="xcard xcard-default" id="maintenance">
-        <div class="xcard-hd" onclick="toggleCard('maintenance')">
-          <div class="xcard-hd-left">
-            <div class="xcard-ico">🏢</div>
-            <div class="xcard-title-block">
-              <h3>Property Maintenance</h3>
-              <div class="sub">Inspections, monthly visits, tenant turnover, and vacation check-ins</div>
-            </div>
-          </div>
-          <div class="xcard-meta">
-            <div class="xcard-price">From $95</div>
-            <div class="xcard-tags"><span class="xtag">Residential</span><span class="xtag">Commercial</span></div>
-            <div class="xcard-chevron">▼</div>
-          </div>
-        </div>
-        <div class="xcard-body"><div class="xcard-body-inner">
-          <table class="price-table">
-            <thead><tr><th>Service</th><th>Details</th><th>Starting At</th></tr></thead>
-            <tbody>
-              <tr><td>Property Walk-Through Inspection</td><td>Visual inspection with a written punch list</td><td>$125</td></tr>
-              <tr><td>Monthly Maintenance Visit</td><td>2-hour check-in with minor repairs for residential properties</td><td>$225/mo</td></tr>
-              <tr><td>Commercial Monthly Package</td><td>Custom scope based on property type and visit frequency</td><td>From $450/mo</td></tr>
-              <tr><td>Vacation Property Check-In</td><td>Per visit — includes report and photos</td><td>$95</td></tr>
-              <tr><td>Tenant Turnover Prep</td><td>Cleaning, minor repairs, touch-ups, and reset prep</td><td>$325</td></tr>
-            </tbody>
-          </table>
-        </div></div>
-      </div>
-
-      <div class="xcard xcard-default" id="hvac">
-        <div class="xcard-hd" onclick="toggleCard('hvac')">
-          <div class="xcard-hd-left">
-            <div class="xcard-ico">❄️</div>
-            <div class="xcard-title-block">
-              <h3>HVAC/R Maintenance</h3>
-              <div class="sub">Air filters, walk-in coolers, freezers, ice machines, and commercial contracts</div>
-            </div>
-          </div>
-          <div class="xcard-meta">
-            <div class="xcard-price">From $65</div>
-            <div class="xcard-tags"><span class="xtag">Residential</span><span class="xtag">Commercial</span></div>
-            <div class="xcard-chevron">▼</div>
-          </div>
-        </div>
-        <div class="xcard-body"><div class="xcard-body-inner">
-          <table class="price-table">
-            <thead><tr><th>Service</th><th>Details</th><th>Starting At</th></tr></thead>
-            <tbody>
-              <tr><td>Air Filter Replacement</td><td>Standard residential — filter included</td><td>$65</td></tr>
-              <tr><td>HVAC Inspection &amp; Cleaning</td><td>Basic tune-up, inspection, and cleaning</td><td>$145</td></tr>
-              <tr><td>Walk-In Cooler PM</td><td>Condenser/evaporator clean and temperature check</td><td>$195</td></tr>
-              <tr><td>Walk-In Freezer PM</td><td>Full preventative maintenance visit</td><td>$225</td></tr>
-              <tr><td>Ice Machine Clean &amp; Inspect</td><td>Sanitize, descale, and inspect</td><td>$175</td></tr>
-              <tr><td>Commercial HVAC/R Contract</td><td>Quarterly preventative maintenance visits</td><td>Free Estimate</td></tr>
-            </tbody>
-          </table>
-        </div></div>
-      </div>
-
-      <div class="xcard xcard-default" id="packages">
-        <div class="xcard-hd" onclick="toggleCard('packages')">
-          <div class="xcard-hd-left">
-            <div class="xcard-ico">📦</div>
-            <div class="xcard-title-block">
-              <h3>Monthly Maintenance Packages</h3>
-              <div class="sub">Essential, Pro, and Commercial — recurring service at a predictable price</div>
-            </div>
-          </div>
-          <div class="xcard-meta">
-            <div class="xcard-price">From $249/mo</div>
-            <div class="xcard-tags"><span class="xtag">Bundle &amp; Save</span></div>
-            <div class="xcard-chevron">▼</div>
-          </div>
-        </div>
-        <div class="xcard-body"><div class="xcard-body-inner">
-          <div class="pkgs-grid">
-            <div class="pkg">
-              <div class="pkg-name">Essential</div>
-              <div class="pkg-price">$249 <em>/ month</em></div>
-              <div class="pkg-desc">For single-family homeowners who want regular, worry-free upkeep.</div>
-              <ul class="pkg-list">
-                <li><span class="chk">✓</span> 1 maintenance visit/month</li>
-                <li><span class="chk">✓</span> Minor repairs up to 1 hour</li>
-                <li><span class="chk">✓</span> Air filter check/replacement</li>
-                <li><span class="chk">✓</span> Property walk-through report</li>
-                <li><span class="chk">✓</span> Priority scheduling</li>
-              </ul>
-              <a href="contact.html" class="btn btn-outline pkg-btn">Get Started</a>
-            </div>
-            <div class="pkg feat">
-              <div class="pkg-badge">Most Popular</div>
-              <div class="pkg-name">Pro</div>
-              <div class="pkg-price">$399 <em>/ month</em></div>
-              <div class="pkg-desc">Ideal for multi-unit residential or small commercial properties.</div>
-              <ul class="pkg-list">
-                <li><span class="chk">✓</span> 2 maintenance visits/month</li>
-                <li><span class="chk">✓</span> Minor repairs up to 2 hours</li>
-                <li><span class="chk">✓</span> HVAC filter service included</li>
-                <li><span class="chk">✓</span> Exterior &amp; gutter check</li>
-                <li><span class="chk">✓</span> Property walk-through report</li>
-                <li><span class="chk">✓</span> Priority same-day response</li>
-              </ul>
-              <a href="contact.html" class="btn btn-gold pkg-btn">Get Started</a>
-            </div>
-            <div class="pkg">
-              <div class="pkg-name">Commercial</div>
-              <div class="pkg-price">Custom <em>pricing</em></div>
-              <div class="pkg-desc">Built around your property’s specific needs — we scope it out together.</div>
-              <ul class="pkg-list">
-                <li><span class="chk">✓</span> Custom visit schedule</li>
-                <li><span class="chk">✓</span> HVAC/R preventative maintenance</li>
-                <li><span class="chk">✓</span> Full exterior &amp; interior rounds</li>
-                <li><span class="chk">✓</span> Detailed visit reports</li>
-                <li><span class="chk">✓</span> Dedicated point of contact</li>
-                <li><span class="chk">✓</span> Emergency response available</li>
-              </ul>
-              <a href="contact.html" class="btn btn-outline pkg-btn">Request a Quote</a>
-            </div>
-          </div>
-        </div></div>
       </div>
     </div>
   </div>
@@ -690,7 +376,7 @@
         <div class="faq-item"><div class="faq-q">What’s your minimum service call? <span class="faq-arrow">▾</span></div><div class="faq-a">Our minimum service call is $150. For hourly handyman work, there is also a 2-hour minimum unless the job is quoted at a flat rate.</div></div>
         <div class="faq-item"><div class="faq-q">Are materials included in the prices? <span class="faq-arrow">▾</span></div><div class="faq-a">Most prices are for labor only unless otherwise noted. Materials are billed separately at cost and approved with you upfront.</div></div>
         <div class="faq-item"><div class="faq-q">Do you require a deposit? <span class="faq-arrow">▾</span></div><div class="faq-a">For larger jobs, special-order materials, or material-heavy projects, we may require a deposit before scheduling the work.</div></div>
-        <div class="faq-item"><div class="faq-q">How does the A1 HomeShield Plan work? <span class="faq-arrow">▾</span></div><div class="faq-a">You pay once per year and get two seasonal visits — spring and fall. Each visit includes a property walkthrough, HVAC filter swap, up to 1 hour of minor repairs, and a written report. HomeShield members also get 10% off extra services booked during the year.</div></div>
+        <div class="faq-item"><div class="faq-q">How does the A1 HomeShield Plan work? <span class="faq-arrow">▾</span></div><div class="faq-a">You pay once per year and get two seasonal visits. The plan is built around routine upkeep items, simple check-ins, and easier scheduling for homeowners who want regular maintenance support without managing every reminder themselves.</div></div>
         <div class="faq-item"><div class="faq-q">Can I bundle cleanup services? <span class="faq-arrow">▾</span></div><div class="faq-a">Absolutely. Bundling cleanup, gutters, trimming, and light washing into one visit usually saves both time and money.</div></div>
         <div class="faq-item"><div class="faq-q">What if the job takes longer than expected? <span class="faq-arrow">▾</span></div><div class="faq-a">If a job runs beyond the approved scope, we stop and communicate with you before doing any additional billable work. No surprise invoices.</div></div>
         <div class="faq-item"><div class="faq-q">What forms of payment do you accept? <span class="faq-arrow">▾</span></div><div class="faq-a">We accept cash, check, Venmo, Zelle, and major credit cards. Payment is due upon job completion unless you’re on a recurring maintenance plan.</div></div>
@@ -757,19 +443,12 @@
     document.getElementById('hbg').addEventListener('click', function() {
       document.getElementById('mob').classList.toggle('open');
     });
-    function toggleCard(id) {
-      const card = document.getElementById(id);
-      const isOpen = card.classList.contains('open');
-      document.querySelectorAll('.xcard').forEach(c => c.classList.remove('open'));
-      if (!isOpen) card.classList.add('open');
-    }
     document.querySelectorAll('.faq-q').forEach(function(q) {
       q.addEventListener('click', function() {
         this.classList.toggle('open');
         this.nextElementSibling.classList.toggle('open');
       });
     });
-    document.getElementById('card-spring').classList.add('open');
   </script>
 </body>
 </html>
