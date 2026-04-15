@@ -152,6 +152,19 @@
     .price-body li{display:flex;justify-content:space-between;gap:10px;padding-bottom:10px;border-bottom:1px solid var(--border);font-size:.92rem}
     .price-body li:last-child{border-bottom:none;padding-bottom:0}
     .price-body strong{white-space:nowrap;color:var(--navy);font-family:'Oswald',sans-serif}
+    .field-example{background:linear-gradient(180deg,#f7fafc 0%,#eef5fb 100%)}
+    .example-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start;margin-top:34px}
+    .example-copy{background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:var(--shadow)}
+    .example-copy h3{font-size:1.35rem;color:var(--navy);margin-bottom:12px}
+    .example-copy p{font-size:.98rem;color:var(--muted);margin-bottom:16px}
+    .example-points{display:grid;gap:10px;margin:18px 0}
+    .example-points li{background:#f5f7fa;border:1px solid var(--border);border-radius:12px;padding:12px 14px;font-size:.92rem;color:var(--text)}
+    .example-note{font-size:.92rem;color:var(--muted);padding-top:6px;border-top:1px solid var(--border)}
+    .example-gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .example-card{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+    .example-card img{width:100%;height:100%;max-height:280px;object-fit:cover}
+    .example-card figcaption{padding:14px 16px;color:var(--muted);font-size:.9rem;line-height:1.55}
+    .example-card.wide{grid-column:1 / -1}
     .plans{background:var(--gold-lt)}
     .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px}
     .plan{background:#fff;border:1px solid rgba(232,160,32,.28);border-radius:16px;padding:26px;box-shadow:var(--shadow)}
@@ -185,8 +198,8 @@
     .ft-links{display:flex;gap:20px}
     .ft-bottom a{color:rgba(255,255,255,.38)}
     .ft-bottom a:hover{color:var(--gold)}
-    @media(max-width:980px){.hero-grid,.pricing-grid,.plan-grid,.audience-grid,.ft-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:768px){section{padding:60px 0}.nav-links{display:none}.hbg{display:flex}.hero{padding:72px 0 62px}.hero-grid,.pricing-grid,.plan-grid,.audience-grid{grid-template-columns:1fr}}
+    @media(max-width:980px){.hero-grid,.pricing-grid,.plan-grid,.audience-grid,.ft-grid,.example-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){section{padding:60px 0}.nav-links{display:none}.hbg{display:flex}.hero{padding:72px 0 62px}.hero-grid,.pricing-grid,.plan-grid,.audience-grid,.example-grid,.example-gallery{grid-template-columns:1fr}.example-card.wide{grid-column:auto}}
     @media(max-width:520px){.ft-grid{grid-template-columns:1fr}.ft-bottom{flex-direction:column;text-align:center}}
   </style>
 </head>
@@ -358,6 +371,40 @@
             <a href="restaurant-hvacr.html" class="btn btn-outline">See Restaurant HVAC/R</a>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="field-example">
+    <div class="wrap">
+      <div class="pill">Real Maintenance Example</div>
+      <h2 class="section-h">Before and After: Rooftop Unit Filter Change</h2>
+      <p class="section-p">Commercial HVAC maintenance is often about catching the simple things before they start affecting comfort, airflow, and system efficiency. Filter changes are one of the easiest examples of that value.</p>
+      <div class="example-grid">
+        <div class="example-copy">
+          <h3>Dirty filters make rooftop equipment work harder</h3>
+          <p>This rooftop unit service shows a straightforward but important maintenance task: replacing loaded filters before they begin to choke airflow and reduce performance. The dirty filter condition on the left is the kind of issue that quietly adds strain to the system when it gets missed.</p>
+          <ul class="example-points">
+            <li>Restricted filters can reduce airflow and make heating or cooling less effective.</li>
+            <li>Routine filter service helps support cleaner operation and more consistent comfort in commercial spaces.</li>
+            <li>It is also one of the simplest ways to stay ahead of avoidable wear in rooftop equipment.</li>
+          </ul>
+          <p class="example-note">This kind of recurring HVAC maintenance can be folded into a broader commercial upkeep plan or a restaurant-focused HVAC/R service schedule, depending on the property.</p>
+        </div>
+        <div class="example-gallery">
+          <figure class="example-card">
+            <img src="images/rtu-filter-before.jpeg" alt="Dirty rooftop unit filters before commercial HVAC maintenance">
+            <figcaption>Before: loaded rooftop unit filters showing the kind of buildup that can restrict airflow.</figcaption>
+          </figure>
+          <figure class="example-card">
+            <img src="images/rtu-filter-after.jpeg" alt="New rooftop unit filters after commercial HVAC maintenance">
+            <figcaption>After: new filters installed to restore cleaner airflow through the rooftop unit.</figcaption>
+          </figure>
+          <figure class="example-card wide">
+            <img src="images/rtu-unit-context.jpeg" alt="Commercial rooftop HVAC unit context photo during filter service">
+            <figcaption>Supporting rooftop context shot from the same service visit.</figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </section>
