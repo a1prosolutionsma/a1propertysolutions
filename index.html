@@ -8,9 +8,11 @@
   <meta name="keywords" content="handyman Boston, property maintenance Boston MA, HVAC maintenance Boston, yard cleanup Boston, handyman Greater Boston" />
   <meta name="author" content="A1 Property Solutions" />
   <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0d1f3c" />
   <link rel="canonical" href="https://a1propertypros.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="A1 Property Solutions" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="A1 Property Solutions | Boston Handyman &amp; Property Maintenance" />
   <meta property="og:description" content="Residential and commercial property maintenance, handyman repairs, HVAC/R, and yard cleanup across Greater Boston." />
   <meta property="og:url" content="https://a1propertypros.com/" />
@@ -95,14 +97,18 @@
 
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:'Source Sans 3',sans-serif;color:var(--text);background:var(--white);line-height:1.65}
+    body{font-family:'Source Sans 3',sans-serif;color:var(--text);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    main{display:block}
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
     ul{list-style:none}
     h1,h2,h3,h4{font-family:'Oswald',sans-serif;letter-spacing:.02em;line-height:1.15}
+    :target{scroll-margin-top:96px}
 
     .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
     section{padding:88px 0}
+    .skip-link{position:absolute;left:20px;top:-44px;background:var(--gold);color:var(--navy);padding:10px 14px;border-radius:8px;font-weight:700;z-index:300;transition:top .2s}
+    .skip-link:focus{top:16px}
 
     .pill{
       display:inline-block;
@@ -321,6 +327,7 @@
     }
 
     .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .hero-btns .btn{min-width:220px;text-align:center}
 
     .hero-trust{
       margin-top:52px;
@@ -347,6 +354,8 @@
       align-items:center;
       gap:18px;
       flex-wrap:wrap;
+      max-width:980px;
+      margin:0 auto;
       color:var(--muted);
       font-size:.92rem
     }
@@ -396,15 +405,15 @@
     .services-sec{background:var(--white)}
     .svc-hd{text-align:center;margin-bottom:52px}
     .svc-hd .section-p{margin:0 auto}
-    .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
-    .svc-card{background:var(--off);border:1px solid var(--border);border-radius:12px;padding:30px 26px;position:relative;overflow:hidden;transition:box-shadow .25s,transform .2s,border-color .2s}
+    .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;align-items:stretch}
+    .svc-card{background:var(--off);border:1px solid var(--border);border-radius:12px;padding:30px 26px;position:relative;overflow:hidden;transition:box-shadow .25s,transform .2s,border-color .2s;display:flex;flex-direction:column;height:100%}
     .svc-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s}
     .svc-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px);border-color:transparent;background:var(--white)}
     .svc-card:hover::after{transform:scaleX(1)}
     .svc-ico{width:50px;height:50px;border-radius:12px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:18px}
     .svc-card h3{font-size:1.15rem;color:var(--navy);margin-bottom:9px}
     .svc-card p{color:var(--muted);font-size:.92rem;line-height:1.6}
-    .svc-link{display:inline-block;margin-top:14px;font-size:.85rem;font-weight:700;color:var(--gold-dk);letter-spacing:.04em}
+    .svc-link{display:inline-block;margin-top:auto;padding-top:16px;font-size:.85rem;font-weight:700;color:var(--gold-dk);letter-spacing:.04em}
     .svc-link:hover{text-decoration:underline}
 
     .quote-note{
@@ -413,6 +422,7 @@
       color:var(--muted);
       font-size:.92rem
     }
+    .svc-cta-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:24px}
 
     .how-sec{background:var(--navy);color:#fff}
     .how-hd{text-align:center;margin-bottom:56px}
@@ -480,7 +490,10 @@
       .steps::before{display:none}
       .rev-grid{grid-template-columns:1fr}
       .hero{padding:72px 0 64px}
+      .hero-btns{max-width:360px;margin:0 auto;flex-direction:column;align-items:stretch}
+      .hero-btns .btn{width:100%}
       .hero-trust{gap:18px}
+      .lead-strip-inner{justify-content:flex-start}
     }
 
     @media(max-width:520px){
@@ -488,10 +501,14 @@
       .steps{grid-template-columns:1fr}
       .ft-grid{grid-template-columns:1fr}
       .ft-bottom{flex-direction:column;text-align:center}
+      .wrap{padding:0 20px}
+      .lead-strip-inner{text-align:center;justify-content:center}
+      .hero-badge{font-size:.72rem;padding:5px 14px}
     }
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <div class="topbar">
     📞 Call or text anytime: <a href="tel:6173026160">(617) 302-6160</a>
@@ -536,6 +553,7 @@
     </div>
   </nav>
 
+  <main id="main-content">
   <section class="hero">
     <div class="wrap">
       <div class="hero-badge">Greater Boston Property Maintenance</div>
@@ -650,7 +668,7 @@
     <div class="wrap">
       <div class="about-grid">
         <div class="about-visual logo-panel">
-          <img src="images/logos.png" alt="A1 Property Solutions logo">
+          <img src="images/logos.png" alt="A1 Property Solutions logo" loading="lazy" decoding="async">
         </div>
 
         <div class="about-text">
@@ -725,6 +743,10 @@
       </div>
 
       <div class="quote-note">Need help choosing the right service? Call or text and we’ll point you to the right pricing page and the right next step.</div>
+      <div class="svc-cta-row">
+        <a href="pricing.html" class="btn btn-outline">Browse All Pricing</a>
+        <a href="contact.html" class="btn btn-gold">Request a Free Quote</a>
+      </div>
     </div>
   </section>
 
@@ -871,6 +893,7 @@
       <a href="tel:6173026160" class="btn-navy">📞 Call (617) 302-6160</a>
     </div>
   </section>
+  </main>
 
   <footer>
     <div class="ft-grid">
@@ -879,10 +902,10 @@
         <p>Reliable property maintenance, handyman repairs, and yard cleanup across Greater Boston.</p>
         <div class="ft-social">
           <a href="https://www.facebook.com/profile.php?id=61572055553393" target="_blank" rel="noopener" class="soc-btn" aria-label="Facebook">
-            <img src="images/facebook.png" class="social-logo" alt="Facebook">
+          <img src="images/facebook.png" class="social-logo" alt="Facebook" loading="lazy" decoding="async">
           </a>
           <a href="https://www.instagram.com/a1prosolutions?igsh=MWhndnA4NDRhMHc1dw%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener" class="soc-btn" aria-label="Instagram">
-            <img src="images/instagram.png" class="social-logo" alt="Instagram">
+          <img src="images/instagram.png" class="social-logo" alt="Instagram" loading="lazy" decoding="async">
           </a>
         </div>
       </div>
