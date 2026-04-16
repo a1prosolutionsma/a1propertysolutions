@@ -74,7 +74,12 @@
     .btn{display:inline-block;font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:.06em;border-radius:var(--r);transition:all .2s}.btn-gold{background:var(--gold);color:var(--navy);padding:14px 30px}.btn-outline{border:2px solid var(--navy);color:var(--navy);padding:12px 24px}
     footer{background:var(--navy-deep);color:rgba(255,255,255,.5);padding:60px 28px 28px}.ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;max-width:1120px;margin:0 auto 44px}.ft-col h4{font-family:'Oswald',sans-serif;color:#fff;font-size:.9rem;margin-bottom:16px}.ft-col a{display:block;color:rgba(255,255,255,.48);font-size:.86rem;margin-bottom:9px}.ft-bottom{max-width:1120px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:12px;font-size:.82rem}.ft-bottom span{color:var(--gold)}
     @media(max-width:900px){.article-grid,.ft-grid{grid-template-columns:1fr}} @media(max-width:768px){.nav-links{display:none}.hero{padding:72px 0 60px}}
-  </style>
+      .mobile-cta-bar{position:fixed;left:0;right:0;bottom:0;z-index:250;display:none;gap:10px;padding:12px 14px calc(12px + env(safe-area-inset-bottom));background:rgba(7,17,31,.96);border-top:1px solid rgba(232,160,32,.22);box-shadow:0 -8px 24px rgba(7,17,31,.18)}
+    .mobile-cta-btn{flex:1;display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:12px;font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:.04em;font-size:.92rem;text-align:center}
+    .mobile-cta-btn.call{background:#e8a020;color:#0d1f3c}
+    .mobile-cta-btn.text{background:#ffffff;color:#0d1f3c;border:1px solid #dde3ed}
+    @media(max-width:768px){body{padding-bottom:88px}.mobile-cta-bar{display:flex}}
+</style>
 </head>
 <body>
   <div class="topbar">📞 Call or text anytime: <a href="tel:6173026160">(617) 302-6160</a> · Serving Boston &amp; Surrounding Areas</div>
@@ -158,5 +163,9 @@
     </div>
     <div class="ft-bottom"><p>© 2026 <span>A1 Property Solutions</span> · Boston, MA · All Rights Reserved</p><p>Serving Greater Boston</p></div>
   </footer>
+  <div class="mobile-cta-bar" aria-label="Quick contact actions">
+    <a href="tel:6173026160" class="mobile-cta-btn call">Call Now</a>
+    <a href="sms:6173026160" class="mobile-cta-btn text">Text for Quote</a>
+  </div>
 </body>
 </html>

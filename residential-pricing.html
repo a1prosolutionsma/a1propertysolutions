@@ -193,7 +193,12 @@
     @media(max-width:980px){.hero-grid,.cards,.bundle-grid,.intro-grid,.ft-grid{grid-template-columns:1fr 1fr}.hero-grid{align-items:start}}
     @media(max-width:768px){section{padding:60px 0}.nav-links{display:none}.hbg{display:flex}.hero{padding:72px 0 62px}.hero-grid,.cards,.bundle-grid,.intro-grid{grid-template-columns:1fr}}
     @media(max-width:520px){.ft-grid{grid-template-columns:1fr}.ft-bottom{flex-direction:column;text-align:center}}
-  </style>
+      .mobile-cta-bar{position:fixed;left:0;right:0;bottom:0;z-index:250;display:none;gap:10px;padding:12px 14px calc(12px + env(safe-area-inset-bottom));background:rgba(7,17,31,.96);border-top:1px solid rgba(232,160,32,.22);box-shadow:0 -8px 24px rgba(7,17,31,.18)}
+    .mobile-cta-btn{flex:1;display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:12px;font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:.04em;font-size:.92rem;text-align:center}
+    .mobile-cta-btn.call{background:#e8a020;color:#0d1f3c}
+    .mobile-cta-btn.text{background:#ffffff;color:#0d1f3c;border:1px solid #dde3ed}
+    @media(max-width:768px){body{padding-bottom:88px}.mobile-cta-bar{display:flex}}
+</style>
 </head>
 <body>
   <div class="topbar">📞 Call or text anytime: <a href="tel:6173026160">(617) 302-6160</a> &nbsp;·&nbsp; Serving Boston &amp; Surrounding Areas</div>
@@ -528,5 +533,9 @@
       });
     });
   </script>
+  <div class="mobile-cta-bar" aria-label="Quick contact actions">
+    <a href="tel:6173026160" class="mobile-cta-btn call">Call Now</a>
+    <a href="sms:6173026160" class="mobile-cta-btn text">Text for Quote</a>
+  </div>
 </body>
 </html>
