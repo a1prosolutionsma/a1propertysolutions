@@ -154,9 +154,9 @@
     .example-points{display:grid;gap:10px;margin:18px 0}
     .example-points li{background:var(--ice);border:1px solid #cfe2f5;border-radius:12px;padding:12px 14px;color:var(--text);font-size:.93rem}
     .example-note{font-size:.92rem;color:var(--muted);padding-top:6px;border-top:1px solid var(--border)}
-    .example-gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .example-card{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
-    .example-card img{width:100%;height:100%;max-height:280px;object-fit:cover}
+    .example-gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+    .example-card{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;align-self:start}
+    .example-card img{width:100%;height:auto;max-height:280px;object-fit:cover}
     .example-card figcaption{padding:14px 16px;color:var(--muted);font-size:.9rem;line-height:1.55}
     .example-card.wide{grid-column:1 / -1}
     .process{background:var(--gold-lt)}
