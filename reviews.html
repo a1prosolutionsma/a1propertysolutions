@@ -110,6 +110,19 @@
     .hero-badges{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}
     .hero-badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:#fff;font-size:.8rem;font-weight:700;padding:6px 12px;border-radius:18px}
 
+    .trust-strip{background:#fff;border-bottom:1px solid var(--border);padding:44px 0}
+    .trust-head{text-align:center;margin-bottom:26px}
+    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+    .trust-card{background:var(--off);border:1px solid var(--border);border-radius:14px;padding:20px 18px;box-shadow:var(--shadow)}
+    .trust-card h3{font-size:1rem;color:var(--navy);margin-bottom:6px}
+    .trust-card p{font-size:.88rem;color:var(--muted);line-height:1.6}
+    .quote-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .quote-chip{background:var(--gold-lt);border:1px solid rgba(232,160,32,.24);border-radius:14px;padding:18px 16px}
+    .quote-chip p{font-size:.92rem;color:var(--text);font-style:italic;line-height:1.6;margin-bottom:8px}
+    .quote-chip span{display:block;font-size:.78rem;color:var(--muted);font-weight:700;letter-spacing:.03em}
+    .live-note{background:#f7fafc;border:1px solid var(--border);border-radius:12px;padding:14px 16px;color:var(--text);font-size:.88rem;line-height:1.65;margin-top:20px}
+    .live-note a{color:var(--gold-dk);font-weight:700}
+
     .platform-strip{background:var(--off);padding:34px 0;border-bottom:1px solid var(--border)}
     .platform-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .plat-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:22px;box-shadow:var(--shadow)}
@@ -202,6 +215,8 @@
     .ft-links{display:flex;gap:20px}
 
     @media(max-width:900px){
+      .trust-grid{grid-template-columns:1fr 1fr}
+      .quote-row{grid-template-columns:1fr}
       .platform-inner{grid-template-columns:1fr}
       .ft-grid{grid-template-columns:1fr 1fr;gap:28px}
     }
@@ -266,6 +281,54 @@
         <span class="hero-badge">Real Review Sources</span>
         <span class="hero-badge">Taskrabbit Screenshot Proof</span>
         <span class="hero-badge">Google &amp; Facebook Feedback</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-strip">
+    <div class="wrap">
+      <div class="trust-head">
+        <div class="pill">Why People Trust Us</div>
+        <h2 class="section-h">Specific Proof, Clear Communication, and Real Follow-Through</h2>
+        <p class="section-p" style="margin:0 auto">Customers usually want the same things before they book: someone responsive, someone local, someone professional, and proof that past jobs were handled well. This page is built to answer those questions clearly.</p>
+      </div>
+
+      <div class="trust-grid">
+        <div class="trust-card">
+          <h3>Boston-Based and Owner-Operated</h3>
+          <p>Local service with direct communication, clear accountability, and no national call-center handoff.</p>
+        </div>
+        <div class="trust-card">
+          <h3>Responsive by Call or Text</h3>
+          <p>Fast replies during business hours, straightforward scheduling, and clear next steps instead of vague follow-up.</p>
+        </div>
+        <div class="trust-card">
+          <h3>Real Third-Party Review Proof</h3>
+          <p>Taskrabbit screenshot history, plus public Google and Facebook review sources that customers can check themselves.</p>
+        </div>
+        <div class="trust-card">
+          <h3>Built for Repeat Service</h3>
+          <p>We support homeowners, landlords, property managers, and businesses that need dependable ongoing maintenance, not just one-off visits.</p>
+        </div>
+      </div>
+
+      <div class="quote-row">
+        <div class="quote-chip">
+          <p>"Professional, punctual, and clearly skilled. I'll definitely be hiring again."</p>
+          <span>Taskrabbit review · General Mounting</span>
+        </div>
+        <div class="quote-chip">
+          <p>"Clear and prompt communication. We will hire again."</p>
+          <span>Taskrabbit review · Snow Removal</span>
+        </div>
+        <div class="quote-chip">
+          <p>"He did a great job troubleshooting when there were challenges."</p>
+          <span>Taskrabbit review · General Mounting</span>
+        </div>
+      </div>
+
+      <div class="live-note">
+        <strong style="color:var(--navy)">About live Google reviews:</strong> the newest public Google feedback is available directly on the <a href="https://g.page/r/CVxrB5_T8yDwEAE/review" target="_blank" rel="noopener">Google Business Profile</a>. We do not mirror a live Google review feed on this static site because Google review feeds require API or third-party widget setup that is not ideal for your current GitHub site.
       </div>
     </div>
   </section>
