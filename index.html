@@ -328,6 +328,8 @@
 
     .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
     .hero-btns .btn{min-width:220px;text-align:center}
+    .hero-subcta{margin-top:16px;font-size:.92rem;color:rgba(255,255,255,.72)}
+    .hero-subcta a{color:var(--gold);font-weight:700}
 
     .hero-trust{
       margin-top:52px;
@@ -341,34 +343,6 @@
 
     .trust-item{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.62);font-size:.88rem}
     .trust-icon{font-size:1.1rem}
-
-    .lead-strip{
-      background:var(--white);
-      padding:24px 0;
-      border-bottom:1px solid var(--border)
-    }
-
-    .lead-strip-inner{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:18px;
-      flex-wrap:wrap;
-      max-width:980px;
-      margin:0 auto;
-      color:var(--muted);
-      font-size:.92rem
-    }
-
-    .lead-chip{
-      background:var(--off);
-      border:1px solid var(--border);
-      color:var(--navy);
-      padding:7px 12px;
-      border-radius:16px;
-      font-weight:700;
-      font-size:.82rem
-    }
 
     .path-sec{background:linear-gradient(180deg,#ffffff 0%,#f7fafc 100%);padding:56px 0;border-bottom:1px solid var(--border)}
     .path-hd{text-align:center;margin-bottom:34px}
@@ -392,30 +366,6 @@
     .why-item h4{font-family:'Oswald',sans-serif;font-size:1rem;color:var(--navy);margin-bottom:4px}
     .why-item p{font-size:.86rem;color:var(--muted);line-height:1.55}
 
-    .about-sec{background:var(--off)}
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-    .about-visual{border-radius:14px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;border:1px solid var(--border);position:relative}
-    .logo-panel{padding:30px;background:#ffffff;}
-    .logo-panel img{width:100%;max-width:420px;height:auto;object-fit:contain;}
-    .about-text .section-p{margin-bottom:14px}
-    .stats-row{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--border)}
-    .stat-num{font-family:'Oswald',sans-serif;font-size:2rem;color:var(--gold);font-weight:700;line-height:1}
-    .stat-lbl{font-size:.78rem;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;margin-top:4px}
-
-    .services-sec{background:var(--white)}
-    .svc-hd{text-align:center;margin-bottom:52px}
-    .svc-hd .section-p{margin:0 auto}
-    .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;align-items:stretch}
-    .svc-card{background:var(--off);border:1px solid var(--border);border-radius:12px;padding:30px 26px;position:relative;overflow:hidden;transition:box-shadow .25s,transform .2s,border-color .2s;display:flex;flex-direction:column;height:100%}
-    .svc-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s}
-    .svc-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px);border-color:transparent;background:var(--white)}
-    .svc-card:hover::after{transform:scaleX(1)}
-    .svc-ico{width:50px;height:50px;border-radius:12px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:18px}
-    .svc-card h3{font-size:1.15rem;color:var(--navy);margin-bottom:9px}
-    .svc-card p{color:var(--muted);font-size:.92rem;line-height:1.6}
-    .svc-link{display:inline-block;margin-top:auto;padding-top:16px;font-size:.85rem;font-weight:700;color:var(--gold-dk);letter-spacing:.04em}
-    .svc-link:hover{text-decoration:underline}
-
     .quote-note{
       margin-top:28px;
       text-align:center;
@@ -424,20 +374,6 @@
     }
     .svc-cta-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:24px}
 
-    .how-sec{background:var(--navy);color:#fff}
-    .how-hd{text-align:center;margin-bottom:56px}
-    .how-hd .section-h{color:#fff}
-    .how-hd .section-p{color:rgba(255,255,255,.6);margin:0 auto}
-    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
-    .steps::before{content:'';position:absolute;top:28px;left:14%;right:14%;height:2px;background:linear-gradient(90deg,var(--gold) 0%,rgba(232,160,32,.2) 100%)}
-    .step{text-align:center;padding:0 12px;position:relative}
-    .step-num{width:56px;height:56px;border-radius:50%;background:var(--gold);color:var(--navy);font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;position:relative;z-index:1;box-shadow:0 0 0 6px rgba(232,160,32,.15)}
-    .step h3{color:#fff;margin-bottom:8px;font-size:1.05rem}
-    .step p{color:rgba(255,255,255,.55);font-size:.88rem;line-height:1.6}
-
-    .rev-strip{background:var(--gold-lt);padding:72px 0}
-    .rev-hd{text-align:center;margin-bottom:44px}
-    .stars-row{color:var(--gold);font-size:1.5rem;letter-spacing:3px;margin-bottom:10px}
     .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .rev-mini{background:var(--white);border-radius:14px;padding:26px 24px;border:1px solid var(--border);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
     .rev-mini .stars{color:var(--gold);font-size:.95rem}
@@ -485,24 +421,19 @@
       .nav-links{display:none}
       .hbg{display:flex}
       .path-grid,
-      .about-grid,.area-grid{grid-template-columns:1fr;gap:36px}
-      .steps{grid-template-columns:1fr 1fr;gap:28px}
-      .steps::before{display:none}
+      .area-grid{grid-template-columns:1fr;gap:36px}
       .rev-grid{grid-template-columns:1fr}
       .hero{padding:72px 0 64px}
       .hero-btns{max-width:360px;margin:0 auto;flex-direction:column;align-items:stretch}
       .hero-btns .btn{width:100%}
       .hero-trust{gap:18px}
-      .lead-strip-inner{justify-content:flex-start}
     }
 
     @media(max-width:520px){
       .why-grid{grid-template-columns:1fr}
-      .steps{grid-template-columns:1fr}
       .ft-grid{grid-template-columns:1fr}
       .ft-bottom{flex-direction:column;text-align:center}
       .wrap{padding:0 20px}
-      .lead-strip-inner{text-align:center;justify-content:center}
       .hero-badge{font-size:.72rem;padding:5px 14px}
     }
   </style>
@@ -522,33 +453,25 @@
       </a>
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
-        <li><a href="index.html#services">Services</a></li>
         <li class="nav-dd">
-          <a href="pricing.html" class="nav-dd-toggle" aria-haspopup="true" aria-expanded="false">Pricing</a>
+          <a href="pricing.html" class="nav-dd-toggle" aria-haspopup="true" aria-expanded="false">Services</a>
           <div class="nav-drop">
-            <a href="pricing.html">All Pricing</a>
             <a href="residential-pricing.html">Residential Pricing</a>
             <a href="commercial-pricing.html">Commercial Pricing</a>
-            <a href="home-shield.html">HomeShield Plan</a>
             <a href="restaurant-hvacr.html">Restaurant HVAC/R</a>
+            <a href="pricing.html">All Pricing</a>
           </div>
         </li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
       </ul>
       <button class="hbg" id="hbg" aria-label="Menu" aria-controls="mob" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
     <div class="mob-menu" id="mob">
       <a href="about.html">About</a>
-      <a href="index.html#services">Services</a>
-      <a href="pricing.html">All Pricing</a>
       <a href="residential-pricing.html" class="mob-sub">Residential Pricing</a>
       <a href="commercial-pricing.html" class="mob-sub">Commercial Pricing</a>
-      <a href="home-shield.html" class="mob-sub">HomeShield Plan</a>
       <a href="restaurant-hvacr.html" class="mob-sub">Restaurant HVAC/R</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="blog.html">Blog</a>
+      <a href="pricing.html">All Pricing</a>
       <a href="contact.html">Contact Us</a>
     </div>
   </nav>
@@ -561,8 +484,8 @@
       <p class="hero-sub">A1 Property Solutions helps homeowners, landlords, businesses, and restaurant operators handle repairs, upkeep, and HVAC/R issues before they turn into bigger problems. Call or text for a fast quote, clear communication, and dependable local service.</p>
       <div class="hero-btns">
         <a href="tel:6173026160" class="btn btn-gold">📞 Call or Text — (617) 302-6160</a>
-        <a href="contact.html" class="btn btn-ghost">Get a Fast Free Quote</a>
       </div>
+      <div class="hero-subcta">Prefer to message instead? <a href="contact.html">Request a free quote online</a>.</div>
       <div class="hero-trust">
         <div class="trust-item"><span class="trust-icon">✅</span> Residential &amp; Commercial</div>
         <div class="trust-item"><span class="trust-icon">⚡</span> Same-Day Response When Available</div>
@@ -573,51 +496,40 @@
     </div>
   </section>
 
-  <div class="lead-strip">
-    <div class="wrap">
-      <div class="lead-strip-inner">
-        <span class="lead-chip">Free Estimates</span>
-        <span class="lead-chip">Clear Pricing</span>
-        <span class="lead-chip">Owner-Operated</span>
-        <span>Call, text, or send a message and we’ll help you figure out the right path quickly. Limited scheduling slots are available each week.</span>
-      </div>
-    </div>
-  </div>
-
   <section class="path-sec">
     <div class="wrap">
       <div class="path-hd">
         <div class="pill">Start Here</div>
-        <h2 class="section-h">Choose the Right Service Path</h2>
-        <p class="section-p">Most visitors already know what kind of property or maintenance need they have. Start with the page that fits best, then drill into the specific pricing and service details from there.</p>
+        <h2 class="section-h">Choose the Service Path That Fits Your Property</h2>
+        <p class="section-p">Most visitors only need one of these three categories. Pick the one that fits best and go straight to the right pricing and service details.</p>
       </div>
       <div class="path-grid">
         <article class="path-card">
           <span class="path-kicker">Homeowners</span>
-          <h3>Residential Repairs and Seasonal Upkeep</h3>
-          <p>Best for punch-list repairs, yard cleanup, filter changes, detector checks, and recurring home maintenance.</p>
+          <h3>Residential Repairs and Home Upkeep</h3>
+          <p>Best for home repairs, seasonal cleanup, maintenance visits, and smaller punch-list work.</p>
           <ul class="path-points">
             <li>Handyman repairs and fixture installs</li>
-            <li>Spring cleanup and exterior reset</li>
-            <li>Monthly home maintenance options</li>
+            <li>Spring cleanup and exterior work</li>
+            <li>Recurring home maintenance options</li>
           </ul>
           <a href="residential-pricing.html" class="btn btn-outline">See Residential Pricing</a>
         </article>
         <article class="path-card">
           <span class="path-kicker">Managers &amp; Businesses</span>
           <h3>Commercial Maintenance and Building Support</h3>
-          <p>Best for landlords, mixed-use properties, common-area upkeep, walkthroughs, turnover prep, and recurring service.</p>
+          <p>Best for landlords, mixed-use properties, small businesses, walkthroughs, and recurring building care.</p>
           <ul class="path-points">
             <li>Property walkthroughs and reports</li>
             <li>Commercial handyman and site upkeep</li>
-            <li>Recurring building maintenance plans</li>
+            <li>Turnover prep and monthly maintenance</li>
           </ul>
           <a href="commercial-pricing.html" class="btn btn-outline">See Commercial Pricing</a>
         </article>
         <article class="path-card">
           <span class="path-kicker">Restaurants</span>
           <h3>Restaurant HVAC/R and Kitchen Equipment PM</h3>
-          <p>Best for walk-ins, reach-ins, ice machines, rooftop equipment, and ventilation support in food-service spaces.</p>
+          <p>Best for walk-ins, reach-ins, ice machines, rooftop units, and kitchen ventilation support.</p>
           <ul class="path-points">
             <li>Walk-in cooler and freezer PM</li>
             <li>Ice machine breakdown cleaning</li>
@@ -626,173 +538,48 @@
           <a href="restaurant-hvacr.html" class="btn btn-outline">See Restaurant HVAC/R</a>
         </article>
       </div>
+      <div class="quote-note">Not sure which category fits? Call or text and we’ll point you to the right service path fast.</div>
     </div>
   </section>
 
-  <div class="why-strip">
+  <section class="why-strip">
     <div class="wrap">
+      <div class="path-hd" style="margin-bottom:28px">
+        <div class="pill">Why Call Us</div>
+        <h2 class="section-h">Why Boston-Area Customers Reach Out</h2>
+        <p class="section-p">People usually want the same things: fast communication, clear pricing, real proof of past work, and a local company that makes the next step easy.</p>
+      </div>
       <div class="why-grid">
         <div class="why-item">
           <div class="why-ico">📞</div>
           <div>
             <h4>Easy to Reach</h4>
-            <p>Call or text during business hours and get clear communication from the start, not a drawn-out back-and-forth that delays your project.</p>
+            <p>Call or text and get clear next steps without a long back-and-forth.</p>
           </div>
         </div>
         <div class="why-item">
           <div class="why-ico">💰</div>
           <div>
-            <h4>Honest Pricing</h4>
-            <p>Starting-rate pricing, honest scoping, and straightforward quotes before work is scheduled so you know what to expect.</p>
+            <h4>Clear Pricing</h4>
+            <p>Starting-rate pricing and honest scoping before work is scheduled.</p>
           </div>
         </div>
         <div class="why-item">
-          <div class="why-ico">🏆</div>
+          <div class="why-ico">⭐</div>
           <div>
-            <h4>Quality Work</h4>
-            <p>Real field experience across repairs, maintenance, refrigeration, and cleanup work that has to be done properly the first time.</p>
+            <h4>Real Review Proof</h4>
+            <p>Taskrabbit screenshot proof plus Google and Facebook review sources.</p>
           </div>
         </div>
         <div class="why-item">
-          <div class="why-ico">🔄</div>
+          <div class="why-ico">📍</div>
           <div>
-            <h4>One Reliable Team</h4>
-            <p>From handyman tasks to seasonal work and HVAC/R upkeep, you do not have to chase multiple service providers to get things handled.</p>
+            <h4>Boston-Area Focus</h4>
+            <p>Local service across Boston and nearby cities without a national-brand feel.</p>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <section class="about-sec" id="about">
-    <div class="wrap">
-      <div class="about-grid">
-        <div class="about-visual logo-panel">
-          <img src="images/logos.png" alt="A1 Property Solutions logo" loading="lazy" decoding="async">
-        </div>
-
-        <div class="about-text">
-          <div class="pill">About Us</div>
-          <h2 class="section-h">Dependable Property Maintenance for Greater Boston</h2>
-          <p class="section-p">
-            A1 Property Solutions provides dependable property maintenance, handyman repairs, and HVAC/R support for residential and commercial properties throughout Greater Boston.
-          </p>
-          <p class="section-p" style="margin-top:12px">
-            From seasonal cleanups and small repairs to ongoing upkeep, walk-in cooler maintenance, ice machine service, and ventilation issues, we help property owners stay ahead of the work without the hassle of managing multiple contractors.
-          </p>
-
-          <div class="stats-row">
-            <div>
-              <div class="stat-num">100+</div>
-              <div class="stat-lbl">Jobs Completed</div>
-            </div>
-            <div>
-              <div class="stat-num">5★</div>
-              <div class="stat-lbl">Customer Rating</div>
-            </div>
-            <div>
-              <div class="stat-num">Fast</div>
-              <div class="stat-lbl">Response Time</div>
-            </div>
-          </div>
-
-          <div style="margin-top:28px">
-            <a href="about.html" class="btn btn-outline">Learn More About Us →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="services-sec" id="services">
-    <div class="wrap">
-      <div class="svc-hd">
-        <div class="pill">What We Do</div>
-        <h2 class="section-h">Our Services</h2>
-        <p class="section-p">Everything your property needs, handled by one dependable team.</p>
-      </div>
-
-      <div class="svc-grid">
-        <div class="svc-card">
-          <div class="svc-ico">🌿</div>
-          <h3>Yard Cleanup &amp; Exterior</h3>
-          <p>Yard cleanup, debris removal, gutter cleaning, trimming, and seasonal exterior upkeep.</p>
-          <a href="residential-pricing.html" class="svc-link">See Homeowner Pricing →</a>
-        </div>
-
-        <div class="svc-card">
-          <div class="svc-ico">🔨</div>
-          <h3>Handyman &amp; Repairs</h3>
-          <p>Doors, drywall, fixtures, furniture assembly, and general repairs handled efficiently.</p>
-          <a href="residential-pricing.html" class="svc-link">See Homeowner Pricing →</a>
-        </div>
-
-        <div class="svc-card">
-          <div class="svc-ico">🏢</div>
-          <h3>Property Maintenance</h3>
-          <p>Ongoing maintenance and preventative care for residential and commercial properties.</p>
-          <a href="commercial-pricing.html" class="svc-link">See Commercial Pricing →</a>
-        </div>
-
-        <div class="svc-card">
-          <div class="svc-ico">❄️</div>
-          <h3>HVAC/R Maintenance</h3>
-          <p>Air filters, inspections, walk-in coolers, freezers, and ice machine preventative maintenance.</p>
-          <a href="restaurant-hvacr.html" class="svc-link">See HVAC/R Pricing →</a>
-        </div>
-      </div>
-
-      <div class="quote-note">Need help choosing the right service? Call or text and we’ll point you to the right pricing page, the right next step, and the fastest scheduling option available.</div>
-      <div class="svc-cta-row">
-        <a href="pricing.html" class="btn btn-outline">Browse All Pricing</a>
-        <a href="contact.html" class="btn btn-gold">Request a Free Quote</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="how-sec" id="how-it-works">
-    <div class="wrap">
-      <div class="how-hd">
-        <div class="pill">Simple Process</div>
-        <h2 class="section-h">How It Works</h2>
-        <p class="section-p">Getting your property taken care of is simple from start to finish.</p>
-      </div>
-
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h3>Call or Text</h3>
-        <p>Reach out with your project details and we’ll let you know the fastest next step.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3>Get a Quote</h3>
-        <p>We provide a clear, honest quote based on your scope, timing, and access.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3>Schedule Service</h3>
-        <p>Choose a time that works for your property and your schedule, with limited weekly availability filled first come, first served.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <h3>Work Completed</h3>
-        <p>We show up, do the work properly, and leave your property in better shape than we found it.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="rev-strip">
-    <div class="wrap">
-      <div class="rev-hd">
-        <div class="stars-row">★★★★★</div>
-        <div class="pill">Trusted Feedback</div>
-        <h2 class="section-h">Real Review Sources, Not Just Marketing Copy</h2>
-        <p class="section-p" style="margin:0 auto">Visitors want proof. Here are the review sources and service strengths people mention most often across the platforms already connected to the business.</p>
-      </div>
-
-      <div class="rev-grid">
+      <div class="rev-grid" style="margin-top:28px">
         <div class="rev-mini">
           <div class="rev-top">
             <div>
@@ -801,9 +588,8 @@
             </div>
             <div class="rev-score">4.9</div>
           </div>
-          <p>Taskrabbit review history currently shows 41 reviews with repeat mentions for furniture assembly, mounting, troubleshooting, professionalism, and clear communication.</p>
-          <div class="rev-note">Best proof for hands-on residential work and smaller service calls.</div>
-          <a href="reviews.html" class="btn btn-outline">See Review Proof</a>
+          <p>41 reviews with repeat praise for mounting, assembly, troubleshooting, communication, and professionalism.</p>
+          <div class="rev-note">Best proof for residential and smaller service calls.</div>
         </div>
         <div class="rev-mini">
           <div class="rev-top">
@@ -811,11 +597,10 @@
               <div class="rev-source">Google</div>
               <div class="stars">★★★★★</div>
             </div>
-            <div class="rev-score">Public</div>
+            <div class="rev-score">Local</div>
           </div>
-          <p>Google gives local customers a familiar public place to check current feedback when they are comparing handyman, maintenance, and property service options around Boston.</p>
-          <div class="rev-note">Helpful for local search trust and quick public review checks.</div>
-          <a href="reviews.html" class="btn btn-outline">Read Google Reviews</a>
+          <p>Public local-business reviews help customers compare service quality before they call or text.</p>
+          <div class="rev-note">Good for local trust and search visibility.</div>
         </div>
         <div class="rev-mini">
           <div class="rev-top">
@@ -823,16 +608,11 @@
               <div class="rev-source">Facebook</div>
               <div class="stars">★★★★★</div>
             </div>
-            <div class="rev-score">Local</div>
+            <div class="rev-score">Public</div>
           </div>
-          <p>Facebook helps reinforce neighborhood trust, especially for homeowners and smaller property clients who want another public signal before reaching out.</p>
-          <div class="rev-note">Good secondary trust source for Boston-area service customers.</div>
-          <a href="reviews.html" class="btn btn-outline">See All Review Sources</a>
+          <p>Community-facing review and recommendation source for local homeowners and property clients.</p>
+          <div class="rev-note">Helpful trust signal before someone reaches out.</div>
         </div>
-      </div>
-
-      <div style="text-align:center;margin-top:36px">
-        <a href="reviews.html" class="btn btn-outline">Read More Reviews →</a>
       </div>
     </div>
   </section>
@@ -842,9 +622,9 @@
       <div class="area-grid">
         <div>
           <div class="pill">Where We Work</div>
-          <h2 class="section-h">Serving Greater Boston</h2>
+          <h2 class="section-h">Serving Boston and Surrounding Areas</h2>
           <p class="section-p">
-            Based in Boston, we serve homeowners and property managers across the city and surrounding suburbs. Not sure if we cover your area? Give us a call or send a message.
+            Based in Boston, we serve homeowners, landlords, businesses, and restaurants across the city and nearby suburbs. Not sure if we cover your area? Call or text and we’ll let you know quickly.
           </p>
 
           <div class="town-tags">
