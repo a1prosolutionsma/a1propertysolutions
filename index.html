@@ -365,6 +365,20 @@
       font-size:.82rem
     }
 
+    .path-sec{background:linear-gradient(180deg,#ffffff 0%,#f7fafc 100%);padding:56px 0;border-bottom:1px solid var(--border)}
+    .path-hd{text-align:center;margin-bottom:34px}
+    .path-hd .section-p{margin:0 auto;max-width:760px}
+    .path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .path-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px 24px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px;transition:transform .2s,box-shadow .2s,border-color .2s}
+    .path-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:rgba(232,160,32,.35)}
+    .path-kicker{display:inline-flex;align-self:flex-start;background:var(--gold-lt);border:1px solid rgba(232,160,32,.28);color:var(--navy);padding:6px 10px;border-radius:999px;font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+    .path-card h3{font-size:1.2rem;color:var(--navy)}
+    .path-card p{color:var(--muted);font-size:.94rem;line-height:1.65}
+    .path-points{display:grid;gap:8px}
+    .path-points li{color:var(--text);font-size:.9rem;padding-left:18px;position:relative}
+    .path-points li::before{content:'•';position:absolute;left:0;color:var(--gold-dk);font-weight:700}
+    .path-card .btn-outline{margin-top:auto;text-align:center}
+
     .why-strip{background:var(--white);padding:52px 0;border-bottom:2px solid var(--off)}
     .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
     .why-item{display:flex;align-items:flex-start;gap:14px;padding:20px 18px;border-radius:10px;border:1px solid var(--border);background:var(--off);transition:box-shadow .2s,border-color .2s}
@@ -419,11 +433,14 @@
     .rev-hd{text-align:center;margin-bottom:44px}
     .stars-row{color:var(--gold);font-size:1.5rem;letter-spacing:3px;margin-bottom:10px}
     .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .rev-mini{background:var(--white);border-radius:12px;padding:26px 24px;border:1px solid var(--border);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
+    .rev-mini{background:var(--white);border-radius:14px;padding:26px 24px;border:1px solid var(--border);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
     .rev-mini .stars{color:var(--gold);font-size:.95rem}
-    .rev-mini blockquote{font-size:.95rem;color:var(--text);font-style:italic;line-height:1.65;flex:1}
-    .rev-mini .who{font-size:.82rem;font-weight:700;color:var(--navy)}
-    .rev-mini .who span{color:var(--muted);font-weight:400}
+    .rev-top{display:flex;justify-content:space-between;align-items:center;gap:14px}
+    .rev-source{font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--navy)}
+    .rev-score{font-family:'Oswald',sans-serif;font-size:1.6rem;color:var(--gold-dk);line-height:1}
+    .rev-mini p{font-size:.93rem;color:var(--muted);line-height:1.65;flex:1}
+    .rev-note{font-size:.82rem;color:var(--text);font-weight:700}
+    .rev-mini .btn-outline{align-self:flex-start}
 
     .area-sec{background:var(--white)}
     .area-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
@@ -452,6 +469,7 @@
     .ft-links{display:flex;gap:20px}
 
     @media(max-width:900px){
+      .path-grid{grid-template-columns:1fr 1fr}
       .why-grid{grid-template-columns:1fr 1fr}
       .ft-grid{grid-template-columns:1fr 1fr;gap:28px}
     }
@@ -460,6 +478,7 @@
       section{padding:60px 0}
       .nav-links{display:none}
       .hbg{display:flex}
+      .path-grid,
       .about-grid,.area-grid{grid-template-columns:1fr;gap:36px}
       .steps{grid-template-columns:1fr 1fr;gap:28px}
       .steps::before{display:none}
@@ -524,8 +543,8 @@
   <section class="hero">
     <div class="wrap">
       <div class="hero-badge">Greater Boston Property Maintenance</div>
-      <h1>Your Property, <span>Handled Right.</span></h1>
-      <p class="hero-sub">Reliable property maintenance and repair services for residential and commercial properties — from handyman work and HVAC upkeep to yard cleanup and seasonal maintenance.</p>
+      <h1>Reliable <span>Property Maintenance, Repairs, and HVAC/R</span> for Greater Boston</h1>
+      <p class="hero-sub">A1 Property Solutions, led by John Liriano, helps homeowners, landlords, businesses, and restaurant operators stay ahead of repairs, upkeep, and preventable equipment issues without juggling multiple contractors.</p>
       <div class="hero-btns">
         <a href="tel:6173026160" class="btn btn-gold">📞 Call or Text — (617) 302-6160</a>
         <a href="contact.html" class="btn btn-ghost">Get a Free Quote</a>
@@ -546,10 +565,55 @@
         <span class="lead-chip">Free Estimates</span>
         <span class="lead-chip">Clear Pricing</span>
         <span class="lead-chip">Owner-Operated</span>
-        <span>Call, text, or send a message and we’ll help you figure out the right service for your property.</span>
+        <span>Call, text, or send a message and we’ll help you figure out the right path for your property, timeline, and scope.</span>
       </div>
     </div>
   </div>
+
+  <section class="path-sec">
+    <div class="wrap">
+      <div class="path-hd">
+        <div class="pill">Start Here</div>
+        <h2 class="section-h">Choose the Right Service Path</h2>
+        <p class="section-p">Most visitors already know what kind of property or maintenance need they have. Start with the page that fits best, then drill into the specific pricing and service details from there.</p>
+      </div>
+      <div class="path-grid">
+        <article class="path-card">
+          <span class="path-kicker">Homeowners</span>
+          <h3>Residential Repairs and Seasonal Upkeep</h3>
+          <p>Best for punch-list repairs, yard cleanup, filter changes, detector checks, and recurring home maintenance.</p>
+          <ul class="path-points">
+            <li>Handyman repairs and fixture installs</li>
+            <li>Spring cleanup and exterior reset</li>
+            <li>Monthly home maintenance options</li>
+          </ul>
+          <a href="residential-pricing.html" class="btn btn-outline">See Residential Pricing</a>
+        </article>
+        <article class="path-card">
+          <span class="path-kicker">Managers &amp; Businesses</span>
+          <h3>Commercial Maintenance and Building Support</h3>
+          <p>Best for landlords, mixed-use properties, common-area upkeep, walkthroughs, turnover prep, and recurring service.</p>
+          <ul class="path-points">
+            <li>Property walkthroughs and reports</li>
+            <li>Commercial handyman and site upkeep</li>
+            <li>Recurring building maintenance plans</li>
+          </ul>
+          <a href="commercial-pricing.html" class="btn btn-outline">See Commercial Pricing</a>
+        </article>
+        <article class="path-card">
+          <span class="path-kicker">Restaurants</span>
+          <h3>Restaurant HVAC/R and Kitchen Equipment PM</h3>
+          <p>Best for walk-ins, reach-ins, ice machines, rooftop equipment, and ventilation support in food-service spaces.</p>
+          <ul class="path-points">
+            <li>Walk-in cooler and freezer PM</li>
+            <li>Ice machine breakdown cleaning</li>
+            <li>Kitchen exhaust and rooftop service</li>
+          </ul>
+          <a href="restaurant-hvacr.html" class="btn btn-outline">See Restaurant HVAC/R</a>
+        </article>
+      </div>
+    </div>
+  </section>
 
   <div class="why-strip">
     <div class="wrap">
@@ -558,28 +622,28 @@
           <div class="why-ico">📞</div>
           <div>
             <h4>Easy to Reach</h4>
-            <p>Call or text anytime during business hours. We respond quickly and keep communication clear.</p>
+            <p>Call or text during business hours and get clear communication from the start, not a drawn-out back-and-forth.</p>
           </div>
         </div>
         <div class="why-item">
           <div class="why-ico">💰</div>
           <div>
             <h4>Honest Pricing</h4>
-            <p>Clear quotes upfront with no hidden fees or surprise add-ons.</p>
+            <p>Starting-rate pricing, honest scoping, and straightforward quotes before work is scheduled.</p>
           </div>
         </div>
         <div class="why-item">
           <div class="why-ico">🏆</div>
           <div>
             <h4>Quality Work</h4>
-            <p>We take pride in doing the job properly, paying attention to details, and leaving things clean.</p>
+            <p>Real field experience across repairs, maintenance, refrigeration, and cleanup work that has to be done properly.</p>
           </div>
         </div>
         <div class="why-item">
           <div class="why-ico">🔄</div>
           <div>
             <h4>One Reliable Team</h4>
-            <p>From repairs to maintenance and seasonal work, you don’t need to juggle multiple contractors.</p>
+            <p>From handyman tasks to seasonal work and HVAC/R upkeep, you do not have to manage multiple service providers.</p>
           </div>
         </div>
       </div>
@@ -597,10 +661,10 @@
           <div class="pill">About Us</div>
           <h2 class="section-h">Dependable Property Maintenance for Greater Boston</h2>
           <p class="section-p">
-            We provide reliable property maintenance, handyman repairs, and yard cleanup for residential and commercial properties throughout Greater Boston.
+            John Liriano and A1 Property Solutions provide dependable property maintenance, handyman repairs, and HVAC/R support for residential and commercial properties throughout Greater Boston.
           </p>
           <p class="section-p" style="margin-top:12px">
-            From seasonal cleanups and small repairs to ongoing upkeep and HVAC/R maintenance, we help property owners stay on top of the work without the hassle of managing multiple service providers.
+            From seasonal cleanups and small repairs to ongoing upkeep, walk-in cooler maintenance, ice machine service, and ventilation issues, we help property owners stay ahead of the work without the hassle of managing multiple contractors.
           </p>
 
           <div class="stats-row">
@@ -664,7 +728,7 @@
         </div>
       </div>
 
-      <div class="quote-note">Need help choosing the right service? Call or text and we’ll point you in the right direction.</div>
+      <div class="quote-note">Need help choosing the right service? Call or text and we’ll point you to the right pricing page and the right next step.</div>
     </div>
   </section>
 
@@ -705,26 +769,47 @@
     <div class="wrap">
       <div class="rev-hd">
         <div class="stars-row">★★★★★</div>
-        <div class="pill">Customer Reviews</div>
-        <h2 class="section-h">What Our Customers Say</h2>
-        <p class="section-p" style="margin:0 auto">Real feedback from Boston-area homeowners and businesses.</p>
+        <div class="pill">Trusted Feedback</div>
+        <h2 class="section-h">Real Review Sources, Not Just Marketing Copy</h2>
+        <p class="section-p" style="margin:0 auto">Visitors want proof. Here are the review sources and service strengths people mention most often across the platforms already connected to the business.</p>
       </div>
 
       <div class="rev-grid">
         <div class="rev-mini">
-          <div class="stars">★★★★★</div>
-          <blockquote>“Fast response, fair price, and the work was done perfectly. Will definitely use A1 again.”</blockquote>
-          <div class="who">— Sarah M. <span>· Brookline, MA</span></div>
+          <div class="rev-top">
+            <div>
+              <div class="rev-source">Taskrabbit</div>
+              <div class="stars">★★★★★</div>
+            </div>
+            <div class="rev-score">4.9</div>
+          </div>
+          <p>Taskrabbit review history currently shows 41 reviews with repeat mentions for furniture assembly, mounting, troubleshooting, professionalism, and clear communication.</p>
+          <div class="rev-note">Best proof for hands-on residential work and smaller service calls.</div>
+          <a href="reviews.html" class="btn btn-outline">See Review Proof</a>
         </div>
         <div class="rev-mini">
-          <div class="stars">★★★★★</div>
-          <blockquote>“Finally found a reliable handyman in Boston. Showed up on time and knocked out a whole list of repairs.”</blockquote>
-          <div class="who">— James R. <span>· Somerville, MA</span></div>
+          <div class="rev-top">
+            <div>
+              <div class="rev-source">Google</div>
+              <div class="stars">★★★★★</div>
+            </div>
+            <div class="rev-score">Public</div>
+          </div>
+          <p>Google gives local customers a familiar public place to check current feedback when they are comparing handyman, maintenance, and property service options around Boston.</p>
+          <div class="rev-note">Helpful for local search trust and quick public review checks.</div>
+          <a href="reviews.html" class="btn btn-outline">Read Google Reviews</a>
         </div>
         <div class="rev-mini">
-          <div class="stars">★★★★★</div>
-          <blockquote>“We use A1 for all our commercial property maintenance. Professional, responsive, and easy to work with.”</blockquote>
-          <div class="who">— Maria T. <span>· Boston, MA</span></div>
+          <div class="rev-top">
+            <div>
+              <div class="rev-source">Facebook</div>
+              <div class="stars">★★★★★</div>
+            </div>
+            <div class="rev-score">Local</div>
+          </div>
+          <p>Facebook helps reinforce neighborhood trust, especially for homeowners and smaller property clients who want another public signal before reaching out.</p>
+          <div class="rev-note">Good secondary trust source for Boston-area service customers.</div>
+          <a href="reviews.html" class="btn btn-outline">See All Review Sources</a>
         </div>
       </div>
 
