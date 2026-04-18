@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-labelledby="title">
+  <title>A1 Property Pros icon</title>
+  <g fill="none" fill-rule="evenodd">
+    <path fill="#E8A020" d="M141 38h29v132h-29z"/>
+    <path fill="#E8A020" d="M124 38h46v22h-46z"/>
+    <path fill="#FFFFFF" stroke="#0D1F3C" stroke-linejoin="round" stroke-width="8" d="M54 186h24l11-34h42l12 34h27L124 38H90L54 186zm43-65 13-40 14 40H97z"/>
+    <path fill="#0D1F3C" d="M97 121h27l-14-40z"/>
+    <rect width="13" height="13" x="99" y="149" fill="#E8A020"/>
+    <rect width="13" height="13" x="114" y="149" fill="#E8A020"/>
+    <rect width="13" height="13" x="99" y="164" fill="#E8A020"/>
+    <rect width="13" height="13" x="114" y="164" fill="#E8A020"/>
+    <path stroke="#0D1F3C" stroke-width="3" d="M113.5 149v28M99 163.5h28"/>
+  </g>
+</svg>
