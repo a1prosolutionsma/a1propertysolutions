@@ -139,6 +139,10 @@
     .c-val a{color:var(--gold)}
     .area-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
     .area-tag{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.65);font-size:.75rem;padding:3px 10px;border-radius:12px}
+    .policy-strip{background:var(--gold-lt);border:1px solid rgba(232,160,32,.26);border-radius:14px;padding:20px 18px;margin-bottom:20px}
+    .policy-strip p{font-size:.92rem;color:var(--text);line-height:1.7}
+    .policy-strip ul{display:grid;gap:8px;margin-top:12px}
+    .policy-strip li{font-size:.88rem;color:var(--text)}
     .call-box{background:var(--gold);border-radius:12px;padding:26px 22px;text-align:center}
     .call-box h4{color:var(--navy);font-size:1.05rem;margin-bottom:5px}
     .call-box p{color:var(--navy);opacity:.7;font-size:.86rem;margin-bottom:14px}
@@ -210,7 +214,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li class="nav-dd">
-          <a href="pricing.html" class="nav-dd-toggle" aria-haspopup="true" aria-expanded="false">Services</a>
+          <a href="pricing.html" class="nav-dd-toggle" aria-haspopup="true" aria-expanded="false">Pricing &amp; Services</a>
           <div class="nav-drop">
             <a href="residential-pricing.html">Residential Pricing</a>
             <a href="commercial-pricing.html">Commercial Pricing</a>
@@ -241,7 +245,7 @@
       <h1>Call or Text for a <span>Fast Local Quote</span></h1>
       <p>Call, text, or send your project details below for a fast quote. We work with homeowners, landlords, property managers, and businesses that need clear communication, dependable follow-through, and a professional service partner for one-time work or ongoing support.</p>
       <div class="hero-badges">
-        <span class="hero-badge">Free Estimates</span>
+        <span class="hero-badge">Photo-Based Estimates</span>
         <span class="hero-badge">Boston-Based Service</span>
         <span class="hero-badge">Same-Day Response When Available</span>
       </div>
@@ -253,12 +257,20 @@
       <div class="contact-layout" style="padding:72px 0">
 
         <div class="c-sidebar">
+          <div class="policy-strip">
+            <div class="pill">Before You Book</div>
+            <p>Minimum service call: <strong style="color:var(--navy)">$150</strong>. Free estimates are available for most jobs based on photos and project details. If an in-person quote visit is needed, a <strong style="color:var(--navy)">$50</strong> site visit fee may apply and will be credited toward the job.</p>
+            <ul>
+              <li>Deposits may be required for larger jobs or reserved time blocks.</li>
+              <li><a href="policies.html" style="color:var(--gold-dk);font-weight:700">View full pricing &amp; policies</a></li>
+            </ul>
+          </div>
           <div class="c-info-box">
             <h3>Contact Info</h3>
             <p class="sub">Easy to reach for one-time work, recurring service, and business-focused maintenance support.</p>
 
             <div class="min-note">
-              <strong>Good to know:</strong> minimum service call is $150. Larger or material-heavy jobs may require a deposit before scheduling. Limited weekly scheduling slots are filled first come, first served.
+              <strong>Good to know:</strong> photo-based estimates are preferred for most jobs. If an in-person quote visit is needed before pricing, a $50 site visit fee may apply and will be credited toward the job. Limited weekly scheduling slots are filled first come, first served.
             </div>
 
             <div class="c-item">
@@ -296,11 +308,11 @@
         </div>
 
         <div class="form-box">
-          <h2 class="form-title">Request a Free Estimate</h2>
-          <p class="form-sub">Whether you need a one-time repair, recurring maintenance, turnover support, or preventative HVAC/R service, the more detail you provide here, the faster we can give you an accurate quote and recommend the right next step.</p>
+          <h2 class="form-title">Request an Estimate</h2>
+          <p class="form-sub">Whether you need a one-time repair, recurring maintenance, turnover support, or preventative HVAC/R service, the more detail you provide here, the faster we can review the job, quote it from photos if possible, and recommend the right next step.</p>
 
           <div class="form-badges">
-            <span class="form-badge">Free estimates</span>
+            <span class="form-badge">Photo-based estimates</span>
             <span class="form-badge">No obligation</span>
             <span class="form-badge">Fast response</span>
             <span class="form-badge">Same-day replies when available</span>
@@ -374,7 +386,7 @@
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
             <button type="submit" class="form-submit">Request My Quote →</button>
-            <p class="form-disc">✔ Free estimates &nbsp; ✔ No obligation &nbsp; ✔ We typically respond within a few hours and often the same day during business hours. We’ll never share your information.</p>
+            <p class="form-disc">✔ Free estimates for most jobs based on photos &nbsp; ✔ In-person quote visits may require a credited $50 site visit fee &nbsp; ✔ We typically respond within a few hours and often the same day during business hours.</p>
           </form>
 
           <div class="form-ok" id="form-ok">
@@ -441,11 +453,11 @@
           </a>
         </div>
       </div>
-      <div class="ft-col"><h4>Explore</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="pricing.html">Pricing</a><a href="reviews.html">Reviews</a><a href="blog.html">Blog</a><a href="index.html#payment-policy">Payment Policy</a><a href="contact.html">Contact</a></div>
+      <div class="ft-col"><h4>Explore</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="pricing.html">Pricing</a><a href="reviews.html">Reviews</a><a href="blog.html">Blog</a><a href="policies.html">Policies</a><a href="contact.html">Contact</a></div>
       <div class="ft-col"><h4>Specialty Pages</h4><a href="residential-pricing.html">Residential Pricing</a><a href="commercial-pricing.html">Commercial Pricing</a><a href="restaurant-hvacr.html">Restaurant HVAC/R</a><a href="home-shield.html">HomeShield Plan</a></div>
       <div class="ft-col"><h4>Contact</h4><a href="tel:6173026160">(617) 302-6160</a><a href="mailto:info@a1propertypros.com">info@a1propertypros.com</a><a href="contact.html">Send a Message</a><div class="hrs">Mon–Fri: 5 AM – 7 PM<br>Sat: 5 AM – 3 PM</div></div>
     </div>
-    <div class="ft-bottom"><p>© 2026 <span>A1 Property Solutions</span> · Boston, MA · All Rights Reserved</p><div class="ft-links"><a href="pricing.html">Pricing</a><a href="blog.html">Blog</a></div></div>
+    <div class="ft-bottom"><p>© 2026 <span>A1 Property Solutions</span> · Boston, MA · All Rights Reserved</p><div class="ft-links"><a href="pricing.html">Pricing</a><a href="blog.html">Blog</a><a href="policies.html">Policies</a></div></div>
   </footer>
 
   <script>

@@ -390,17 +390,13 @@
     .town-tag{background:var(--gold-lt);border:1px solid rgba(232,160,32,.35);color:var(--navy);font-size:.8rem;font-weight:600;padding:5px 13px;border-radius:20px}
 
     .policy-sec{background:#fffaf2;border-top:1px solid rgba(232,160,32,.22);border-bottom:1px solid rgba(232,160,32,.18)}
-    .policy-head{text-align:center;max-width:760px;margin:0 auto 34px}
+    .policy-head{text-align:center;max-width:720px;margin:0 auto 30px}
     .policy-head .section-p{margin:0 auto}
-    .policy-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-    .policy-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
-    .policy-card h3{display:flex;align-items:center;gap:10px;font-size:1.2rem;color:var(--navy);margin-bottom:10px}
-    .policy-card p{font-size:1rem;color:var(--muted);line-height:1.7}
+    .policy-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .policy-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+    .policy-card h3{display:flex;align-items:center;gap:10px;font-size:1.05rem;color:var(--navy);margin-bottom:8px}
+    .policy-card p{font-size:.95rem;color:var(--muted);line-height:1.7}
     .policy-icon{width:34px;height:34px;border-radius:999px;background:var(--gold-lt);display:inline-flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-    .policy-note{margin-top:28px;background:var(--navy);color:#fff;border-radius:18px;padding:24px 26px;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
-    .policy-note p{color:rgba(255,255,255,.82);margin-top:8px}
-    .policy-note .btn-outline{border-color:rgba(255,255,255,.34);color:#fff}
-    .policy-note .btn-outline:hover{background:#fff;color:var(--navy)}
     .appt-line{display:inline-block;background:var(--gold-lt);color:var(--navy);border-left:4px solid var(--gold);padding:12px 16px;border-radius:10px;font-weight:700}
 
     .cta-band{background:var(--gold);padding:60px 0;text-align:center}
@@ -428,7 +424,6 @@
       .path-grid{grid-template-columns:1fr 1fr}
       .why-grid{grid-template-columns:1fr 1fr}
       .policy-grid{grid-template-columns:1fr}
-      .policy-note{grid-template-columns:1fr}
       .ft-grid{grid-template-columns:1fr 1fr;gap:28px}
     }
 
@@ -476,7 +471,7 @@
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li class="nav-dd">
-          <a href="pricing.html" class="nav-dd-toggle" aria-haspopup="true" aria-expanded="false">Services</a>
+          <a href="pricing.html" class="nav-dd-toggle" aria-haspopup="true" aria-expanded="false">Pricing &amp; Services</a>
           <div class="nav-drop">
             <a href="residential-pricing.html">Residential Pricing</a>
             <a href="commercial-pricing.html">Commercial Pricing</a>
@@ -695,39 +690,27 @@
     <div class="wrap">
       <div class="policy-head">
         <div class="pill">Before You Book</div>
-        <h2 class="section-h">Payment &amp; Estimate Policy</h2>
-        <p class="section-p">We keep estimates, scheduling, and payment terms straightforward so customers know what to expect before the job is on the calendar. These policies help us provide reliable service and protect our time so we can better serve all clients.</p>
+        <h2 class="section-h">A Few Quick Booking Details</h2>
+        <p class="section-p">We keep quoting and scheduling straightforward so it is easy to know what to expect before you reach out. For the full details, visit the dedicated pricing and policies page.</p>
       </div>
 
       <div class="policy-grid">
         <div class="policy-card">
           <h3><span class="policy-icon">📷</span> Photo-Based Estimates</h3>
-          <p><strong>Free estimates are available based on photos and descriptions.</strong> If the project needs an in-person walkthrough, a <strong>$50 site visit fee</strong> may apply and will be <strong>credited toward the job</strong> if you move forward.</p>
+          <p><strong>Photo-based estimates are available for most jobs.</strong> Send photos, videos, and a short description for the fastest quote path.</p>
         </div>
         <div class="policy-card">
-          <h3><span class="policy-icon">📅</span> Scheduling &amp; Deposits</h3>
-          <p><strong>Deposits may be required to secure appointments</strong>, especially for larger jobs, material pickup, or reserved time blocks. <strong>Appointments are confirmed upon estimate approval or deposit.</strong></p>
+          <h3><span class="policy-icon">💼</span> Minimum Service Call</h3>
+          <p><strong>Minimum service call is $150.</strong> Final pricing still depends on scope, access, materials, and total time on site.</p>
         </div>
         <div class="policy-card">
-          <h3><span class="policy-icon">💳</span> Accepted Payment Methods</h3>
-          <p>We accept <strong>card, Zelle, cash, and check</strong>. Card payments include a <strong>3% credit card processing fee</strong>.</p>
-        </div>
-        <div class="policy-card">
-          <h3><span class="policy-icon">🧾</span> Check &amp; Payment Timing</h3>
-          <p><strong>Checks must clear</strong>, and we do <strong>not accept third-party or overpayment checks</strong>. Unless otherwise agreed in writing, <strong>payment is due upon completion</strong>.</p>
+          <h3><span class="policy-icon">📅</span> Deposits &amp; Booking</h3>
+          <p><strong>Deposits may be required for larger jobs.</strong> Appointments are confirmed upon estimate approval or deposit.</p>
         </div>
       </div>
-
-      <div class="policy-note">
-        <div>
-          <h3 style="font-size:1.35rem;color:#fff">Need to Know If Your Job Can Be Quoted Remotely?</h3>
-          <p>Text over photos and a short description, and we will let you know whether we can quote it remotely or whether an in-person visit makes more sense.</p>
-          <div class="appt-line" style="margin-top:16px">Appointments are confirmed upon estimate approval or deposit.</div>
-        </div>
-        <div style="display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap">
-          <a href="sms:6173026160" class="btn btn-gold">Text Photos for a Quote</a>
-          <a href="contact.html" class="btn btn-outline">Contact Us</a>
-        </div>
+      <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:28px">
+        <a href="policies.html" class="btn btn-outline">View Full Pricing &amp; Policies</a>
+        <a href="contact.html" class="btn btn-gold">Contact Us</a>
       </div>
     </div>
   </section>
@@ -763,8 +746,7 @@
         <a href="about.html">About Us</a>
         <a href="pricing.html">Pricing</a>
         <a href="reviews.html">Reviews</a>
-        <a href="blog.html">Blog</a>
-        <a href="index.html#payment-policy">Payment Policy</a>
+        <a href="blog.html">Blog</a><a href="policies.html">Policies</a>
         <a href="contact.html">Contact</a>
       </div>
 
@@ -789,7 +771,7 @@
       <p>© 2026 <span>A1 Property Solutions</span> · Boston, MA · All Rights Reserved</p>
       <div class="ft-links">
         <a href="pricing.html">Pricing</a>
-        <a href="blog.html">Blog</a>
+        <a href="blog.html">Blog</a><a href="policies.html">Policies</a>
       </div>
     </div>
   </footer>
