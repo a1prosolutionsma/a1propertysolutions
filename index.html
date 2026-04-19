@@ -797,13 +797,6 @@
         pricingToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       };
 
-      pricingToggle.addEventListener('click', function(e) {
-        if (window.innerWidth > 768) {
-          e.preventDefault();
-          syncPricingState(!pricingGroup.classList.contains('open'));
-        }
-      });
-
       pricingGroup.addEventListener('mouseenter', function() {
         if (window.innerWidth > 768) syncPricingState(true);
       });
