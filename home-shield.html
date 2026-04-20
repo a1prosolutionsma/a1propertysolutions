@@ -32,7 +32,7 @@
         "name":"A1 Property Pros",
         "url":"https://a1propertypros.com/",
         "telephone":"+16173026160",
-        "email":"mailto:info@a1propertypros.com",
+        "email":"mailto:info@a1propertypros.com"
       },
       {
         "@type":"Service",
@@ -1123,6 +1123,7 @@
           <p>Useful for rental properties or second homes where a simple recurring check-in helps you stay more organized between bigger maintenance needs.</p>
         </div>
       </div>
+      <p class="section-p" style="margin:24px auto 0;max-width:760px;text-align:center">If you need more frequent recurring support, compare this plan with our <a href="monthly-maintenance-packages.html" style="color:var(--gold-dk);font-weight:700">monthly maintenance packages</a> or the broader <a href="residential-pricing.html" style="color:var(--gold-dk);font-weight:700">residential pricing page</a>.</p>
     </div>
   </section>
 
@@ -1267,17 +1268,10 @@
       });
     }
 
-    document.querySelectorAll('.faq-q').forEach(function (q) {
-      q.addEventListener('click', function () {
-        const isOpen = this.classList.contains('open');
-        document.querySelectorAll('.faq-q').forEach(function (x) {
-          x.classList.remove('open');
-          x.nextElementSibling.classList.remove('open');
-        });
-        if (!isOpen) {
-          this.classList.add('open');
-          this.nextElementSibling.classList.add('open');
-        }
+    document.querySelectorAll('.faq-q').forEach(function(q) {
+      q.addEventListener('click', function() {
+        this.classList.toggle('open');
+        this.nextElementSibling.classList.toggle('open');
       });
     });
   </script>
